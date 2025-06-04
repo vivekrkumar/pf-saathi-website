@@ -37,7 +37,7 @@
             display: block;
             opacity: 1;
         }
- 
+
         /* Styles for the info modals */
         .info-modal-overlay {
             position: fixed;
@@ -46,7 +46,7 @@
             right: 0;
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
+            display: none; /* Changed to none by default */
             justify-content: center;
             align-items: center;
             z-index: 2000;
@@ -55,6 +55,7 @@
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         }
         .info-modal-overlay.show {
+            display: flex; /* Changed to flex when shown */
             opacity: 1;
             visibility: visible;
         }
@@ -85,7 +86,7 @@
         .info-modal-close-btn:hover {
             color: #1f2937; /* Tailwind gray-900 */
         }
- 
+
         /* Blinking animation for rejection chances */
         @keyframes blink {
             0% { opacity: 1; }
@@ -99,7 +100,7 @@
 </head>
 <body class="antialiased">
     <div class="min-h-screen flex flex-col">
- 
+
         <!-- Header Section -->
         <header class="bg-gradient-to-r from-emerald-600 to-green-700 text-white shadow-lg py-4 px-6 md:px-12 rounded-b-xl">
             <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -111,13 +112,13 @@
                 </nav>
             </div>
         </header>
- 
+
         <!-- Main Content Area -->
         <main id="main-content" class="flex-grow container mx-auto px-4 py-8 md:py-16">
- 
+
             <!-- Initial Landing Page Content -->
             <div id="landing-page-content">
- 
+
                 <!-- New: What do you want to do today? Section -->
                 <section class="bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">What do you want to do today?</h2>
@@ -149,7 +150,7 @@
                         </div>
                     </div>
                 </section>
- 
+
                 <!-- Hero Section (Moved down) -->
                 <section class="bg-white bg-opacity-90 text-center mb-12 p-6 md:p-10 rounded-xl shadow-md">
                     <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
@@ -168,7 +169,7 @@
                         </button>
                     </div>
                 </section>
- 
+
                 <!-- Image Section - Village Population -->
                 <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md flex flex-col items-center text-center">
@@ -178,7 +179,7 @@
                             We believe financial security should be for everyone, from bustling cities to serene villages. Our services are designed to be inclusive and easy to use, empowering rural communities.
                         </p>
                     </div>
- 
+
                     <!-- Image Section - Urban Poor Population -->
                     <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md flex flex-col items-center text-center">
                         <img src="https://placehold.co/600x400/22c55e/ffffff?text=Urban+Dreams+Realized" alt="Happy urban dwellers, possibly from economically weaker sections, smiling and showing hope, representing urban poor benefiting from financial security." class="w-full h-auto rounded-lg mb-4 object-cover">
@@ -189,7 +190,7 @@
                     </div>
                 </section>
             </div>
- 
+
             <!-- Mobile Number Entry Section (Now used for Withdraw PF flow) -->
             <div id="mobile-input-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">Enter Your UAN linked Mobile Number</h2>
@@ -202,7 +203,7 @@
                     Back to Home
                 </button>
             </div>
- 
+
             <!-- OTP Entry Section (Now used for Withdraw PF flow) -->
             <div id="otp-input-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6">Enter OTP</h2>
@@ -215,11 +216,11 @@
                     Back
                 </button>
             </div>
- 
+
             <!-- PF Details Section (Hidden by default) -->
             <div id="pf-details-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Your Provident Fund Details</h2>
- 
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                     <!-- Account Balance Tile -->
                     <div class="bg-green-50 p-6 rounded-lg shadow-sm">
@@ -238,7 +239,7 @@
                         </p>
                         <p class="text-gray-600 text-sm mt-2">As of: 31st March 2025</p>
                     </div>
- 
+
                     <!-- KYC Details Tile -->
                     <div class="bg-lime-50 p-6 rounded-lg shadow-sm">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-between">
@@ -257,7 +258,7 @@
                             <li>Bank Account: Linked <span class="text-green-600">✓</span></li>
                         </ul>
                     </div>
- 
+
                     <!-- Employer History Tile -->
                     <div class="bg-emerald-50 p-6 rounded-lg shadow-sm">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Employer History</h3>
@@ -267,7 +268,7 @@
                             <li>StartUp Hub (2016 - 2018)</li>
                         </ul>
                     </div>
- 
+
                     <!-- Claims Tile (Claims removed as per request) -->
                     <div class="bg-teal-50 p-6 rounded-lg shadow-sm">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Recent Claims</h3>
@@ -284,7 +285,7 @@
                 </div>
             </div>
         </main>
- 
+
         <!-- Actions Section (This section is now redundant and hidden as its content is moved to landing page) -->
         <section class="container mx-auto px-4 py-8 md:py-16 hidden">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Actions</h2>
@@ -296,10 +297,10 @@
                 </div>
             </div>
         </section>
- 
+
         <!-- Message Box -->
         <div id="message-box" class="message-box"></div>
- 
+
         <!-- Info Modal for Immediately Available Balance Calculation -->
         <div id="info-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
@@ -316,7 +317,7 @@
                 </p>
             </div>
         </div>
- 
+
         <!-- KYC Info Modal -->
         <div id="kyc-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
@@ -349,7 +350,7 @@
                 </p>
             </div>
         </div>
- 
+
         <!-- Withdrawable Reasons Modal -->
         <div id="reasons-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
@@ -368,7 +369,7 @@
                 </ul>
             </div>
         </div>
- 
+
         <!-- Marriage Withdrawal Eligibility Section -->
         <div id="marriage-withdrawal-eligibility-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Marriage Withdrawal: Check Eligibility</h2>
@@ -387,13 +388,13 @@
             <button id="check-eligibility-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
                 Check Eligibility & Calculate Amount
             </button>
- 
+
             <!-- New: Desired Withdrawal Amount Input -->
             <div id="desired-withdrawal-input-group" class="mb-6 hidden">
                 <label for="desired-withdrawal-amount" class="block text-left text-gray-700 text-sm font-bold mb-2">Enter Desired Withdrawal Amount (₹):</label>
                 <input type="number" id="desired-withdrawal-amount" placeholder="e.g., 50000" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
- 
+
             <button id="get-withdrawal-advice-btn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4 hidden">
                 ✨ Get Personalized Withdrawal Advice
             </button>
@@ -404,7 +405,7 @@
                 Back to PF Details
             </button>
         </div>
- 
+
         <!-- Bank Details Confirmation Section -->
         <div id="bank-details-confirmation-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Confirm Bank Details</h2>
@@ -425,7 +426,7 @@
                 Back
             </button>
         </div>
- 
+
         <!-- Address Confirmation Section -->
         <div id="address-confirmation-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Confirm Address</h2>
@@ -445,7 +446,7 @@
                 Back
             </button>
         </div>
- 
+
         <!-- Review and Submit Section -->
         <div id="review-and-submit-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-lg mx-auto">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Review Your Claim</h2>
@@ -478,7 +479,7 @@
                 Back
             </button>
         </div>
- 
+
         <!-- Claim Submission Success Section -->
         <div id="claim-submission-success-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Claim Submitted Successfully!</h2>
@@ -495,7 +496,7 @@
                 Back to Home
             </button>
         </div>
- 
+
         <!-- Withdrawal Advice Modal (New LLM Feature) -->
         <div id="withdrawal-advice-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
@@ -512,24 +513,24 @@
                 </p>
             </div>
         </div>
- 
+
         <!-- PF Data Score Section (New) -->
         <div id="pf-data-score-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-lg mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Your PF Data Score</h2>
- 
+
             <div class="space-y-6 text-left mb-8">
                 <div class="p-4 bg-blue-50 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Completeness Score</h3>
                     <p class="text-2xl font-bold text-blue-700">High</p>
                     <p class="text-gray-600 text-sm mt-1">All essential data fields are populated.</p>
                 </div>
- 
+
                 <div class="p-4 bg-red-50 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Match Score</h3>
                     <p class="text-2xl font-bold text-red-700">Low</p>
                     <p class="text-gray-600 text-sm mt-1">Discrepancies found between linked documents (e.g., PAN, Aadhaar, UAN).</p>
                 </div>
- 
+
                 <div class="p-4 bg-yellow-50 rounded-lg shadow-md text-center">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Overall Data Impact Score</h3>
                     <p class="text-3xl font-bold text-red-700 blinking-text">75% Chances of Rejection during Withdrawal</p>
@@ -539,28 +540,28 @@
                     </button>
                 </div>
             </div>
- 
+
             <div class="text-center mt-8">
                 <button id="back-to-home-from-data-score" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                     Back to Home
                 </button>
             </div>
         </div>
- 
+
         <!-- Data Mismatch Fix Section (New) -->
         <div id="data-mismatch-fix-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Fix Data Mismatch</h2>
             <p class="text-gray-700 mb-4">We've detected a slight mismatch in your father's name:</p>
- 
+
             <div class="bg-red-50 p-4 rounded-lg mb-6 text-left">
                 <p class="font-semibold text-gray-800">Father's Name in PAN:</p>
                 <p class="text-lg text-red-700">Ram Kumar</p>
                 <p class="font-semibold text-gray-800 mt-3">Father's Name in UAN:</p>
                 <p class="text-lg text-red-700">Ram Kumaar</p>
             </div>
- 
+
             <p class="text-gray-700 mb-4">Please update your PAN data to ensure consistency.</p>
- 
+
             <div class="mb-4">
                 <label for="pan-number-input" class="block text-left text-gray-700 text-sm font-bold mb-2">Your PAN Number:</label>
                 <input type="text" id="pan-number-input" value="ABCDE1234F" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg bg-gray-100" readonly>
@@ -569,7 +570,7 @@
                 <label for="corrected-father-name-input" class="block text-left text-gray-700 text-sm font-bold mb-2">Corrected Father's Name (as per official records):</label>
                 <input type="text" id="corrected-father-name-input" placeholder="e.g., Ram Kumar" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
- 
+
             <button id="submit-pan-update-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
                 Submit PAN Update Request
             </button>
@@ -577,7 +578,7 @@
                 Back to Data Score
             </button>
         </div>
- 
+
         <!-- PAN Update Success Section (New) -->
         <div id="pan-update-success-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">PAN Update Request Submitted!</h2>
@@ -591,7 +592,7 @@
                 Back to Home
             </button>
         </div>
- 
+
         <!-- Balance Only Section (New) -->
         <div id="balance-only-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Your PF Balance</h2>
@@ -614,8 +615,8 @@
                 Back to Home
             </button>
         </div>
- 
- 
+
+
         <!-- Footer Section -->
         <footer class="bg-green-900 text-white py-6 px-4 md:px-12 mt-8 rounded-t-xl">
             <div class="container mx-auto text-center text-sm md:text-base">
@@ -626,7 +627,7 @@
             </div>
         </footer>
     </div>
- 
+
     <script>
         // Get references to main sections
         const landingPageContent = document.getElementById('landing-page-content');
@@ -642,13 +643,13 @@
         const dataMismatchFixSection = document.getElementById('data-mismatch-fix-section');
         const panUpdateSuccessSection = document.getElementById('pan-update-success-section');
         const balanceOnlySection = document.getElementById('balance-only-section');
- 
+
         const messageBox = document.getElementById('message-box');
         const infoModalOverlay = document.getElementById('info-modal-overlay');
         const kycModalOverlay = document.getElementById('kyc-modal-overlay');
         const reasonsModalOverlay = document.getElementById('reasons-modal-overlay');
         const withdrawalAdviceModalOverlay = document.getElementById('withdrawal-advice-modal-overlay');
- 
+
         // Get references to buttons and inputs
         const backToHomeFromPfBtn = document.getElementById('back-to-home-from-pf');
         const infoIconBtn = document.getElementById('info-icon-btn');
@@ -657,14 +658,14 @@
         const kycModalCloseBtn = document.getElementById('kyc-modal-close-btn');
         const reasonsModalCloseBtn = document.getElementById('reasons-modal-close-btn');
         const reasonsList = document.getElementById('reasons-list');
- 
+
         // Main action tiles
         const actionCheckBalance = document.getElementById('action-check-balance');
         const actionCheckDataScore = document.getElementById('action-check-data-score');
         const actionHelpWithdraw = document.getElementById('action-help-withdraw');
         const actionHelpTransfer = document.getElementById('action-help-transfer');
         const actionSpeakExpert = document.getElementById('action-speak-expert');
- 
+
         // Mobile/OTP related elements
         const mobileNumberInput = document.getElementById('mobile-number-input');
         const sendOtpBtn = document.getElementById('send-otp-btn');
@@ -672,10 +673,10 @@
         const verifyOtpBtn = document.getElementById('verify-otp-btn');
         const backToHomeFromMobileBtn = document.getElementById('back-to-home-from-mobile');
         const backToMobileFromOtpBtn = document.getElementById('back-to-mobile-from-otp');
- 
+
         // Button in PF Details Section
         const initiatePfWithdrawalBtn = document.getElementById('initiate-pf-withdrawal-btn');
- 
+
         // Elements for withdrawal workflow
         const yearsOfServiceInput = document.getElementById('years-of-service');
         const employeeShareBalanceInput = document.getElementById('employee-share-balance');
@@ -686,29 +687,29 @@
         const getWithdrawalAdviceBtn = document.getElementById('get-withdrawal-advice-btn');
         const proceedToBankDetailsBtn = document.getElementById('proceed-to-bank-details-btn');
         const backToPfDetailsFromEligibilityBtn = document.getElementById('back-to-pf-details-from-eligibility');
- 
+
         const last4DigitsInput = document.getElementById('last-4-digits-input');
         const verifyBankDetailsBtn = document.getElementById('verify-bank-details-btn');
         const backToEligibilityFromBankBtn = document.getElementById('back-to-eligibility-from-bank');
- 
+
         const addressCorrectCheckbox = document.getElementById('address-correct-checkbox');
         const confirmAddressBtn = document.getElementById('confirm-address-btn');
         const backToBankFromAddressBtn = document.getElementById('back-to-bank-from-address');
- 
+
         const reviewWithdrawalAmount = document.getElementById('review-withdrawal-amount');
         const reviewBankDigits = document.getElementById('review-bank-digits');
         const reviewAddress = document.getElementById('review-address');
         const termsCheckbox = document.getElementById('terms-checkbox');
         const submitClaimBtn = document.getElementById('submit-claim-btn');
         const backToAddressFromReviewBtn = document.getElementById('back-to-address-from-review');
- 
+
         const acknowledgmentNumberSpan = document.getElementById('acknowledgment-number');
         const backToHomeFromSuccessBtn = document.getElementById('back-to-home-from-success');
         const backToHomeFromDataScoreBtn = document.getElementById('back-to-home-from-data-score');
- 
+
         const withdrawalAdviceContent = document.getElementById('withdrawal-advice-content');
         const withdrawalAdviceModalCloseBtn = document.getElementById('withdrawal-advice-modal-close-btn');
- 
+
         // Elements for data mismatch fix workflow
         const fixDataNowBtn = document.getElementById('fix-data-now-btn');
         const panNumberInput = document.getElementById('pan-number-input');
@@ -716,18 +717,18 @@
         const submitPanUpdateBtn = document.getElementById('submit-pan-update-btn');
         const backToDataScoreFromFixBtn = document.getElementById('back-to-data-score-from-fix');
         const backToHomeFromPanSuccessBtn = document.getElementById('back-to-home-from-pan-success');
- 
+
         // Elements for balance-only section
         const infoIconBtnBalanceOnly = document.getElementById('info-icon-btn-balance-only');
         const backToHomeFromBalanceOnlyBtn = document.getElementById('back-to-home-from-balance-only');
-        const dynamicBalanceInfo = document.getElementById('dynamic-balance-info'); // New: for dynamic content
- 
- 
+        const dynamicBalanceInfo = document.getElementById('dynamic-balance-info');
+
+
         let calculatedEligibleWithdrawalAmount = 0;
         let currentYearsOfService = 0;
         let currentEmployeeShareBalance = 0;
         let finalRequestedWithdrawalAmount = 0;
- 
+
         // Content for dynamic balance info display
         const balanceInfoSentences = [
             "Upon Retirement or Superannuation: You can withdraw your full balance.",
@@ -735,7 +736,7 @@
             "For Unemployment (after 2 months): The remaining 25% of your PF balance becomes available.",
             "For Specific Purposes (e.g., house purchase, medical needs): Partial withdrawals are allowed under certain conditions, usually a percentage of your contribution or a fixed amount, whichever is less."
         ];
- 
+
         // Function to show a message
         function showMessage(message, isError = false) {
             messageBox.textContent = message;
@@ -748,7 +749,7 @@
                 messageBox.classList.remove('show');
             }, 3000); // Hide after 3 seconds
         }
- 
+
         // Function to hide all content sections and show a specific one
         function showSection(sectionToShow) {
             landingPageContent.classList.add('hidden');
@@ -764,16 +765,16 @@
             dataMismatchFixSection.classList.add('hidden');
             panUpdateSuccessSection.classList.add('hidden');
             balanceOnlySection.classList.add('hidden');
- 
+
             // Ensure modals are hidden when switching main sections
             infoModalOverlay.classList.remove('show');
             kycModalOverlay.classList.remove('show');
             reasonsModalOverlay.classList.remove('show');
             withdrawalAdviceModalOverlay.classList.remove('show');
- 
+
             sectionToShow.classList.remove('hidden');
         }
- 
+
         // Function to display balance info dynamically
         function displayBalanceInfoDynamically() {
             dynamicBalanceInfo.innerHTML = ''; // Clear previous content
@@ -791,30 +792,30 @@
                 delay += 1000; // 1 second delay between sentences
             });
         }
- 
+
         // --- Action Tile Event Listeners ---
         actionCheckBalance.addEventListener('click', () => {
             showSection(balanceOnlySection); // Show only the balance section
         });
- 
+
         actionCheckDataScore.addEventListener('click', () => {
             showSection(pfDataScoreSection);
         });
- 
+
         actionHelpWithdraw.addEventListener('click', () => {
             showSection(mobileInputSection);
             mobileNumberInput.value = ''; // Clear input
         });
- 
+
         actionHelpTransfer.addEventListener('click', () => {
             showMessage('PF Transfer functionality coming soon!', false);
         });
- 
+
         actionSpeakExpert.addEventListener('click', () => {
             showMessage('Connecting you to an expert... (This is a placeholder)', false);
         });
         // --- End Action Tile Event Listeners ---
- 
+
         // --- Mobile/OTP Workflow ---
         sendOtpBtn.addEventListener('click', () => {
             const mobileNumber = mobileNumberInput.value;
@@ -826,7 +827,7 @@
             showSection(otpInputSection);
             otpInput.value = ''; // Clear OTP input
         });
- 
+
         verifyOtpBtn.addEventListener('click', () => {
             const otp = otpInput.value;
             if (otp.length !== 6 || !/^\d{6}$/.test(otp)) {
@@ -836,91 +837,91 @@
             showMessage('OTP Verified Successfully!');
             showSection(pfDetailsSection); // Proceed to PF Details after successful OTP
         });
- 
+
         backToHomeFromMobileBtn.addEventListener('click', () => {
             showSection(landingPageContent);
             mobileNumberInput.value = '';
         });
- 
+
         backToMobileFromOtpBtn.addEventListener('click', () => {
             showSection(mobileInputSection);
             otpInput.value = '';
         });
         // --- End Mobile/OTP Workflow ---
- 
- 
+
+
         // Initiate PF Withdrawal button in PF Details section
         initiatePfWithdrawalBtn.addEventListener('click', () => {
             reasonsModalOverlay.classList.add('show'); // Show the withdrawal reasons modal
         });
- 
- 
+
+
         // Event listener for "Back to Home" button from PF details section
         backToHomeFromPfBtn.addEventListener('click', () => {
             showSection(landingPageContent);
         });
- 
+
         // Event listener for Immediately Available Balance info icon button (in full PF Details)
         infoIconBtn.addEventListener('click', () => {
             displayBalanceInfoDynamically(); // Call dynamic display
             infoModalOverlay.classList.add('show');
         });
- 
+
         // Event listener for Immediately Available Balance info icon button (in balance-only section)
         infoIconBtnBalanceOnly.addEventListener('click', () => {
             displayBalanceInfoDynamically(); // Call dynamic display
             infoModalOverlay.classList.add('show');
         });
- 
- 
+
+
         // Event listener for Immediately Available Balance info modal close button
         infoModalCloseBtn.addEventListener('click', () => {
             infoModalOverlay.classList.remove('show');
         });
- 
+
         // Close Immediately Available Balance modal if clicked outside (on overlay)
         infoModalOverlay.addEventListener('click', (event) => {
             if (event.target === infoModalOverlay) {
                 infoModalOverlay.classList.remove('show');
             }
         });
- 
+
         // Event listener for KYC info icon button
         kycInfoBtn.addEventListener('click', () => {
             kycModalOverlay.classList.add('show');
         });
- 
+
         // Event listener for KYC info modal close button
         kycModalCloseBtn.addEventListener('click', () => {
             kycModalOverlay.classList.remove('show');
         });
- 
+
         // Close KYC modal if clicked outside (on overlay)
         kycModalOverlay.addEventListener('click', (event) => {
             if (event.target === kycModalOverlay) {
                 kycModalOverlay.classList.remove('show');
             }
         });
- 
+
         // Event listener for Withdrawable Reasons modal close button
         reasonsModalCloseBtn.addEventListener('click', () => {
             reasonsModalOverlay.classList.remove('show');
         });
- 
+
         // Close Withdrawable Reasons modal if clicked outside (on overlay)
         reasonsModalOverlay.addEventListener('click', (event) => {
             if (event.target === reasonsModalOverlay) {
                 reasonsModalOverlay.classList.remove('show');
             }
         });
- 
+
         // Event listener for clicking a reason in the list
         reasonsList.addEventListener('click', (event) => {
             if (event.target.tagName === 'LI') {
                 const selectedReason = event.target.dataset.reason;
                 showMessage(`Selected Reason: ${selectedReason}`);
                 reasonsModalOverlay.classList.remove('show');
- 
+
                 // If 'Marriage' is selected, proceed to the eligibility section
                 if (selectedReason === 'Marriage') {
                     showSection(marriageWithdrawalEligibilitySection);
@@ -939,15 +940,15 @@
                 }
             }
         });
- 
+
         // Marriage Withdrawal Eligibility Logic
         checkEligibilityBtn.addEventListener('click', () => {
             const years = parseInt(yearsOfServiceInput.value);
             const balance = parseFloat(employeeShareBalanceInput.value);
- 
+
             currentYearsOfService = years; // Store for LLM call
             currentEmployeeShareBalance = balance; // Store for LLM call
- 
+
             if (isNaN(years) || isNaN(balance) || years < 0 || balance < 0) {
                 showMessage('Please enter valid numbers for years of service and balance.', true);
                 eligibleAmountDisplay.textContent = '';
@@ -956,13 +957,13 @@
                 getWithdrawalAdviceBtn.classList.add('hidden');
                 return;
             }
- 
+
             if (years >= 7) {
                 calculatedEligibleWithdrawalAmount = balance * 0.50; // 50% of employee's share + interest
                 eligibleAmountDisplay.textContent = `Maximum Eligible Withdrawal: ₹ ${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
                 eligibleAmountDisplay.classList.remove('text-red-600');
                 eligibleAmountDisplay.classList.add('text-emerald-700');
- 
+
                 desiredWithdrawalInputGroup.classList.remove('hidden'); // Show desired amount input
                 desiredWithdrawalAmountInput.value = ''; // Clear previous value
                 proceedToBankDetailsBtn.classList.add('hidden'); // Disable until valid amount entered
@@ -978,17 +979,17 @@
                 showMessage('You are not eligible for Marriage Withdrawal yet.', true);
             }
         });
- 
+
         // Event listener for desired withdrawal amount input
         desiredWithdrawalAmountInput.addEventListener('input', () => {
             const desiredAmount = parseFloat(desiredWithdrawalAmountInput.value);
- 
+
             if (isNaN(desiredAmount) || desiredAmount <= 0) {
                 showMessage('Please enter a valid positive amount for withdrawal.', true);
                 proceedToBankDetailsBtn.classList.add('hidden');
                 return;
             }
- 
+
             if (desiredAmount > calculatedEligibleWithdrawalAmount) {
                 showMessage(`Desired amount (₹${desiredAmount.toLocaleString('en-IN')}) exceeds eligible amount (₹${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN')}).`, true);
                 proceedToBankDetailsBtn.classList.add('hidden');
@@ -998,8 +999,8 @@
                 proceedToBankDetailsBtn.classList.remove('hidden');
             }
         });
- 
- 
+
+
         // LLM Integration: Get Personalized Withdrawal Advice
         getWithdrawalAdviceBtn.addEventListener('click', async () => {
             withdrawalAdviceModalOverlay.classList.add('show');
@@ -1009,15 +1010,15 @@
                     <p class="ml-4 text-gray-700">Generating advice...</p>
                 </div>
             `; // Show loading spinner
- 
+
             const prompt = `You are a helpful assistant providing guidance on Provident Fund (PF) withdrawals in India. A user is considering a partial PF withdrawal for 'Marriage'. They have ${currentYearsOfService} years of EPF service and are eligible to withdraw ₹ ${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}. Provide concise, helpful advice on what documents they might need, any common pitfalls to avoid for this specific reason, and general best practices for PF withdrawals for marriage. Keep it under 200 words.`;
- 
+
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
             const payload = { contents: chatHistory };
             const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
- 
+
             try {
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -1025,7 +1026,7 @@
                     body: JSON.stringify(payload)
                 });
                 const result = await response.json();
- 
+
                 if (result.candidates && result.candidates.length > 0 &&
                     result.candidates[0].content && result.candidates[0].content.parts &&
                     result.candidates[0].content.parts.length > 0) {
@@ -1040,18 +1041,18 @@
                 console.error('Error calling Gemini API:', error);
             }
         });
- 
+
         withdrawalAdviceModalCloseBtn.addEventListener('click', () => {
             withdrawalAdviceModalOverlay.classList.remove('show');
         });
- 
+
         withdrawalAdviceModalOverlay.addEventListener('click', (event) => {
             if (event.target === withdrawalAdviceModalOverlay) {
                 withdrawalAdviceModalOverlay.classList.remove('show');
             }
         });
- 
- 
+
+
         proceedToBankDetailsBtn.addEventListener('click', () => {
             // Ensure the finalRequestedWithdrawalAmount is set before proceeding
             if (finalRequestedWithdrawalAmount <= 0 || finalRequestedWithdrawalAmount > calculatedEligibleWithdrawalAmount) {
@@ -1061,11 +1062,11 @@
             showSection(bankDetailsConfirmationSection);
             last4DigitsInput.value = ''; // Clear input
         });
- 
+
         backToPfDetailsFromEligibilityBtn.addEventListener('click', () => {
             showSection(pfDetailsSection); // Go back to PF details section
         });
- 
+
         // Bank Details Confirmation Logic
         verifyBankDetailsBtn.addEventListener('click', () => {
             const last4 = last4DigitsInput.value;
@@ -1079,16 +1080,16 @@
                 showMessage('Incorrect last 4 digits. Please try again.', true);
             }
         });
- 
+
         backToEligibilityFromBankBtn.addEventListener('click', () => {
             showSection(marriageWithdrawalEligibilitySection);
         });
- 
+
         // Address Confirmation Logic
         addressCorrectCheckbox.addEventListener('change', () => {
             confirmAddressBtn.disabled = !addressCorrectCheckbox.checked;
         });
- 
+
         confirmAddressBtn.addEventListener('click', () => {
             if (addressCorrectCheckbox.checked) {
                 showMessage('Address Confirmed!');
@@ -1101,16 +1102,16 @@
                 showMessage('Please confirm your address to proceed.', true);
             }
         });
- 
+
         backToBankFromAddressBtn.addEventListener('click', () => {
             showSection(bankDetailsConfirmationSection);
         });
- 
+
         // Review and Submit Logic
         termsCheckbox.addEventListener('change', () => {
             submitClaimBtn.disabled = !termsCheckbox.checked;
         });
- 
+
         submitClaimBtn.addEventListener('click', () => {
             if (termsCheckbox.checked) {
                 // Simulate claim submission
@@ -1125,37 +1126,37 @@
                 showMessage('Please agree to the terms and conditions.', true);
             }
         });
- 
+
         backToAddressFromReviewBtn.addEventListener('click', () => {
             showSection(addressConfirmationSection);
         });
- 
+
         // Claim Submission Success Logic
         backToHomeFromSuccessBtn.addEventListener('click', () => {
             showSection(landingPageContent);
         });
- 
+
         // Event listener for Back to Home button from PF Data Score section
         backToHomeFromDataScoreBtn.addEventListener('click', () => {
             showSection(landingPageContent);
         });
- 
+
         // New: Event listener for Back to Home button from Balance Only section
         backToHomeFromBalanceOnlyBtn.addEventListener('click', () => {
             showSection(landingPageContent);
         });
- 
+
         // Event listener for Fix Data Now button
         fixDataNowBtn.addEventListener('click', () => {
             showSection(dataMismatchFixSection);
             correctedFatherNameInput.value = ''; // Clear input
         });
- 
+
         // Event listener for Back to Data Score button from Fix Data Mismatch
         backToDataScoreFromFixBtn.addEventListener('click', () => {
             showSection(pfDataScoreSection);
         });
- 
+
         // Event listener for Submit PAN Update Request button
         submitPanUpdateBtn.addEventListener('click', () => {
             const correctedName = correctedFatherNameInput.value;
@@ -1169,10 +1170,15 @@
                 showMessage('PAN Update Request Submitted Successfully!', false);
             }, 1500); // Simulate service call
         });
- 
+
         // Event listener for Back to Home button from PAN Update Success
         backToHomeFromPanSuccessBtn.addEventListener('click', () => {
             showSection(landingPageContent);
+        });
+
+        // Initialize the page on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection(landingPageContent); // Ensure landing page is shown first
         });
     </script>
 </body>
