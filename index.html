@@ -104,12 +104,23 @@
         <!-- Header Section -->
         <header class="bg-gradient-to-r from-emerald-600 to-green-700 text-white shadow-lg py-4 px-6 md:px-12 rounded-b-xl">
             <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-                <div class="text-3xl md:text-4xl font-extrabold mb-2 md:mb-0">
+                <div class="text-3xl md:text-4xl font-extrabold mb-2 md:mb-0" data-key="headerTitle">
                     PF Saathi
                 </div>
-                <nav class="text-xl md:text-2xl font-medium text-center md:text-right">
+                <nav class="text-xl md:text-2xl font-medium text-center md:text-right" data-key="headerTagline">
                     Your Provident Fund, Simplified!
                 </nav>
+                <!-- Language Selector -->
+                <div class="mt-2 md:mt-0">
+                    <select id="language-selector" class="bg-green-700 text-white py-2 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-300">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="mr">मराठी</option>
+                        <option value="ta">தமிழ்</option>
+                        <option value="kn">ಕನ್ನಡ</option>
+                        <option value="gu">ગુજરાતી</option>
+                    </select>
+                </div>
             </div>
         </header>
 
@@ -121,46 +132,46 @@
 
                 <!-- New: What do you want to do today? Section -->
                 <section class="bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">What do you want to do today?</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8" data-key="whatToDoTodayTitle">What do you want to do today?</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div id="action-check-balance" class="bg-green-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-4xl text-emerald-600 mb-4">💰</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Check my PF Balance</h3>
-                            <p class="text-gray-600">View your current Provident Fund balance.</p>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="checkBalanceTitle">Check my PF Balance</h3>
+                            <p class="text-gray-600" data-key="checkBalanceDesc">View your current Provident Fund balance.</p>
                         </div>
                         <div id="action-check-data-score" class="bg-lime-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-4xl text-lime-600 mb-4">📈</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Check my PF Data Score</h3>
-                            <p class="text-gray-600">Assess your KYC data confidence for withdrawals.</p>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="checkDataScoreTitle">Check my PF Data Score</h3>
+                            <p class="text-gray-600" data-key="checkDataScoreDesc">Assess your KYC data confidence for withdrawals.</p>
                         </div>
                         <div id="action-help-withdraw" class="bg-emerald-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-4xl text-green-600 mb-4">💸</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Help me Withdraw my PF</h3>
-                            <p class="text-gray-600">Start a partial or full PF withdrawal claim.</p>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="helpWithdrawTitle">Help me Withdraw my PF</h3>
+                            <p class="text-gray-600" data-key="helpWithdrawDesc">Start a partial or full PF withdrawal claim.</p>
                         </div>
                         <div id="action-help-transfer" class="bg-teal-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-4xl text-teal-600 mb-4">🔄</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Help me with PF Transfer</h3>
-                            <p class="text-gray-600">Transfer your PF from previous employer.</p>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="helpTransferTitle">Help me with PF Transfer</h3>
+                            <p class="text-gray-600" data-key="helpTransferDesc">Transfer your PF from previous employer.</p>
                         </div>
                         <div id="action-speak-expert" class="bg-purple-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-4xl text-purple-600 mb-4">🗣️</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Speak to an Expert</h3>
-                            <p class="text-gray-600">Get personalized assistance from our team.</p>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="speakExpertTitle">Speak to an Expert</h3>
+                            <p class="text-gray-600" data-key="speakExpertDesc">Get personalized assistance from our team.</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Hero Section (Moved down) -->
                 <section class="bg-white bg-opacity-90 text-center mb-12 p-6 md:p-10 rounded-xl shadow-md">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight" data-key="heroTitle">
                         Empowering Your Financial Future
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto" data-key="heroDesc">
                         PF Saathi is dedicated to making Provident Fund management accessible and easy for everyone. Secure your savings, effortlessly.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        <a href="#" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="getStartedBtn">
                             Get Started
                         </a>
                         <!-- This button is now redundant but kept for reference -->
@@ -174,8 +185,8 @@
                 <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md flex flex-col items-center text-center">
                         <img src="https://placehold.co/600x400/84cc16/ffffff?text=Happy+Village+Life" alt="Happy Indian villagers smiling and interacting, representing rural population benefiting from financial security." class="w-full h-auto rounded-lg mb-4 object-cover">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Reaching Every Corner</h2>
-                        <p class="text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2" data-key="reachingEveryCornerTitle">Reaching Every Corner</h2>
+                        <p class="text-gray-600" data-key="reachingEveryCornerDesc">
                             We believe financial security should be for everyone, from bustling cities to serene villages. Our services are designed to be inclusive and easy to use, empowering rural communities.
                         </p>
                     </div>
@@ -183,8 +194,8 @@
                     <!-- Image Section - Urban Poor Population -->
                     <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md flex flex-col items-center text-center">
                         <img src="https://placehold.co/600x400/22c55e/ffffff?text=Urban+Dreams+Realized" alt="Happy urban dwellers, possibly from economically weaker sections, smiling and showing hope, representing urban poor benefiting from financial security." class="w-full h-auto rounded-lg mb-4 object-cover">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Empowering Urban Lives</h2>
-                        <p class="text-gray-600">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2" data-key="empoweringUrbanLivesTitle">Empowering Urban Lives</h2>
+                        <p class="text-gray-600" data-key="empoweringUrbanLivesDesc">
                             In the heart of our cities, we strive to bring clarity and control over Provident Funds, ensuring that every urban worker can build a secure future with confidence and ease.
                         </p>
                     </div>
@@ -193,41 +204,41 @@
 
             <!-- Mobile Number Entry Section (Now used for Withdraw PF flow) -->
             <div id="mobile-input-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Enter Your UAN linked Mobile Number</h2>
-                <p class="text-gray-700 mb-4">Please enter your 10-digit mobile number linked with your UAN.</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="enterMobileNumberTitle">Enter Your UAN linked Mobile Number</h2>
+                <p class="text-gray-700 mb-4" data-key="enterMobileNumberDesc">Please enter your 10-digit mobile number linked with your UAN.</p>
                 <input type="tel" id="mobile-number-input" placeholder="+91 XXXXXXXXXX" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-center text-lg focus:ring-emerald-500 focus:border-emerald-500" maxlength="10" pattern="[0-9]{10}">
-                <button id="send-otp-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <button id="send-otp-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="sendOtpBtn">
                     Send OTP
                 </button>
-                <button id="back-to-home-from-mobile" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+                <button id="back-to-home-from-mobile" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backToHomeBtn">
                     Back to Home
                 </button>
             </div>
 
             <!-- OTP Entry Section (Now used for Withdraw PF flow) -->
             <div id="otp-input-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Enter OTP</h2>
-                <p class="text-gray-700 mb-4">An OTP has been sent to your mobile number.</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="enterOtpTitle">Enter OTP</h2>
+                <p class="text-gray-700 mb-4" data-key="otpSentDesc">An OTP has been sent to your mobile number.</p>
                 <input type="text" id="otp-input" placeholder="Enter 6-digit OTP" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-center text-lg focus:ring-emerald-500 focus:border-emerald-500" maxlength="6">
-                <button id="verify-otp-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <button id="verify-otp-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="verifyOtpBtn">
                     Verify OTP
                 </button>
-                <button id="back-to-mobile-from-otp" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+                <button id="back-to-mobile-from-otp" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backBtn">
                     Back
                 </button>
             </div>
 
             <!-- PF Details Section (Hidden by default) -->
             <div id="pf-details-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Your Provident Fund Details</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8" data-key="yourPfDetailsTitle">Your Provident Fund Details</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                     <!-- Account Balance Tile -->
                     <div class="bg-green-50 p-6 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Account Balance</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="accountBalanceTitle">Account Balance</h3>
                         <p class="text-2xl font-bold text-emerald-700">₹ 1,50,000.00</p>
                         <!-- Updated: Immediately Available Balance with new info icon -->
-                        <p class="text-lg font-medium text-green-700 mt-2 flex items-center">
+                        <p class="text-lg font-medium text-green-700 mt-2 flex items-center" data-key="immediatelyAvailableBalanceText">
                             Immediately Available Balance: ₹ 90,000.00
                             <button id="info-icon-btn" class="ml-2 text-green-600 hover:text-green-800 focus:outline-none" title="Click for calculation details">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -237,12 +248,12 @@
                                 </svg>
                             </button>
                         </p>
-                        <p class="text-gray-600 text-sm mt-2">As of: 31st March 2025</p>
+                        <p class="text-gray-600 text-sm mt-2" data-key="asOfDate">As of: 31st March 2025</p>
                     </div>
 
                     <!-- KYC Details Tile -->
                     <div class="bg-lime-50 p-6 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-between" data-key="kycDetailsTitle">
                             KYC Details
                             <button id="kyc-info-btn" class="ml-2 text-green-600 hover:text-green-800 focus:outline-none" title="Click for KYC confidence details">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -253,15 +264,15 @@
                             </button>
                         </h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>Aadhaar: Linked <span class="text-green-600">✓</span></li>
-                            <li>PAN: Linked <span class="text-green-600">✓</span></li>
-                            <li>Bank Account: Linked <span class="text-green-600">✓</span></li>
+                            <li data-key="aadhaarLinked">Aadhaar: Linked <span class="text-green-600">✓</span></li>
+                            <li data-key="panLinked">PAN: Linked <span class="text-green-600">✓</span></li>
+                            <li data-key="bankAccountLinked">Bank Account: Linked <span class="text-green-600">✓</span></li>
                         </ul>
                     </div>
 
                     <!-- Employer History Tile -->
                     <div class="bg-emerald-50 p-6 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Employer History</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="employerHistoryTitle">Employer History</h3>
                         <ul class="list-disc list-inside text-gray-600">
                             <li>Tech Solutions Pvt. Ltd. (2020 - Present)</li>
                             <li>Innovate Corp. (2018 - 2020)</li>
@@ -271,15 +282,15 @@
 
                     <!-- Claims Tile (Claims removed as per request) -->
                     <div class="bg-teal-50 p-6 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Recent Claims</h3>
-                        <p class="text-gray-600">No recent claims found.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="recentClaimsTitle">Recent Claims</h3>
+                        <p class="text-gray-600" data-key="noRecentClaims">No recent claims found.</p>
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <button id="initiate-pf-withdrawal-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
+                    <button id="initiate-pf-withdrawal-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" data-key="initiateWithdrawalBtn">
                         Initiate PF Withdrawal
                     </button>
-                    <button id="back-to-home-from-pf" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <button id="back-to-home-from-pf" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="backToHomeBtn">
                         Back to Home
                     </button>
                 </div>
@@ -288,12 +299,12 @@
 
         <!-- Actions Section (This section is now redundant and hidden as its content is moved to landing page) -->
         <section class="container mx-auto px-4 py-8 md:py-16 hidden">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Actions</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8" data-key="actionsTitle">Actions</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Withdrawable Reasons Tile -->
                 <div id="withdrawable-reasons-tile-old" class="bg-blue-50 p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold text-blue-800 mb-2">Withdrawable Reasons</h3>
-                    <p class="text-gray-600">Find out the reasons for which you can withdraw your PF.</p>
+                    <h3 class="text-xl font-semibold text-blue-800 mb-2" data-key="withdrawableReasonsTitle">Withdrawable Reasons</h3>
+                    <p class="text-gray-600" data-key="withdrawableReasonsDesc">Find out the reasons for which you can withdraw your PF.</p>
                 </div>
             </div>
         </section>
@@ -305,14 +316,14 @@
         <div id="info-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
                 <button id="info-modal-close-btn" class="info-modal-close-btn">&times;</button>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Immediately Available Balance Calculation</h3>
-                <p class="text-gray-700 text-base mb-4">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-key="immediatelyAvailableBalanceModalTitle">Immediately Available Balance Calculation</h3>
+                <p class="text-gray-700 text-base mb-4" data-key="immediatelyAvailableBalanceModalDesc">
                     This is how your immediately available balance is typically calculated:
                 </p>
                 <div id="dynamic-balance-info" class="text-left text-lg text-gray-800 space-y-2">
                     <!-- Content will be loaded here dynamically -->
                 </div>
-                <p class="text-sm text-gray-500 mt-4">
+                <p class="text-sm text-gray-500 mt-4" data-key="simplifiedExplanationNote">
                     *Note: This is a simplified explanation. Actual rules and eligibility criteria may vary. Please refer to official EPFO guidelines for precise details.*
                 </p>
             </div>
@@ -322,30 +333,30 @@
         <div id="kyc-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
                 <button id="kyc-modal-close-btn" class="info-modal-close-btn">&times;</button>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">KYC Data Confidence</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-key="kycDataConfidenceModalTitle">KYC Data Confidence</h3>
                 <div class="text-gray-700 mb-4">
                     <p class="mb-2">
-                        <span class="font-semibold text-green-700">PAN details and Aadhaar Details Match:</span>
-                        <span class="text-lg font-bold text-emerald-600">High Match</span>
+                        <span class="font-semibold text-green-700" data-key="panAadhaarMatchTitle">PAN details and Aadhaar Details Match:</span>
+                        <span class="text-lg font-bold text-emerald-600" data-key="highMatch">High Match</span>
                         <br>
-                        <span class="text-sm text-gray-600">Less chances of rejections due to this reason.</span>
+                        <span class="text-sm text-gray-600" data-key="lessRejectionChances">Less chances of rejections due to this reason.</span>
                     </p>
                     <p class="mb-2">
-                        <span class="font-semibold text-green-700">PAN and UAN details:</span>
-                        <span class="text-lg font-bold text-emerald-600">High Match</span>
+                        <span class="font-semibold text-green-700" data-key="panUanMatchTitle">PAN and UAN details:</span>
+                        <span class="text-lg font-bold text-emerald-600" data-key="highMatch">High Match</span>
                         <br>
-                        <span class="text-sm text-gray-600">Less chances of rejections due to this reason.</span>
+                        <span class="text-sm text-gray-600" data-key="lessRejectionChances">Less chances of rejections due to this reason.</span>
                     </p>
                     <div class="mt-4 p-3 bg-green-100 rounded-lg text-center">
-                        <p class="text-xl font-bold text-green-800">
+                        <p class="text-xl font-bold text-green-800" data-key="cumulativeScoreTitle">
                             Cumulative Score: High Confidence
                         </p>
-                        <p class="text-sm text-gray-700">
+                        <p class="text-sm text-gray-700" data-key="lowRejectionChanceDesc">
                             This indicates a low chance of rejections during withdrawal due to data discrepancies.
                         </p>
                     </div>
                 </div>
-                <p class="text-sm text-gray-500">
+                <p class="text-sm text-gray-500" data-key="kycNote">
                     *Note: This confidence score is for informational purposes and based on data matching. Final approval depends on official EPFO verification processes.*
                 </p>
             </div>
@@ -355,144 +366,144 @@
         <div id="reasons-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
                 <button id="reasons-modal-close-btn" class="info-modal-close-btn">&times;</button>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Reasons for PF Withdrawal</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-key="reasonsForPfWithdrawalModalTitle">Reasons for PF Withdrawal</h3>
                 <ul id="reasons-list" class="list-none text-left space-y-2 text-gray-700">
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Medical Purposes">Medical Purposes</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Marriage">Marriage (Self, Child, Sibling)</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Education">Education (Self, Child)</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="House Purchase/Construction">House Purchase/Construction</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="House Renovation/Alteration">House Renovation/Alteration</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Repayment of Home Loan">Repayment of Home Loan</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Unemployment">Unemployment (1 month / 2 months)</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="One year before Retirement">One year before Retirement (age 54+)</li>
-                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Disability">Disability</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Medical Purposes" data-key="reasonMedicalPurposes">Medical Purposes</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Marriage" data-key="reasonMarriage">Marriage (Self, Child, Sibling)</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Education" data-key="reasonEducation">Education (Self, Child)</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="House Purchase/Construction" data-key="reasonHousePurchase">House Purchase/Construction</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="House Renovation/Alteration" data-key="reasonHouseRenovation">House Renovation/Alteration</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Repayment of Home Loan" data-key="reasonHomeLoanRepayment">Repayment of Home Loan</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Unemployment" data-key="reasonUnemployment">Unemployment (1 month / 2 months)</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="One year before Retirement" data-key="reasonBeforeRetirement">One year before Retirement (age 54+)</li>
+                    <li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Disability" data-key="reasonDisability">Disability</li>
                 </ul>
             </div>
         </div>
 
         <!-- Marriage Withdrawal Eligibility Section -->
         <div id="marriage-withdrawal-eligibility-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Marriage Withdrawal: Check Eligibility</h2>
-            <p class="text-gray-700 mb-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="marriageWithdrawalEligibilityTitle">Marriage Withdrawal: Check Eligibility</h2>
+            <p class="text-gray-700 mb-4" data-key="marriageWithdrawalEligibilityDesc">
                 To withdraw for marriage, you must have completed at least 7 years of EPF membership. You can withdraw up to 50% of your employee's share + interest.
             </p>
             <div class="mb-4">
-                <label for="years-of-service" class="block text-left text-gray-700 text-sm font-bold mb-2">Years of EPF Service:</label>
+                <label for="years-of-service" class="block text-left text-gray-700 text-sm font-bold mb-2" data-key="yearsOfEpfServiceLabel">Years of EPF Service:</label>
                 <input type="number" id="years-of-service" value="8" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
             <div class="mb-6">
-                <label for="employee-share-balance" class="block text-left text-gray-700 text-sm font-bold mb-2">Employee Share + Interest (₹):</label>
+                <label for="employee-share-balance" class="block text-left text-gray-700 text-sm font-bold mb-2" data-key="employeeShareBalanceLabel">Employee Share + Interest (₹):</label>
                 <input type="number" id="employee-share-balance" value="180000" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
             <div id="eligible-amount-display" class="text-lg font-semibold text-emerald-700 mb-4"></div>
-            <button id="check-eligibility-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
+            <button id="check-eligibility-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" data-key="checkEligibilityBtn">
                 Check Eligibility & Calculate Amount
             </button>
 
             <!-- New: Desired Withdrawal Amount Input -->
             <div id="desired-withdrawal-input-group" class="mb-6 hidden">
-                <label for="desired-withdrawal-amount" class="block text-left text-gray-700 text-sm font-bold mb-2">Enter Desired Withdrawal Amount (₹):</label>
+                <label for="desired-withdrawal-amount" class="block text-left text-gray-700 text-sm font-bold mb-2" data-key="enterDesiredWithdrawalAmountLabel">Enter Desired Withdrawal Amount (₹):</label>
                 <input type="number" id="desired-withdrawal-amount" placeholder="e.g., 50000" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
 
-            <button id="get-withdrawal-advice-btn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4 hidden">
+            <button id="get-withdrawal-advice-btn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4 hidden" data-key="getPersonalizedAdviceBtn">
                 ✨ Get Personalized Withdrawal Advice
             </button>
-            <button id="proceed-to-bank-details-btn" class="w-full bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hidden">
+            <button id="proceed-to-bank-details-btn" class="w-full bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hidden" data-key="proceedToBankDetailsBtn">
                 Proceed to Bank Details
             </button>
-            <button id="back-to-pf-details-from-eligibility" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+            <button id="back-to-pf-details-from-eligibility" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backToPfDetailsBtn">
                 Back to PF Details
             </button>
         </div>
 
         <!-- Bank Details Confirmation Section -->
         <div id="bank-details-confirmation-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Confirm Bank Details</h2>
-            <p class="text-gray-700 mb-4">Please confirm your linked bank account details.</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="confirmBankDetailsTitle">Confirm Bank Details</h2>
+            <p class="text-gray-700 mb-4" data-key="confirmBankDetailsDesc">Please confirm your linked bank account details.</p>
             <div class="bg-green-50 p-4 rounded-lg mb-4 text-left">
-                <p class="font-semibold text-gray-800">Linked Bank Account:</p>
+                <p class="font-semibold text-gray-800" data-key="linkedBankAccountLabel">Linked Bank Account:</p>
                 <p class="text-lg text-emerald-700">XXXX XXXX 1234</p>
-                <p class="text-sm text-gray-600">Dummy Bank Name, Dummy Branch</p>
+                <p class="text-sm text-gray-600" data-key="dummyBankInfo">Dummy Bank Name, Dummy Branch</p>
             </div>
             <div class="mb-6">
-                <label for="last-4-digits-input" class="block text-left text-gray-700 text-sm font-bold mb-2">Enter Last 4 Digits of Bank Account:</label>
+                <label for="last-4-digits-input" class="block text-left text-gray-700 text-sm font-bold mb-2" data-key="enterLast4DigitsLabel">Enter Last 4 Digits of Bank Account:</label>
                 <input type="text" id="last-4-digits-input" placeholder="e.g., 1234" maxlength="4" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
-            <button id="verify-bank-details-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
+            <button id="verify-bank-details-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" data-key="verifyBankProceedBtn">
                 Verify Bank Account & Proceed
             </button>
-            <button id="back-to-eligibility-from-bank" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+            <button id="back-to-eligibility-from-bank" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backBtn">
                 Back
             </button>
         </div>
 
         <!-- Address Confirmation Section -->
         <div id="address-confirmation-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Confirm Address</h2>
-            <p class="text-gray-700 mb-4">Please confirm your registered address.</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="confirmAddressTitle">Confirm Address</h2>
+            <p class="text-gray-700 mb-4" data-key="confirmAddressDesc">Please confirm your registered address.</p>
             <div class="bg-green-50 p-4 rounded-lg mb-4 text-left">
-                <p class="font-semibold text-gray-800">Registered Address:</p>
+                <p class="font-semibold text-gray-800" data-key="registeredAddressLabel">Registered Address:</p>
                 <p class="text-lg text-emerald-700">Flat 101, Green Apartments, Cyber City, Bengaluru, Karnataka - 560001</p>
             </div>
             <div class="mb-6 flex items-center justify-center">
                 <input type="checkbox" id="address-correct-checkbox" class="h-5 w-5 text-emerald-600 rounded focus:ring-emerald-500">
-                <label for="address-correct-checkbox" class="ml-2 text-gray-700">Is this address correct?</label>
+                <label for="address-correct-checkbox" class="ml-2 text-gray-700" data-key="isAddressCorrectLabel">Is this address correct?</label>
             </div>
-            <button id="confirm-address-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" disabled>
+            <button id="confirm-address-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" disabled data-key="confirmAddressProceedBtn">
                 Confirm Address & Proceed
             </button>
-            <button id="back-to-bank-from-address" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+            <button id="back-to-bank-from-address" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backBtn">
                 Back
             </button>
         </div>
 
         <!-- Review and Submit Section -->
         <div id="review-and-submit-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-lg mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Review Your Claim</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-6" data-key="reviewClaimTitle">Review Your Claim</h2>
             <div class="space-y-4 text-left mb-6">
                 <div class="p-4 bg-green-50 rounded-lg">
-                    <p class="font-semibold text-gray-800">Withdrawal Reason:</p>
-                    <p class="text-lg text-emerald-700">Marriage</p>
+                    <p class="font-semibold text-gray-800" data-key="withdrawalReasonLabel">Withdrawal Reason:</p>
+                    <p class="text-lg text-emerald-700" data-key="reasonMarriageDisplay">Marriage</p>
                 </div>
                 <div class="p-4 bg-lime-50 rounded-lg">
-                    <p class="font-semibold text-gray-800">Requested Withdrawal Amount:</p>
+                    <p class="font-semibold text-gray-800" data-key="requestedWithdrawalAmountLabel">Requested Withdrawal Amount:</p>
                     <p class="text-lg text-emerald-700" id="review-withdrawal-amount">₹ 0.00</p>
                 </div>
                 <div class="p-4 bg-emerald-50 rounded-lg">
-                    <p class="font-semibold text-gray-800">Confirmed Bank Account:</p>
+                    <p class="font-semibold text-gray-800" data-key="confirmedBankAccountLabel">Confirmed Bank Account:</p>
                     <p class="text-lg text-emerald-700">XXXX XXXX <span id="review-bank-digits"></span></p>
                 </div>
                 <div class="p-4 bg-teal-50 rounded-lg">
-                    <p class="font-semibold text-gray-800">Confirmed Address:</p>
+                    <p class="font-semibold text-gray-800" data-key="confirmedAddressLabel">Confirmed Address:</p>
                     <p class="text-lg text-emerald-700" id="review-address">Flat 101, Green Apartments, Cyber City, Bengaluru, Karnataka - 560001</p>
                 </div>
             </div>
             <div class="mb-6 flex items-center justify-center">
                 <input type="checkbox" id="terms-checkbox" class="h-5 w-5 text-emerald-600 rounded focus:ring-emerald-500">
-                <label for="terms-checkbox" class="ml-2 text-gray-700">I agree to the <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>.</label>
+                <label for="terms-checkbox" class="ml-2 text-gray-700" data-key="agreeTermsLabel">I agree to the <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>.</label>
             </div>
-            <button id="submit-claim-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" disabled>
+            <button id="submit-claim-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" disabled data-key="submitPfWithdrawalClaimBtn">
                 Submit PF Withdrawal Claim
             </button>
-            <button id="back-to-address-from-review" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+            <button id="back-to-address-from-review" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backBtn">
                 Back
             </button>
         </div>
 
         <!-- Claim Submission Success Section -->
         <div id="claim-submission-success-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Claim Submitted Successfully!</h2>
-            <p class="text-gray-700 mb-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="claimSubmittedSuccessTitle">Claim Submitted Successfully!</h2>
+            <p class="text-gray-700 mb-4" data-key="claimSubmittedDesc">
                 Your PF withdrawal claim for Marriage has been submitted.
             </p>
-            <p class="text-xl font-bold text-emerald-700 mb-6">
+            <p class="text-xl font-bold text-emerald-700 mb-6" data-key="acknowledgmentNumberLabel">
                 Acknowledgment Number: <span id="acknowledgment-number">PFSAATHI2025XXXXX</span>
             </p>
-            <p class="text-gray-600 text-sm">
+            <p class="text-gray-600 text-sm" data-key="fundsCreditInfo">
                 Funds will be credited to your linked bank account within 3-5 business days.
             </p>
-            <button id="back-to-home-from-success" class="mt-8 bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <button id="back-to-home-from-success" class="mt-8 bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="backToHomeBtn">
                 Back to Home
             </button>
         </div>
@@ -501,14 +512,14 @@
         <div id="withdrawal-advice-modal-overlay" class="info-modal-overlay">
             <div class="info-modal-content">
                 <button id="withdrawal-advice-modal-close-btn" class="info-modal-close-btn">&times;</button>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">✨ Personalized Withdrawal Advice</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-key="personalizedWithdrawalAdviceTitle">✨ Personalized Withdrawal Advice</h3>
                 <div id="withdrawal-advice-content" class="text-gray-700 mb-4">
                     <div class="flex justify-center items-center h-32">
                         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
-                        <p class="ml-4 text-gray-700">Generating advice...</p>
+                        <p class="ml-4 text-gray-700" data-key="generatingAdvice">Generating advice...</p>
                     </div>
                 </div>
-                <p class="text-sm text-gray-500">
+                <p class="text-sm text-gray-500" data-key="adviceNote">
                     *Advice generated by AI. Please cross-verify with official EPFO guidelines.*
                 </p>
             </div>
@@ -516,33 +527,33 @@
 
         <!-- PF Data Score Section (New) -->
         <div id="pf-data-score-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-lg mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">Your PF Data Score</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8" data-key="yourPfDataScoreTitle">Your PF Data Score</h2>
 
             <div class="space-y-6 text-left mb-8">
                 <div class="p-4 bg-blue-50 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Completeness Score</h3>
-                    <p class="text-2xl font-bold text-blue-700">High</p>
-                    <p class="text-gray-600 text-sm mt-1">All essential data fields are populated.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="dataCompletenessScoreTitle">Data Completeness Score</h3>
+                    <p class="text-2xl font-bold text-blue-700" data-key="high">High</p>
+                    <p class="text-gray-600 text-sm mt-1" data-key="allFieldsPopulated">All essential data fields are populated.</p>
                 </div>
 
                 <div class="p-4 bg-red-50 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Match Score</h3>
-                    <p class="text-2xl font-bold text-red-700">Low</p>
-                    <p class="text-gray-600 text-sm mt-1">Discrepancies found between linked documents (e.g., PAN, Aadhaar, UAN).</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="dataMatchScoreTitle">Data Match Score</h3>
+                    <p class="text-2xl font-bold text-red-700" data-key="low">Low</p>
+                    <p class="text-gray-600 text-sm mt-1" data-key="discrepanciesFound">Discrepancies found between linked documents (e.g., PAN, Aadhaar, UAN).</p>
                 </div>
 
                 <div class="p-4 bg-yellow-50 rounded-lg shadow-md text-center">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Overall Data Impact Score</h3>
-                    <p class="text-3xl font-bold text-red-700 blinking-text">75% Chances of Rejection during Withdrawal</p>
-                    <p class="text-gray-600 text-sm mt-2">Action required to rectify data mismatches to ensure smooth withdrawals.</p>
-                    <button id="fix-data-now-btn" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="overallDataImpactScoreTitle">Overall Data Impact Score</h3>
+                    <p class="text-3xl font-bold text-red-700 blinking-text" data-key="rejectionChances">75% Chances of Rejection during Withdrawal</p>
+                    <p class="text-gray-600 text-sm mt-2" data-key="actionRequiredRectify">Action required to rectify data mismatches to ensure smooth withdrawals.</p>
+                    <button id="fix-data-now-btn" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="fixDataNowBtn">
                         Fix Data Now
                     </button>
                 </div>
             </div>
 
             <div class="text-center mt-8">
-                <button id="back-to-home-from-data-score" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <button id="back-to-home-from-data-score" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="backToHomeBtn">
                     Back to Home
                 </button>
             </div>
@@ -550,56 +561,56 @@
 
         <!-- Data Mismatch Fix Section (New) -->
         <div id="data-mismatch-fix-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Fix Data Mismatch</h2>
-            <p class="text-gray-700 mb-4">We've detected a slight mismatch in your father's name:</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="fixDataMismatchTitle">Fix Data Mismatch</h2>
+            <p class="text-gray-700 mb-4" data-key="mismatchDetectedDesc">We've detected a slight mismatch in your father's name:</p>
 
             <div class="bg-red-50 p-4 rounded-lg mb-6 text-left">
-                <p class="font-semibold text-gray-800">Father's Name in PAN:</p>
+                <p class="font-semibold text-gray-800" data-key="fatherNamePanLabel">Father's Name in PAN:</p>
                 <p class="text-lg text-red-700">Ram Kumar</p>
-                <p class="font-semibold text-gray-800 mt-3">Father's Name in UAN:</p>
+                <p class="font-semibold text-gray-800 mt-3" data-key="fatherNameUanLabel">Father's Name in UAN:</p>
                 <p class="text-lg text-red-700">Ram Kumaar</p>
             </div>
 
-            <p class="text-gray-700 mb-4">Please update your PAN data to ensure consistency.</p>
+            <p class="text-gray-700 mb-4" data-key="updatePanDataDesc">Please update your PAN data to ensure consistency.</p>
 
             <div class="mb-4">
-                <label for="pan-number-input" class="block text-left text-gray-700 text-sm font-bold mb-2">Your PAN Number:</label>
+                <label for="pan-number-input" class="block text-left text-gray-700 text-sm font-bold mb-2" data-key="yourPanNumberLabel">Your PAN Number:</label>
                 <input type="text" id="pan-number-input" value="ABCDE1234F" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg bg-gray-100" readonly>
             </div>
             <div class="mb-6">
-                <label for="corrected-father-name-input" class="block text-left text-gray-700 text-sm font-bold mb-2">Corrected Father's Name (as per official records):</label>
+                <label for="corrected-father-name-input" class="block text-left text-gray-700 text-sm font-bold mb-2" data-key="correctedFatherNameLabel">Corrected Father's Name (as per official records):</label>
                 <input type="text" id="corrected-father-name-input" placeholder="e.g., Ram Kumar" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500">
             </div>
 
-            <button id="submit-pan-update-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4">
+            <button id="submit-pan-update-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" data-key="submitPanUpdateRequestBtn">
                 Submit PAN Update Request
             </button>
-            <button id="back-to-data-score-from-fix" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out">
+            <button id="back-to-data-score-from-fix" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out" data-key="backToDataScoreBtn">
                 Back to Data Score
             </button>
         </div>
 
         <!-- PAN Update Success Section (New) -->
         <div id="pan-update-success-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">PAN Update Request Submitted!</h2>
-            <p class="text-gray-700 mb-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="panUpdateSuccessTitle">PAN Update Request Submitted!</h2>
+            <p class="text-gray-700 mb-4" data-key="panUpdateSuccessDesc">
                 Your request to update father's name on PAN has been submitted.
             </p>
-            <p class="text-gray-600 text-sm mb-6">
+            <p class="text-gray-600 text-sm mb-6" data-key="panUpdateNotificationInfo">
                 You will be notified about the update from PAN directly. You can also check the status in the "Track Requests" section of PF Saathi.
             </p>
-            <button id="back-to-home-from-pan-success" class="mt-8 bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <button id="back-to-home-from-pan-success" class="mt-8 bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="backToHomeBtn">
                 Back to Home
             </button>
         </div>
 
         <!-- Balance Only Section (New) -->
         <div id="balance-only-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Your PF Balance</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6" data-key="yourPfBalanceTitle">Your PF Balance</h2>
             <div class="bg-green-50 p-6 rounded-lg shadow-sm mb-4">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Account Balance</h3>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="accountBalanceTitle">Account Balance</h3>
                 <p class="text-2xl font-bold text-emerald-700">₹ 1,50,000.00</p>
-                <p class="text-lg font-medium text-green-700 mt-2 flex items-center justify-center">
+                <p class="text-lg font-medium text-green-700 mt-2 flex items-center justify-center" data-key="immediatelyAvailableBalanceText">
                     Immediately Available Balance: ₹ 90,000.00
                     <button id="info-icon-btn-balance-only" class="ml-2 text-green-600 hover:text-green-800 focus:outline-none" title="Click for calculation details">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -609,9 +620,9 @@
                         </svg>
                     </button>
                 </p>
-                <p class="text-gray-600 text-sm mt-2">As of: 31st March 2025</p>
+                <p class="text-gray-600 text-sm mt-2" data-key="asOfDate">As of: 31st March 2025</p>
             </div>
-            <button id="back-to-home-from-balance-only" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            <button id="back-to-home-from-balance-only" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-key="backToHomeBtn">
                 Back to Home
             </button>
         </div>
@@ -619,9 +630,9 @@
 
         <!-- Footer Section -->
         <footer class="bg-green-900 text-white py-6 px-4 md:px-12 mt-8 rounded-t-xl">
-            <div class="container mx-auto text-center text-sm md:text-base">
+            <div class="container mx-auto text-center text-sm md:text-base" data-key="footerCopyright">
                 <p>&copy; 2025 PF Saathi. All rights reserved.</p>
-                <p class="mt-2">
+                <p class="mt-2" data-key="contactUs">
                     Contact Us: <a href="mailto:info@pfsaathi.com" class="text-lime-400 hover:underline">info@pfsaathi.com</a>
                 </p>
             </div>
@@ -629,6 +640,742 @@
     </div>
 
     <script>
+        // Translations object
+        const translations = {
+            en: {
+                headerTitle: "PF Saathi",
+                headerTagline: "Your Provident Fund, Simplified!",
+                whatToDoTodayTitle: "What do you want to do today?",
+                checkBalanceTitle: "Check my PF Balance",
+                checkBalanceDesc: "View your current Provident Fund balance.",
+                checkDataScoreTitle: "Check my PF Data Score",
+                checkDataScoreDesc: "Assess your KYC data confidence for withdrawals.",
+                helpWithdrawTitle: "Help me Withdraw my PF",
+                helpWithdrawDesc: "Start a partial or full PF withdrawal claim.",
+                helpTransferTitle: "Help me with PF Transfer",
+                helpTransferDesc: "Transfer your PF from previous employer.",
+                speakExpertTitle: "Speak to an Expert",
+                speakExpertDesc: "Get personalized assistance from our team.",
+                heroTitle: "Empowering Your Financial Future",
+                heroDesc: "PF Saathi is dedicated to making Provident Fund management accessible and easy for everyone. Secure your savings, effortlessly.",
+                getStartedBtn: "Get Started",
+                reachingEveryCornerTitle: "Reaching Every Corner",
+                reachingEveryCornerDesc: "We believe financial security should be for everyone, from bustling cities to serene villages. Our services are designed to be inclusive and easy to use, empowering rural communities.",
+                empoweringUrbanLivesTitle: "Empowering Urban Lives",
+                empoweringUrbanLivesDesc: "In the heart of our cities, we strive to bring clarity and control over Provident Funds, ensuring that every urban worker can build a secure future with confidence and ease.",
+                enterMobileNumberTitle: "Enter Your UAN linked Mobile Number",
+                enterMobileNumberDesc: "Please enter your 10-digit mobile number linked with your UAN.",
+                sendOtpBtn: "Send OTP",
+                backToHomeBtn: "Back to Home",
+                enterOtpTitle: "Enter OTP",
+                otpSentDesc: "An OTP has been sent to your mobile number.",
+                verifyOtpBtn: "Verify OTP",
+                backBtn: "Back",
+                yourPfDetailsTitle: "Your Provident Fund Details",
+                accountBalanceTitle: "Account Balance",
+                immediatelyAvailableBalanceText: "Immediately Available Balance:",
+                asOfDate: "As of: 31st March 2025",
+                kycDetailsTitle: "KYC Details",
+                aadhaarLinked: "Aadhaar: Linked ✓",
+                panLinked: "PAN: Linked ✓",
+                bankAccountLinked: "Bank Account: Linked ✓",
+                employerHistoryTitle: "Employer History",
+                recentClaimsTitle: "Recent Claims",
+                noRecentClaims: "No recent claims found.",
+                initiateWithdrawalBtn: "Initiate PF Withdrawal",
+                actionsTitle: "Actions",
+                withdrawableReasonsTitle: "Withdrawable Reasons",
+                withdrawableReasonsDesc: "Find out the reasons for which you can withdraw your PF.",
+                immediatelyAvailableBalanceModalTitle: "Immediately Available Balance Calculation",
+                immediatelyAvailableBalanceModalDesc: "This is how your immediately available balance is typically calculated:",
+                simplifiedExplanationNote: "*Note: This is a simplified explanation. Actual rules and eligibility criteria may vary. Please refer to official EPFO guidelines for precise details.*",
+                kycDataConfidenceModalTitle: "KYC Data Confidence",
+                panAadhaarMatchTitle: "PAN details and Aadhaar Details Match:",
+                highMatch: "High Match",
+                lessRejectionChances: "Less chances of rejections due to this reason.",
+                panUanMatchTitle: "PAN and UAN details:",
+                cumulativeScoreTitle: "Cumulative Score: High Confidence",
+                lowRejectionChanceDesc: "This indicates a low chance of rejections during withdrawal due to data discrepancies.",
+                kycNote: "*Note: This confidence score is for informational purposes and based on data matching. Final approval depends on official EPFO verification processes.*",
+                reasonsForPfWithdrawalModalTitle: "Reasons for PF Withdrawal",
+                reasonMedicalPurposes: "Medical Purposes",
+                reasonMarriage: "Marriage (Self, Child, Sibling)",
+                reasonEducation: "Education (Self, Child)",
+                reasonHousePurchase: "House Purchase/Construction",
+                reasonHouseRenovation: "House Renovation/Alteration",
+                reasonHomeLoanRepayment: "Repayment of Home Loan",
+                reasonUnemployment: "Unemployment (1 month / 2 months)",
+                reasonBeforeRetirement: "One year before Retirement (age 54+)",
+                reasonDisability: "Disability",
+                marriageWithdrawalEligibilityTitle: "Marriage Withdrawal: Check Eligibility",
+                marriageWithdrawalEligibilityDesc: "To withdraw for marriage, you must have completed at least 7 years of EPF membership. You can withdraw up to 50% of your employee's share + interest.",
+                yearsOfEpfServiceLabel: "Years of EPF Service:",
+                employeeShareBalanceLabel: "Employee Share + Interest (₹):",
+                checkEligibilityBtn: "Check Eligibility & Calculate Amount",
+                enterDesiredWithdrawalAmountLabel: "Enter Desired Withdrawal Amount (₹):",
+                getPersonalizedAdviceBtn: "✨ Get Personalized Withdrawal Advice",
+                proceedToBankDetailsBtn: "Proceed to Bank Details",
+                confirmBankDetailsTitle: "Confirm Bank Details",
+                confirmBankDetailsDesc: "Please confirm your linked bank account details.",
+                linkedBankAccountLabel: "Linked Bank Account:",
+                dummyBankInfo: "Dummy Bank Name, Dummy Branch",
+                enterLast4DigitsLabel: "Enter Last 4 Digits of Bank Account:",
+                verifyBankProceedBtn: "Verify Bank Account & Proceed",
+                confirmAddressTitle: "Confirm Address",
+                confirmAddressDesc: "Please confirm your registered address.",
+                registeredAddressLabel: "Registered Address:",
+                isAddressCorrectLabel: "Is this address correct?",
+                confirmAddressProceedBtn: "Confirm Address & Proceed",
+                reviewClaimTitle: "Review Your Claim",
+                withdrawalReasonLabel: "Withdrawal Reason:",
+                reasonMarriageDisplay: "Marriage",
+                requestedWithdrawalAmountLabel: "Requested Withdrawal Amount:",
+                confirmedBankAccountLabel: "Confirmed Bank Account:",
+                confirmedAddressLabel: "Confirmed Address:",
+                agreeTermsLabel: "I agree to the terms and conditions.",
+                submitPfWithdrawalClaimBtn: "Submit PF Withdrawal Claim",
+                claimSubmittedSuccessTitle: "Claim Submitted Successfully!",
+                claimSubmittedDesc: "Your PF withdrawal claim for Marriage has been submitted.",
+                acknowledgmentNumberLabel: "Acknowledgment Number:",
+                fundsCreditInfo: "Funds will be credited to your linked bank account within 3-5 business days.",
+                yourPfBalanceTitle: "Your PF Balance",
+                footerCopyright: "&copy; 2025 PF Saathi. All rights reserved.",
+                contactUs: "Contact Us: info@pfsaathi.com",
+                generatingAdvice: "Generating advice...",
+                yourPfDataScoreTitle: "Your PF Data Score",
+                dataCompletenessScoreTitle: "Data Completeness Score",
+                allFieldsPopulated: "All essential data fields are populated.",
+                dataMatchScoreTitle: "Data Match Score",
+                discrepanciesFound: "Discrepancies found between linked documents (e.g., PAN, Aadhaar, UAN).",
+                overallDataImpactScoreTitle: "Overall Data Impact Score",
+                rejectionChances: "75% Chances of Rejection during Withdrawal",
+                actionRequiredRectify: "Action required to rectify data mismatches to ensure smooth withdrawals.",
+                fixDataNowBtn: "Fix Data Now",
+                fixDataMismatchTitle: "Fix Data Mismatch",
+                mismatchDetectedDesc: "We've detected a slight mismatch in your father's name:",
+                fatherNamePanLabel: "Father's Name in PAN:",
+                fatherNameUanLabel: "Father's Name in UAN:",
+                updatePanDataDesc: "Please update your PAN data to ensure consistency.",
+                yourPanNumberLabel: "Your PAN Number:",
+                correctedFatherNameLabel: "Corrected Father's Name (as per official records):",
+                submitPanUpdateRequestBtn: "Submit PAN Update Request",
+                backToDataScoreBtn: "Back to Data Score",
+                panUpdateSuccessTitle: "PAN Update Request Submitted!",
+                panUpdateSuccessDesc: "Your request to update father's name on PAN has been submitted.",
+                panUpdateNotificationInfo: "You will be notified about the update from PAN directly. You can also check the status in the \"Track Requests\" section of PF Saathi.",
+            },
+            hi: {
+                headerTitle: "पीएफ साथी",
+                headerTagline: "आपका भविष्य निधि, सरलीकृत!",
+                whatToDoTodayTitle: "आज आप क्या करना चाहते हैं?",
+                checkBalanceTitle: "मेरा पीएफ बैलेंस देखें",
+                checkBalanceDesc: "अपने वर्तमान भविष्य निर्वाह निधि की शिल्लक देखें।",
+                checkDataScoreTitle: "मेरा पीएफ डेटा स्कोर जांचें",
+                checkDataScoreDesc: "निकासी के लिए अपने केवाईसी डेटा आत्मविश्वास का आकलन करें।",
+                helpWithdrawTitle: "मुझे पीएफ निकालने में मदद करें",
+                helpWithdrawDesc: "आंशिक या पूर्ण पीएफ निकासी दावा शुरू करें।",
+                helpTransferTitle: "मुझे पीएफ ट्रांसफर में मदद करें",
+                helpTransferDesc: "अपने पीएफ को पिछले नियोक्ता से ट्रांसफर करें।",
+                speakExpertTitle: "विशेषज्ञ से बात करें",
+                speakExpertDesc: "हमारी टीम से व्यक्तिगत सहायता प्राप्त करें।",
+                heroTitle: "आपके वित्तीय भविष्य को सशक्त बनाना",
+                heroDesc: "पीएफ साथी भविष्य निधि प्रबंधन को सभी के लिए सुलभ और आसान बनाने के लिए समर्पित है। अपनी बचत को सहजता से सुरक्षित करें।",
+                getStartedBtn: "शुरू करें",
+                reachingEveryCornerTitle: "हर कोने तक पहुंचना",
+                reachingEveryCornerDesc: "हमारा मानना है कि वित्तीय सुरक्षा सभी के लिए होनी चाहिए, चाहे वह व्यस्त शहर हों या शांत गांव। हमारी सेवाएं समावेशी और उपयोग में आसान होने के लिए डिज़ाइन की गई हैं, जो ग्रामीण समुदायों को सशक्त बनाती हैं।",
+                empoweringUrbanLivesTitle: "शहरी जीवन को सशक्त बनाना",
+                empoweringUrbanLivesDesc: "हमारे शहरों के केंद्र में, हम भविष्य निधि पर स्पष्टता और नियंत्रण लाने का प्रयास करते हैं, यह सुनिश्चित करते हुए कि हर शहरी कर्मचारी आत्मविश्वास और आसानी से एक सुरक्षित भविष्य का निर्माण कर सके।",
+                enterMobileNumberTitle: "अपना यूएएन लिंक्ड मोबाइल नंबर दर्ज करें",
+                enterMobileNumberDesc: "कृपया अपना यूएएन से जुड़ा 10 अंकों का मोबाइल नंबर दर्ज करें।",
+                sendOtpBtn: "ओटीपी भेजें",
+                backToHomeBtn: "होम पर वापस",
+                enterOtpTitle: "ओटीपी दर्ज करें",
+                otpSentDesc: "आपके मोबाइल नंबर पर एक ओटीपी भेजा गया है।",
+                verifyOtpBtn: "ओटीपी सत्यापित करें",
+                backBtn: "वापस",
+                yourPfDetailsTitle: "आपके भविष्य निधि विवरण",
+                accountBalanceTitle: "खाता शेष",
+                immediatelyAvailableBalanceText: "तत्काल उपलब्ध शेष राशि:",
+                asOfDate: "दिनांक: 31 मार्च 2025 तक",
+                kycDetailsTitle: "केवाईसी विवरण",
+                aadhaarLinked: "आधार: लिंक्ड ✓",
+                panLinked: "पैन: लिंक्ड ✓",
+                bankAccountLinked: "बैंक खाता: लिंक्ड ✓",
+                employerHistoryTitle: "नियोक्ता इतिहास",
+                recentClaimsTitle: "हाल के दावे",
+                noRecentClaims: "कोई हाल का दावा नहीं मिला।",
+                initiateWithdrawalBtn: "पीएफ निकासी शुरू करें",
+                actionsTitle: "कार्य",
+                withdrawableReasonsTitle: "निकासी के कारण",
+                withdrawableReasonsDesc: "उन कारणों का पता लगाएं जिनके लिए आप अपना पीएफ निकाल सकते हैं।",
+                immediatelyAvailableBalanceModalTitle: "तत्काल उपलब्ध शेष राशि की गणना",
+                immediatelyAvailableBalanceModalDesc: "आपकी तत्काल उपलब्ध शेष राशि की गणना आमतौर पर इस प्रकार की जाती है:",
+                simplifiedExplanationNote: "*नोट: यह एक सरलीकृत स्पष्टीकरण है। वास्तविक नियम और पात्रता मानदंड भिन्न हो सकते हैं। सटीक विवरण के लिए कृपया आधिकारिक ईपीएफओ दिशानिर्देशों का संदर्भ लें।*",
+                kycDataConfidenceModalTitle: "केवाईसी डेटा आत्मविश्वास",
+                panAadhaarMatchTitle: "पैन विवरण और आधार विवरण मिलान:",
+                highMatch: "उच्च मिलान",
+                lessRejectionChances: "इस कारण से अस्वीकृति की संभावना कम है।",
+                panUanMatchTitle: "पैन और यूएएन विवरण:",
+                cumulativeScoreTitle: "संचयी स्कोर: उच्च आत्मविश्वास",
+                lowRejectionChanceDesc: "यह डेटा विसंगतियों के कारण निकासी के दौरान अस्वीकृति की कम संभावना को इंगित करता है।",
+                kycNote: "*नोट: यह आत्मविश्वास स्कोर सूचनात्मक उद्देश्यों के लिए है और डेटा मिलान पर आधारित है। अंतिम अनुमोदन आधिकारिक ईपीएफओ सत्यापन प्रक्रियाओं पर निर्भर करता है।*",
+                reasonsForPfWithdrawalModalTitle: "पीएफ निकासी के कारण",
+                reasonMedicalPurposes: "चिकित्सा उद्देश्य",
+                reasonMarriage: "विवाह (स्वयं, बच्चा, भाई-बहन)",
+                reasonEducation: "शिक्षा (स्वयं, बच्चा)",
+                reasonHousePurchase: "घर खरीद/निर्माण",
+                reasonHouseRenovation: "घर नवीनीकरण/परिवर्तन",
+                reasonHomeLoanRepayment: "गृह ऋण चुकौती",
+                reasonUnemployment: "बेरोजगारी (1 महीना / 2 महीने)",
+                reasonBeforeRetirement: "सेवानिवृत्ति से एक वर्ष पहले (54+ वर्ष)",
+                reasonDisability: "विकलांगता",
+                marriageWithdrawalEligibilityTitle: "विवाह निकासी: पात्रता जांचें",
+                marriageWithdrawalEligibilityDesc: "विवाह के लिए निकासी के लिए, आपको कम से कम 7 साल की ईपीएफ सदस्यता पूरी करनी होगी। आप अपने कर्मचारी के हिस्से + ब्याज का 50% तक निकाल सकते हैं।",
+                yearsOfEpfServiceLabel: "ईपीएफ सेवा के वर्ष:",
+                employeeShareBalanceLabel: "कर्मचारी का हिस्सा + ब्याज (₹):",
+                checkEligibilityBtn: "पात्रता जांचें और राशि की गणना करें",
+                enterDesiredWithdrawalAmountLabel: "वांछित निकासी राशि दर्ज करें (₹):",
+                getPersonalizedAdviceBtn: "✨ व्यक्तिगत निकासी सलाह प्राप्त करें",
+                proceedToBankDetailsBtn: "बैंक विवरण पर आगे बढ़ें",
+                confirmBankDetailsTitle: "बैंक विवरण की पुष्टि करें",
+                confirmBankDetailsDesc: "कृपया अपने लिंक्ड बैंक खाता विवरण की पुष्टि करें।",
+                linkedBankAccountLabel: "लिंक्ड बैंक खाता:",
+                dummyBankInfo: "डमी बैंक नाम, डमी शाखा",
+                enterLast4DigitsLabel: "बैंक खाते के अंतिम 4 अंक दर्ज करें:",
+                verifyBankProceedBtn: "बैंक खाता सत्यापित करें और आगे बढ़ें",
+                confirmAddressTitle: "पते की पुष्टि करें",
+                confirmAddressDesc: "कृपया अपने पंजीकृत पते की पुष्टि करें।",
+                registeredAddressLabel: "पंजीकृत पता:",
+                isAddressCorrectLabel: "क्या यह पता सही है?",
+                confirmAddressProceedBtn: "पता पुष्टि करें और आगे बढ़ें",
+                reviewClaimTitle: "अपने दावे की समीक्षा करें",
+                withdrawalReasonLabel: "निकासी का कारण:",
+                reasonMarriageDisplay: "विवाह",
+                requestedWithdrawalAmountLabel: "अनुरोधित निकासी राशि:",
+                confirmedBankAccountLabel: "पुष्टि बैंक खाता:",
+                confirmedAddressLabel: "पुष्टि पता:",
+                agreeTermsLabel: "मैं नियमों और शर्तों से सहमत हूँ।",
+                submitPfWithdrawalClaimBtn: "पीएफ निकासी दावा जमा करें",
+                claimSubmittedSuccessTitle: "दावा सफलतापूर्वक जमा किया गया!",
+                claimSubmittedDesc: "विवाह के लिए आपका पीएफ निकासी दावा जमा कर दिया गया है।",
+                acknowledgmentNumberLabel: "स्वीकृति संख्या:",
+                fundsCreditInfo: "फंड 3-5 व्यावसायिक दिनों के भीतर आपके लिंक्ड बैंक खाते में जमा कर दिए जाएंगे।",
+                yourPfBalanceTitle: "आपका पीएफ बैलेंस",
+                footerCopyright: "&copy; 2025 पीएफ साथी। सर्वाधिकार सुरक्षित।",
+                contactUs: "हमसे संपर्क करें: info@pfsaathi.com",
+                generatingAdvice: "सलाह उत्पन्न हो रही है...",
+                yourPfDataScoreTitle: "आपका पीएफ डेटा स्कोर",
+                dataCompletenessScoreTitle: "डेटा पूर्णता स्कोर",
+                allFieldsPopulated: "सभी आवश्यक डेटा फ़ील्ड भरे हुए हैं।",
+                dataMatchScoreTitle: "डेटा मिलान स्कोर",
+                discrepanciesFound: "लिंक्ड दस्तावेजों (जैसे, पैन, आधार, यूएएन) के बीच विसंगतियां पाई गईं।",
+                overallDataImpactScoreTitle: "समग्र डेटा प्रभाव स्कोर",
+                rejectionChances: "निकासी के दौरान अस्वीकृति की 75% संभावना",
+                actionRequiredRectify: "सुचारू निकासी सुनिश्चित करने के लिए डेटा बेमेल को ठीक करने के लिए कार्रवाई आवश्यक है।",
+                fixDataNowBtn: "अभी डेटा ठीक करें",
+                fixDataMismatchTitle: "डेटा बेमेल ठीक करें",
+                mismatchDetectedDesc: "हमने आपके पिता के नाम में थोड़ा बेमेल पाया है:",
+                fatherNamePanLabel: "पैन में पिता का नाम:",
+                fatherNameUanLabel: "यूएएन में पिता का नाम:",
+                updatePanDataDesc: "संगति सुनिश्चित करने के लिए कृपया अपना पैन डेटा अपडेट करें।",
+                yourPanNumberLabel: "आपका पैन नंबर:",
+                correctedFatherNameLabel: "सही पिता का नाम (आधिकारिक रिकॉर्ड के अनुसार):",
+                submitPanUpdateRequestBtn: "पैन अद्यतन अनुरोध जमा करें",
+                backToDataScoreBtn: "डेटा स्कोर पर वापस",
+                panUpdateSuccessTitle: "पैन अद्यतन अनुरोध जमा किया गया!",
+                panUpdateSuccessDesc: "पैन पर पिता का नाम अपडेट करने का आपका अनुरोध जमा कर दिया गया है।",
+                panUpdateNotificationInfo: "आपको पैन से सीधे अपडेट के बारे में सूचित किया जाएगा। आप पीएफ साथी के \"ट्रैक अनुरोध\" अनुभाग में भी स्थिति की जांच कर सकते हैं।",
+            },
+            mr: {
+                headerTitle: "पीएफ साथी",
+                headerTagline: "तुमचा भविष्य निर्वाह निधी, सोपा केला!",
+                whatToDoTodayTitle: "आज तुम्हाला काय करायचे आहे?",
+                checkBalanceTitle: "माझी पीएफ शिल्लक तपासा",
+                checkBalanceDesc: "तुमची सध्याची भविष्य निर्वाह निधी शिल्लक पहा.",
+                checkDataScoreTitle: "माझा पीएफ डेटा स्कोअर तपासा",
+                checkDataScoreDesc: "निकालीसाठी तुमच्या केवायसी डेटा आत्मविश्वासाचे मूल्यांकन करा.",
+                helpWithdrawTitle: "मला पीएफ काढण्यास मदत करा",
+                helpWithdrawDesc: "अंशतः किंवा पूर्ण पीएफ काढण्याचा दावा सुरू करा.",
+                helpTransferTitle: "मला पीएफ हस्तांतरणात मदत करा",
+                helpTransferDesc: "तुमचा पीएफ मागील मालकाकडून हस्तांतरित करा.",
+                speakExpertTitle: "तज्ञाशी बोला",
+                speakExpertDesc: "आमच्या टीमकडून वैयक्तिकृत मदत मिळवा.",
+                heroTitle: "तुमच्या आर्थिक भविष्याला सशक्त करणे",
+                heroDesc: "पीएफ साथी भविष्य निर्वाह निधी व्यवस्थापन सर्वांसाठी सुलभ आणि सोपे करण्यासाठी समर्पित आहे. तुमची बचत सहजतेने सुरक्षित करा.",
+                getStartedBtn: "सुरुवात करा",
+                reachingEveryCornerTitle: "प्रत्येक कोपऱ्यात पोहोचणे",
+                reachingEveryCornerDesc: "आमचा विश्वास आहे की आर्थिक सुरक्षा प्रत्येकासाठी असावी, मग ती गजबजलेली शहरे असोत किंवा शांत गावे. आमच्या सेवा सर्वसमावेशक आणि वापरण्यास सोप्या आहेत, ज्यामुळे ग्रामीण समुदायांना सशक्त बनवता येते.",
+                empoweringUrbanLivesTitle: "शहरी जीवनांना सशक्त करणे",
+                empoweringUrbanLivesDesc: "आमच्या शहरांच्या मध्यभागी, आम्ही भविष्य निर्वाह निधीवर स्पष्टता आणि नियंत्रण आणण्याचा प्रयत्न करतो, हे सुनिश्चित करतो की प्रत्येक शहरी कामगार आत्मविश्वासाने आणि सहजतेने सुरक्षित भविष्य निर्माण करू शकेल.",
+                enterMobileNumberTitle: "तुमचा यूएएन लिंक केलेला मोबाईल नंबर टाका",
+                enterMobileNumberDesc: "कृपया तुमचा यूएएनशी जोडलेला 10 अंकी मोबाईल नंबर टाका.",
+                sendOtpBtn: "ओटीपी पाठवा",
+                backToHomeBtn: "मुख्यपृष्ठावर परत",
+                enterOtpTitle: "ओटीपी टाका",
+                otpSentDesc: "तुमच्या मोबाईल नंबरवर एक ओटीपी पाठवला आहे.",
+                verifyOtpBtn: "ओटीपी सत्यापित करा",
+                backBtn: "मागे",
+                yourPfDetailsTitle: "तुमचे भविष्य निर्वाह निधी तपशील",
+                accountBalanceTitle: "खाते शिल्लक",
+                immediatelyAvailableBalanceText: "तत्काळ उपलब्ध शिल्लक:",
+                asOfDate: "या तारखेनुसार: 31 मार्च 2025",
+                kycDetailsTitle: "केवायसी तपशील",
+                aadhaarLinked: "आधार: जोडलेले ✓",
+                panLinked: "पॅन: जोडलेले ✓",
+                bankAccountLinked: "बँक खाते: जोडलेले ✓",
+                employerHistoryTitle: "नियोक्ता इतिहास",
+                recentClaimsTitle: "अलीकडील दावे",
+                noRecentClaims: "कोणताही अलीकडील दावा आढळला नाही.",
+                initiateWithdrawalBtn: "पीएफ काढणे सुरू करा",
+                actionsTitle: "क्रिया",
+                withdrawableReasonsTitle: "काढण्याची कारणे",
+                withdrawableReasonsDesc: "तुम्ही तुमचा पीएफ कोणत्या कारणांसाठी काढू शकता ते शोधा.",
+                immediatelyAvailableBalanceModalTitle: "तत्काळ उपलब्ध शिल्लक गणना",
+                immediatelyAvailableBalanceModalDesc: "तुमची तत्काळ उपलब्ध शिल्लक सामान्यतः अशी मोजली जाते:",
+                simplifiedExplanationNote: "*टीप: हे एक सरलीकृत स्पष्टीकरण आहे. वास्तविक नियम आणि पात्रता निकष भिन्न असू शकतात. अचूक तपशिलांसाठी कृपया अधिकृत ईपीएफओ मार्गदर्शक तत्त्वांचा संदर्भ घ्या.*",
+                kycDataConfidenceModalTitle: "केवायसी डेटा आत्मविश्वास",
+                panAadhaarMatchTitle: "पॅन तपशील आणि आधार तपशील जुळणी:",
+                highMatch: "उच्च जुळणी",
+                lessRejectionChances: "या कारणामुळे नाकारण्याची शक्यता कमी आहे.",
+                panUanMatchTitle: "पॅन आणि यूएएन तपशील:",
+                cumulativeScoreTitle: "संचयी स्कोअर: उच्च आत्मविश्वास",
+                lowRejectionChanceDesc: "हे डेटा विसंगतीमुळे काढताना नाकारण्याची कमी शक्यता दर्शवते.",
+                kycNote: "*टीप: हा आत्मविश्वास स्कोअर केवळ माहितीसाठी आहे आणि डेटा जुळणीवर आधारित आहे. अंतिम मंजुरी अधिकृत ईपीएफओ पडताळणी प्रक्रियेवर अवलंबून असते.*",
+                reasonsForPfWithdrawalModalTitle: "पीएफ काढण्याची कारणे",
+                reasonMedicalPurposes: "वैद्यकीय उद्देश",
+                reasonMarriage: "विवाह (स्वतः, मूल, भावंड)",
+                reasonEducation: "शिक्षण (स्वतः, मूल)",
+                reasonHousePurchase: "घर खरेदी/बांधकाम",
+                reasonHouseRenovation: "घर नूतनीकरण/बदल",
+                reasonHomeLoanRepayment: "गृहकर्ज परतफेड",
+                reasonUnemployment: "बेरोजगारी (1 महिना / 2 महिने)",
+                reasonBeforeRetirement: "सेवानिवृत्तीच्या एक वर्ष आधी (54+ वय)",
+                reasonDisability: "अपंगत्व",
+                marriageWithdrawalEligibilityTitle: "विवाह काढणे: पात्रता तपासा",
+                marriageWithdrawalEligibilityDesc: "विवाहासाठी काढण्यासाठी, तुम्हाला किमान 7 वर्षांची ईपीएफ सदस्यता पूर्ण करावी लागेल. तुम्ही तुमच्या कर्मचाऱ्याच्या हिश्श्याच्या + व्याजाच्या 50% पर्यंत काढू शकता.",
+                yearsOfEpfServiceLabel: "ईपीएफ सेवेची वर्षे:",
+                employeeShareBalanceLabel: "कर्मचाऱ्याचा हिस्सा + व्याज (₹):",
+                checkEligibilityBtn: "पात्रता तपासा आणि रक्कम मोजा",
+                enterDesiredWithdrawalAmountLabel: "इच्छित काढण्याची रक्कम प्रविष्ट करा (₹):",
+                getPersonalizedAdviceBtn: "✨ वैयक्तिकृत काढण्याचा सल्ला मिळवा",
+                proceedToBankDetailsBtn: "बँक तपशिलावर पुढे जा",
+                confirmBankDetailsTitle: "बँक तपशिलाची पुष्टी करा",
+                confirmBankDetailsDesc: "कृपया तुमच्या जोडलेल्या बँक खात्याच्या तपशिलाची पुष्टी करा.",
+                linkedBankAccountLabel: "जोडलेले बँक खाते:",
+                dummyBankInfo: "डमी बँक नाव, डमी शाखा",
+                enterLast4DigitsLabel: "बँक खात्याचे शेवटचे 4 अंक प्रविष्ट करा:",
+                verifyBankProceedBtn: "बँक खाते सत्यापित करा आणि पुढे जा",
+                confirmAddressTitle: "पत्याची पुष्टी करा",
+                confirmAddressDesc: "कृपया तुमच्या नोंदणीकृत पत्याची पुष्टी करा.",
+                registeredAddressLabel: "नोंदणीकृत पत्ता:",
+                isAddressCorrectLabel: "हा पत्ता बरोबर आहे का?",
+                confirmAddressProceedBtn: "पत्ता पुष्टी करा आणि पुढे जा",
+                reviewClaimTitle: "तुमच्या दाव्याचे पुनरावलोकन करा",
+                withdrawalReasonLabel: "काढण्याचे कारण:",
+                reasonMarriageDisplay: "विवाह",
+                requestedWithdrawalAmountLabel: "अनुरोधित काढण्याची रक्कम:",
+                confirmedBankAccountLabel: "पुष्टी केलेले बँक खाते:",
+                confirmedAddressLabel: "पुष्टी केलेला पत्ता:",
+                agreeTermsLabel: "मी अटी आणि शर्तींना सहमती देतो.",
+                submitPfWithdrawalClaimBtn: "पीएफ काढण्याचा दावा सबमिट करा",
+                claimSubmittedSuccessTitle: "दावा यशस्वीरित्या सबमिट केला!",
+                claimSubmittedDesc: "विवाहासाठी तुमचा पीएफ काढण्याचा दावा सबमिट केला आहे.",
+                acknowledgmentNumberLabel: "पोचपावती क्रमांक:",
+                fundsCreditInfo: "निधी 3-5 व्यावसायिक दिवसांच्या आत तुमच्या जोडलेल्या बँक खात्यात जमा केले जातील.",
+                yourPfBalanceTitle: "तुमची पीएफ शिल्लक",
+                footerCopyright: "&copy; 2025 पीएफ साथी. सर्व हक्क राखीव.",
+                contactUs: "संपर्क साधा: info@pfsaathi.com",
+                generatingAdvice: "सल्ला तयार होत आहे...",
+                yourPfDataScoreTitle: "तुमचा पीएफ डेटा स्कोअर",
+                dataCompletenessScoreTitle: "डेटा पूर्णता स्कोअर",
+                allFieldsPopulated: "सर्व आवश्यक डेटा फील्ड भरले आहेत.",
+                dataMatchScoreTitle: "डेटा जुळणी स्कोअर",
+                discrepanciesFound: "जोडलेल्या दस्तऐवजांमध्ये (उदा. पॅन, आधार, यूएएन) विसंगती आढळल्या.",
+                overallDataImpactScoreTitle: "एकूण डेटा प्रभाव स्कोअर",
+                rejectionChances: "काढताना नाकारण्याची 75% शक्यता",
+                actionRequiredRectify: "गुळगुळीत काढणे सुनिश्चित करण्यासाठी डेटा जुळणी दुरुस्त करण्यासाठी कारवाई आवश्यक आहे.",
+                fixDataNowBtn: "आता डेटा दुरुस्त करा",
+                fixDataMismatchTitle: "डेटा विसंगती दुरुस्त करा",
+                mismatchDetectedDesc: "आम्ही तुमच्या वडिलांच्या नावात थोडी विसंगती आढळली आहे:",
+                fatherNamePanLabel: "पॅनमध्ये वडिलांचे नाव:",
+                fatherNameUanLabel: "यूएएनमध्ये वडिलांचे नाव:",
+                updatePanDataDesc: "सुसंगतता सुनिश्चित करण्यासाठी कृपया तुमचा पॅन डेटा अपडेट करा.",
+                yourPanNumberLabel: "तुमचा पॅन क्रमांक:",
+                correctedFatherNameLabel: "सुधारलेले वडिलांचे नाव (अधिकृत नोंदीनुसार):",
+                submitPanUpdateRequestBtn: "पॅन अपडेट विनंती सबमिट करा",
+                backToDataScoreBtn: "डेटा स्कोअरवर परत",
+                panUpdateSuccessTitle: "पॅन अपडेट विनंती सबमिट केली!",
+                panUpdateSuccessDesc: "पॅनवर वडिलांचे नाव अपडेट करण्याची तुमची विनंती सबमिट केली आहे.",
+                panUpdateNotificationInfo: "तुम्हाला पॅनकडून थेट अपडेटबद्दल सूचित केले जाईल. तुम्ही पीएफ साथीच्या \"विनंतीचा मागोवा घ्या\" विभागातही स्थिती तपासू शकता.",
+            },
+            ta: {
+                headerTitle: "PF சாத்தி",
+                headerTagline: "உங்கள் வருங்கால வைப்பு நிதி, எளிதாக்கப்பட்டது!",
+                whatToDoTodayTitle: "இன்று நீங்கள் என்ன செய்ய விரும்புகிறீர்கள்?",
+                checkBalanceTitle: "எனது PF இருப்பைச் சரிபார்க்கவும்",
+                checkBalanceDesc: "உங்கள் தற்போதைய வருங்கால வைப்பு நிதி இருப்பைக் காணவும்.",
+                checkDataScoreTitle: "எனது PF டேட்டா ஸ்கோரைச் சரிபார்க்கவும்",
+                checkDataScoreDesc: "திரும்பப் பெறுவதற்கான உங்கள் KYC டேட்டா நம்பிக்கையை மதிப்பிடவும்.",
+                helpWithdrawTitle: "எனது PF ஐ திரும்பப் பெற எனக்கு உதவுங்கள்",
+                helpWithdrawDesc: "பகுதி அல்லது முழுமையான PF திரும்பப் பெறும் கோரிக்கையைத் தொடங்கவும்.",
+                helpTransferTitle: "PF பரிமாற்றத்திற்கு எனக்கு உதவுங்கள்",
+                helpTransferDesc: "உங்கள் PF ஐ முந்தைய முதலாளியிடமிருந்து மாற்றவும்.",
+                speakExpertTitle: "ஒரு நிபுணரிடம் பேசுங்கள்",
+                speakExpertDesc: "எங்கள் குழுவிடம் இருந்து தனிப்பயனாக்கப்பட்ட உதவியைப் பெறுங்கள்.",
+                heroTitle: "உங்கள் நிதி எதிர்காலத்தை மேம்படுத்துதல்",
+                heroDesc: "PF சாத்தி வருங்கால வைப்பு நிதி நிர்வாகத்தை அனைவருக்கும் அணுகக்கூடியதாகவும் எளிதாகவும் மாற்றுவதற்கு அர்ப்பணிக்கப்பட்டுள்ளது. உங்கள் சேமிப்பை சிரமமின்றி பாதுகாக்கவும்.",
+                getStartedBtn: "தொடங்குங்கள்",
+                reachingEveryCornerTitle: "ஒவ்வொரு மூலையையும் சென்றடைதல்",
+                reachingEveryCornerDesc: "நிதிப் பாதுகாப்பு அனைவருக்கும் இருக்க வேண்டும் என்று நாங்கள் நம்புகிறோம், பரபரப்பான நகரங்கள் முதல் அமைதியான கிராமங்கள் வரை. எங்கள் சேவைகள் அனைவரையும் உள்ளடக்கியதாகவும் பயன்படுத்த எளிதாகவும் வடிவமைக்கப்பட்டுள்ளன, கிராமப்புற சமூகங்களுக்கு அதிகாரம் அளிக்கின்றன.",
+                empoweringUrbanLivesTitle: "நகர்ப்புற வாழ்க்கையை மேம்படுத்துதல்",
+                empoweringUrbanLivesDesc: "எங்கள் நகரங்களின் மையத்தில், வருங்கால வைப்பு நிதியில் தெளிவையும் கட்டுப்பாட்டையும் கொண்டு வர நாங்கள் முயற்சி செய்கிறோம், ஒவ்வொரு நகர்ப்புற தொழிலாளியும் நம்பிக்கையுடனும் எளிதாகவும் பாதுகாப்பான எதிர்காலத்தை உருவாக்க முடியும் என்பதை உறுதிப்படுத்துகிறோம்.",
+                enterMobileNumberTitle: "உங்கள் UAN இணைக்கப்பட்ட மொபைல் எண்ணை உள்ளிடவும்",
+                enterMobileNumberDesc: "உங்கள் UAN உடன் இணைக்கப்பட்ட 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்.",
+                sendOtpBtn: "OTP அனுப்பவும்",
+                backToHomeBtn: "முகப்புக்குத் திரும்பு",
+                enterOtpTitle: "OTP ஐ உள்ளிடவும்",
+                otpSentDesc: "உங்கள் மொபைல் எண்ணுக்கு ஒரு OTP அனுப்பப்பட்டுள்ளது.",
+                verifyOtpBtn: "OTP ஐ சரிபார்க்கவும்",
+                backBtn: "பின்புறம்",
+                yourPfDetailsTitle: "உங்கள் வருங்கால வைப்பு நிதி விவரங்கள்",
+                accountBalanceTitle: "கணக்கு இருப்பு",
+                immediatelyAvailableBalanceText: "உடனடியாகக் கிடைக்கும் இருப்பு:",
+                asOfDate: "தேதி: 31 மார்ச் 2025 வரை",
+                kycDetailsTitle: "KYC விவரங்கள்",
+                aadhaarLinked: "ஆதார்: இணைக்கப்பட்டது ✓",
+                panLinked: "பான்: இணைக்கப்பட்டது ✓",
+                bankAccountLinked: "வங்கி கணக்கு: இணைக்கப்பட்டது ✓",
+                employerHistoryTitle: "முதலாளி வரலாறு",
+                recentClaimsTitle: "சமீபத்திய கோரிக்கைகள்",
+                noRecentClaims: "சமீபத்திய கோரிக்கைகள் எதுவும் காணப்படவில்லை.",
+                initiateWithdrawalBtn: "PF திரும்பப் பெறுதலைத் தொடங்கவும்",
+                actionsTitle: "நடவடிக்கைகள்",
+                withdrawableReasonsTitle: "திரும்பப் பெறக்கூடிய காரணங்கள்",
+                withdrawableReasonsDesc: "உங்கள் PF ஐ நீங்கள் திரும்பப் பெறக்கூடிய காரணங்களைக் கண்டறியவும்.",
+                immediatelyAvailableBalanceModalTitle: "உடனடியாகக் கிடைக்கும் இருப்பு கணக்கீடு",
+                immediatelyAvailableBalanceModalDesc: "உங்கள் உடனடியாகக் கிடைக்கும் இருப்பு பொதுவாக இவ்வாறு கணக்கிடப்படுகிறது:",
+                simplifiedExplanationNote: "*குறிப்பு: இது ஒரு எளிமையான விளக்கம். உண்மையான விதிகள் மற்றும் தகுதி வரம்புகள் மாறுபடலாம். துல்லியமான விவரங்களுக்கு அதிகாரப்பூர்வ EPFO வழிகாட்டுதல்களைப் பார்க்கவும்.*",
+                kycDataConfidenceModalTitle: "KYC டேட்டா நம்பிக்கை",
+                panAadhaarMatchTitle: "பான் விவரங்கள் மற்றும் ஆதார் விவரங்கள் பொருத்தம்:",
+                highMatch: "உயர் பொருத்தம்",
+                lessRejectionChances: "இந்தக் காரணத்தால் நிராகரிப்பதற்கான வாய்ப்புகள் குறைவு.",
+                panUanMatchTitle: "பான் மற்றும் UAN விவரங்கள்:",
+                cumulativeScoreTitle: "மொத்த மதிப்பெண்: அதிக நம்பிக்கை",
+                lowRejectionChanceDesc: "இது டேட்டா முரண்பாடுகள் காரணமாக திரும்பப் பெறும் போது நிராகரிப்பதற்கான குறைந்த வாய்ப்பைக் குறிக்கிறது.",
+                kycNote: "*குறிப்பு: இந்த நம்பிக்கை மதிப்பெண் தகவல் நோக்கங்களுக்காக மட்டுமே மற்றும் டேட்டா பொருத்தத்தின் அடிப்படையில் அமைந்துள்ளது. இறுதி ஒப்புதல் அதிகாரப்பூர்வ EPFO சரிபார்ப்பு செயல்முறைகளைப் பொறுத்தது.*",
+                reasonsForPfWithdrawalModalTitle: "PF திரும்பப் பெறுவதற்கான காரணங்கள்",
+                reasonMedicalPurposes: "மருத்துவ நோக்கங்கள்",
+                reasonMarriage: "திருமணம் (சுயம், குழந்தை, சகோதரர்/சகோதரி)",
+                reasonEducation: "கல்வி (சுயம், குழந்தை)",
+                reasonHousePurchase: "வீடு வாங்குதல்/கட்டுதல்",
+                reasonHouseRenovation: "வீடு புதுப்பித்தல்/மாற்றம்",
+                reasonHomeLoanRepayment: "வீட்டுக் கடன் திருப்பிச் செலுத்துதல்",
+                reasonUnemployment: "வேலையின்மை (1 மாதம் / 2 மாதங்கள்)",
+                reasonBeforeRetirement: "ஓய்வுக்கு ஒரு வருடத்திற்கு முன் (54+ வயது)",
+                reasonDisability: "ஊனம்",
+                marriageWithdrawalEligibilityTitle: "திருமண திரும்பப் பெறுதல்: தகுதியைச் சரிபார்க்கவும்",
+                marriageWithdrawalEligibilityDesc: "திருமணத்திற்காக திரும்பப் பெற, நீங்கள் குறைந்தது 7 வருட EPFO உறுப்பினராக இருக்க வேண்டும். உங்கள் ஊழியரின் பங்கு + வட்டியின் 50% வரை திரும்பப் பெறலாம்.",
+                yearsOfEpfServiceLabel: "EPF சேவை ஆண்டுகள்:",
+                employeeShareBalanceLabel: "ஊழியர் பங்கு + வட்டி (₹):",
+                checkEligibilityBtn: "தகுதியைச் சரிபார்த்து தொகையை கணக்கிடவும்",
+                enterDesiredWithdrawalAmountLabel: "விரும்பிய திரும்பப் பெறும் தொகையை உள்ளிடவும் (₹):",
+                getPersonalizedAdviceBtn: "✨ தனிப்பயனாக்கப்பட்ட திரும்பப் பெறும் ஆலோசனையைப் பெறுங்கள்",
+                proceedToBankDetailsBtn: "வங்கி விவரங்களுக்குச் செல்லவும்",
+                confirmBankDetailsTitle: "வங்கி விவரங்களை உறுதிப்படுத்தவும்",
+                confirmBankDetailsDesc: "உங்கள் இணைக்கப்பட்ட வங்கிக் கணக்கு விவரங்களை உறுதிப்படுத்தவும்.",
+                linkedBankAccountLabel: "இணைக்கப்பட்ட வங்கிக் கணக்கு:",
+                dummyBankInfo: "போலி வங்கிப் பெயர், போலி கிளை",
+                enterLast4DigitsLabel: "வங்கி கணக்கின் கடைசி 4 இலக்கங்களை உள்ளிடவும்:",
+                verifyBankProceedBtn: "வங்கிக் கணக்கைச் சரிபார்த்து தொடரவும்",
+                confirmAddressTitle: "முகவரியை உறுதிப்படுத்தவும்",
+                confirmAddressDesc: "உங்கள் பதிவு செய்யப்பட்ட முகவரியை உறுதிப்படுத்தவும்.",
+                registeredAddressLabel: "பதிவு செய்யப்பட்ட முகவரி:",
+                isAddressCorrectLabel: "இந்த முகவரி சரியானதா?",
+                confirmAddressProceedBtn: "முகவரியை உறுதிப்படுத்தி தொடரவும்",
+                reviewClaimTitle: "உங்கள் கோரிக்கையை மதிப்பாய்வு செய்யவும்",
+                withdrawalReasonLabel: "திரும்பப் பெறும் காரணம்:",
+                reasonMarriageDisplay: "திருமணம்",
+                requestedWithdrawalAmountLabel: "கோரப்பட்ட திரும்பப் பெறும் தொகை:",
+                confirmedBankAccountLabel: "உறுதிப்படுத்தப்பட்ட வங்கிக் கணக்கு:",
+                confirmedAddressLabel: "உறுதிப்படுத்தப்பட்ட முகவரி:",
+                agreeTermsLabel: "நான் விதிமுறைகள் மற்றும் நிபந்தனைகளுக்கு ஒப்புக்கொள்கிறேன்.",
+                submitPfWithdrawalClaimBtn: "PF திரும்பப் பெறும் கோரிக்கையைச் சமர்ப்பிக்கவும்",
+                claimSubmittedSuccessTitle: "கோரிக்கை வெற்றிகரமாகச் சமர்ப்பிக்கப்பட்டது!",
+                claimSubmittedDesc: "திருமணத்திற்கான உங்கள் PF திரும்பப் பெறும் கோரிக்கை சமர்ப்பிக்கப்பட்டுள்ளது.",
+                acknowledgmentNumberLabel: "ஒப்புதல் எண்:",
+                fundsCreditInfo: "3-5 வணிக நாட்களுக்குள் உங்கள் இணைக்கப்பட்ட வங்கிக் கணக்கில் நிதி வரவு வைக்கப்படும்.",
+                yourPfBalanceTitle: "உங்கள் PF இருப்பு",
+                footerCopyright: "&copy; 2025 PF சாத்தி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+                contactUs: "தொடர்புக்கு: info@pfsaathi.com",
+                generatingAdvice: "ஆலோசனை உருவாக்கப்படுகிறது...",
+                yourPfDataScoreTitle: "உங்கள் PF டேட்டா ஸ்கோர்",
+                dataCompletenessScoreTitle: "டேட்டா முழுமை ஸ்கோர்",
+                allFieldsPopulated: "அனைத்து அத்தியாவசிய டேட்டா புலங்களும் நிரப்பப்பட்டுள்ளன.",
+                dataMatchScoreTitle: "டேட்டா பொருத்தம் ஸ்கோர்",
+                discrepanciesFound: "இணைக்கப்பட்ட ஆவணங்களுக்கு (எ.கா. பான், ஆதார், UAN) இடையே முரண்பாடுகள் கண்டறியப்பட்டன.",
+                overallDataImpactScoreTitle: "மொத்த டேட்டா தாக்கம் ஸ்கோர்",
+                rejectionChances: "திரும்பப் பெறும் போது நிராகரிப்பதற்கான 75% வாய்ப்புகள்",
+                actionRequiredRectify: "சீரான திரும்பப் பெறுதலை உறுதிப்படுத்த டேட்டா பொருந்தாமைகளை சரிசெய்ய நடவடிக்கை தேவை.",
+                fixDataNowBtn: "டேட்டாவை இப்போதே சரிசெய்யவும்",
+                fixDataMismatchTitle: "டேட்டா முரண்பாட்டை சரிசெய்யவும்",
+                mismatchDetectedDesc: "உங்கள் தந்தையின் பெயரில் ஒரு சிறிய முரண்பாட்டை நாங்கள் கண்டறிந்துள்ளோம்:",
+                fatherNamePanLabel: "பானில் தந்தையின் பெயர்:",
+                fatherNameUanLabel: "UAN இல் தந்தையின் பெயர்:",
+                updatePanDataDesc: "நிலையான தன்மையை உறுதிப்படுத்த உங்கள் பான் டேட்டாவை புதுப்பிக்கவும்.",
+                yourPanNumberLabel: "உங்கள் பான் எண்:",
+                correctedFatherNameLabel: "சரியான தந்தையின் பெயர் (அதிகாரப்பூர்வ பதிவுகளின்படி):",
+                submitPanUpdateRequestBtn: "பான் புதுப்பிப்பு கோரிக்கையைச் சமர்ப்பிக்கவும்",
+                backToDataScoreBtn: "டேட்டா ஸ்கோருக்குத் திரும்பு",
+                panUpdateSuccessTitle: "பான் புதுப்பிப்பு கோரிக்கை சமர்ப்பிக்கப்பட்டது!",
+                panUpdateSuccessDesc: "பானில் தந்தையின் பெயரைப் புதுப்பிப்பதற்கான உங்கள் கோரிக்கை சமர்ப்பிக்கப்பட்டுள்ளது.",
+                panUpdateNotificationInfo: "பான் மூலம் நேரடியாக புதுப்பிப்பு குறித்து உங்களுக்கு அறிவிக்கப்படும். PF சாத்தியின் \"கோரிக்கைகளைக் கண்காணிக்கவும்\" பிரிவிலும் நிலையைச் சரிபார்க்கலாம்.",
+            },
+            kn: {
+                headerTitle: "PF ಸಾಥಿ",
+                headerTagline: "ನಿಮ್ಮ ಭವಿಷ್ಯ ನಿಧಿ, ಸರಳೀಕೃತ!",
+                whatToDoTodayTitle: "ಇಂದು ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?",
+                checkBalanceTitle: "ನನ್ನ PF ಬ್ಯಾಲೆನ್ಸ್ ಪರಿಶೀಲಿಸಿ",
+                checkBalanceDesc: "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಭವಿಷ್ಯ ನಿಧಿ ಬ್ಯಾಲೆನ್ಸ್ ವೀಕ್ಷಿಸಿ.",
+                checkDataScoreTitle: "ನನ್ನ PF ಡೇಟಾ ಸ್ಕೋರ್ ಪರಿಶೀಲಿಸಿ",
+                checkDataScoreDesc: "ಹಿಂಪಡೆಯುವಿಕೆಗಾಗಿ ನಿಮ್ಮ KYC ಡೇಟಾ ವಿಶ್ವಾಸಾರ್ಹತೆಯನ್ನು ನಿರ್ಣಯಿಸಿ.",
+                helpWithdrawTitle: "ನನ್ನ PF ಹಿಂಪಡೆಯಲು ನನಗೆ ಸಹಾಯ ಮಾಡಿ",
+                helpWithdrawDesc: "ಭಾಗಶಃ ಅಥವಾ ಪೂರ್ಣ PF ಹಿಂಪಡೆಯುವಿಕೆ ಕ್ಲೈಮ್ ಪ್ರಾರಂಭಿಸಿ.",
+                helpTransferTitle: "PF ವರ್ಗಾವಣೆಗೆ ನನಗೆ ಸಹಾಯ ಮಾಡಿ",
+                helpTransferDesc: "ನಿಮ್ಮ PF ಅನ್ನು ಹಿಂದಿನ ಉದ್ಯೋಗದಾತರಿಂದ ವರ್ಗಾಯಿಸಿ.",
+                speakExpertTitle: "ತಜ್ಞರೊಂದಿಗೆ ಮಾತನಾಡಿ",
+                speakExpertDesc: "ನಮ್ಮ ತಂಡದಿಂದ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಸಹಾಯವನ್ನು ಪಡೆಯಿರಿ.",
+                heroTitle: "ನಿಮ್ಮ ಆರ್ಥಿಕ ಭವಿಷ್ಯವನ್ನು ಸಶಕ್ತಗೊಳಿಸುವುದು",
+                heroDesc: "PF ಸಾಥಿ ಭವಿಷ್ಯ ನಿಧಿ ನಿರ್ವಹಣೆಯನ್ನು ಎಲ್ಲರಿಗೂ ಸುಲಭವಾಗಿ ಮತ್ತು ಸುಲಭವಾಗಿ ಪ್ರವೇಶಿಸುವಂತೆ ಮಾಡಲು ಸಮರ್ಪಿತವಾಗಿದೆ. ನಿಮ್ಮ ಉಳಿತಾಯವನ್ನು ಸಲೀಸಾಗಿ ಸುರಕ್ಷಿತಗೊಳಿಸಿ.",
+                getStartedBtn: "ಪ್ರಾರಂಭಿಸಿ",
+                reachingEveryCornerTitle: "ಪ್ರತಿಯೊಂದು ಮೂಲೆಗೂ ತಲುಪುವುದು",
+                reachingEveryCornerDesc: "ಆರ್ಥಿಕ ಭದ್ರತೆಯು ಪ್ರತಿಯೊಬ್ಬರಿಗೂ ಇರಬೇಕು ಎಂದು ನಾವು ನಂಬುತ್ತೇವೆ, ಗಲಭೆಯ ನಗರಗಳಿಂದ ಹಿಡಿದು ಶಾಂತಿಯುತ ಹಳ್ಳಿಗಳವರೆಗೆ. ನಮ್ಮ ಸೇವೆಗಳು ಸಮಗ್ರವಾಗಿ ಮತ್ತು ಬಳಸಲು ಸುಲಭವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ, ಗ್ರಾಮೀಣ ಸಮುದಾಯಗಳಿಗೆ ಅಧಿಕಾರ ನೀಡುತ್ತವೆ.",
+                empoweringUrbanLivesTitle: "ನಗರ ಜೀವನವನ್ನು ಸಶಕ್ತಗೊಳಿಸುವುದು",
+                empoweringUrbanLivesDesc: "ನಮ್ಮ ನಗರಗಳ ಹೃದಯಭಾಗದಲ್ಲಿ, ಭವಿಷ್ಯ ನಿಧಿಯ ಮೇಲೆ ಸ್ಪಷ್ಟತೆ ಮತ್ತು ನಿಯಂತ್ರಣವನ್ನು ತರಲು ನಾವು ಪ್ರಯತ್ನಿಸುತ್ತೇವೆ, ಪ್ರತಿ ನಗರ ಕಾರ್ಮಿಕರು ಆತ್ಮವಿಶ್ವಾಸ ಮತ್ತು ಸುಲಭವಾಗಿ ಸುರಕ್ಷಿತ ಭವಿಷ್ಯವನ್ನು ನಿರ್ಮಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುತ್ತೇವೆ.",
+                enterMobileNumberTitle: "ನಿಮ್ಮ UAN ಲಿಂಕ್ ಮಾಡಿದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+                enterMobileNumberDesc: "ದಯವಿಟ್ಟು ನಿಮ್ಮ UAN ಗೆ ಲಿಂಕ್ ಮಾಡಲಾದ 10-ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ.",
+                sendOtpBtn: "OTP ಕಳುಹಿಸಿ",
+                backToHomeBtn: "ಮುಖಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+                enterOtpTitle: "OTP ನಮೂದಿಸಿ",
+                otpSentDesc: "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಗೆ OTP ಕಳುಹಿಸಲಾಗಿದೆ.",
+                verifyOtpBtn: "OTP ಪರಿಶೀಲಿಸಿ",
+                backBtn: "ಹಿಂದೆ",
+                yourPfDetailsTitle: "ನಿಮ್ಮ ಭವಿಷ್ಯ ನಿಧಿ ವಿವರಗಳು",
+                accountBalanceTitle: "ಖಾತೆ ಬಾಕಿ",
+                immediatelyAvailableBalanceText: "ತಕ್ಷಣ ಲಭ್ಯವಿರುವ ಬಾಕಿ:",
+                asOfDate: "ದಿನಾಂಕ: 31 ಮಾರ್ಚ್ 2025 ರಂತೆ",
+                kycDetailsTitle: "KYC ವಿವರಗಳು",
+                aadhaarLinked: "ಆಧಾರ್: ಲಿಂಕ್ ಮಾಡಲಾಗಿದೆ ✓",
+                panLinked: "ಪ್ಯಾನ್: ಲಿಂಕ್ ಮಾಡಲಾಗಿದೆ ✓",
+                bankAccountLinked: "ಬ್ಯಾಂಕ್ ಖಾತೆ: ಲಿಂಕ್ ಮಾಡಲಾಗಿದೆ ✓",
+                employerHistoryTitle: "ಉದ್ಯೋಗದಾತ ಇತಿಹಾಸ",
+                recentClaimsTitle: "ಇತ್ತೀಚಿನ ಹಕ್ಕುಗಳು",
+                noRecentClaims: "ಯಾವುದೇ ಇತ್ತೀಚಿನ ಹಕ್ಕುಗಳು ಕಂಡುಬಂದಿಲ್ಲ.",
+                initiateWithdrawalBtn: "PF ಹಿಂಪಡೆಯುವಿಕೆ ಪ್ರಾರಂಭಿಸಿ",
+                actionsTitle: "ಕ್ರಿಯೆಗಳು",
+                withdrawableReasonsTitle: "ಹಿಂಪಡೆಯುವ ಕಾರಣಗಳು",
+                withdrawableReasonsDesc: "ನಿಮ್ಮ PF ಅನ್ನು ನೀವು ಹಿಂಪಡೆಯಬಹುದಾದ ಕಾರಣಗಳನ್ನು ಕಂಡುಕೊಳ್ಳಿ.",
+                immediatelyAvailableBalanceModalTitle: "ತಕ್ಷಣ ಲಭ್ಯವಿರುವ ಬಾಕಿ ಲೆಕ್ಕಾಚಾರ",
+                immediatelyAvailableBalanceModalDesc: "ನಿಮ್ಮ ತಕ್ಷಣ ಲಭ್ಯವಿರುವ ಬಾಕಿಯನ್ನು ಸಾಮಾನ್ಯವಾಗಿ ಈ ರೀತಿ ಲೆಕ್ಕಹಾಕಲಾಗುತ್ತದೆ:",
+                simplifiedExplanationNote: "*ಗಮನಿಸಿ: ಇದು ಸರಳೀಕೃತ ವಿವರಣೆಯಾಗಿದೆ. ನಿಜವಾದ ನಿಯಮಗಳು ಮತ್ತು ಅರ್ಹತಾ ಮಾನದಂಡಗಳು ಬದಲಾಗಬಹುದು. ನಿಖರವಾದ ವಿವರಗಳಿಗಾಗಿ ದಯವಿಟ್ಟು ಅಧಿಕೃತ EPFO ಮಾರ್ಗಸೂಚಿಗಳನ್ನು ನೋಡಿ.*",
+                kycDataConfidenceModalTitle: "KYC ಡೇಟಾ ವಿಶ್ವಾಸಾರ್ಹತೆ",
+                panAadhaarMatchTitle: "ಪ್ಯಾನ್ ವಿವರಗಳು ಮತ್ತು ಆಧಾರ್ ವಿವರಗಳು ಹೊಂದಾಣಿಕೆ:",
+                highMatch: "ಹೆಚ್ಚಿನ ಹೊಂದಾಣಿಕೆ",
+                lessRejectionChances: "ಈ ಕಾರಣದಿಂದಾಗಿ ತಿರಸ್ಕರಿಸುವ ಸಾಧ್ಯತೆಗಳು ಕಡಿಮೆ.",
+                panUanMatchTitle: "ಪ್ಯಾನ್ ಮತ್ತು UAN ವಿವರಗಳು:",
+                cumulativeScoreTitle: "ಸಂಚಿತ ಸ್ಕೋರ್: ಹೆಚ್ಚಿನ ವಿಶ್ವಾಸಾರ್ಹತೆ",
+                lowRejectionChanceDesc: "ಇದು ಡೇಟಾ ವ್ಯತ್ಯಾಸಗಳಿಂದಾಗಿ ಹಿಂಪಡೆಯುವಿಕೆಯ ಸಮಯದಲ್ಲಿ ತಿರಸ್ಕರಿಸುವ ಕಡಿಮೆ ಸಾಧ್ಯತೆಯನ್ನು ಸೂಚಿಸುತ್ತದೆ.",
+                kycNote: "*ಗಮನಿಸಿ: ಈ ವಿಶ್ವಾಸಾರ್ಹತಾ ಸ್ಕೋರ್ ಮಾಹಿತಿ ಉದ್ದೇಶಗಳಿಗಾಗಿ ಮಾತ್ರ ಮತ್ತು ಡೇಟಾ ಹೊಂದಾಣಿಕೆಯ ಆಧಾರದ ಮೇಲೆ. ಅಂತಿಮ ಅನುಮೋದನೆಯು ಅಧಿಕೃತ EPFO ಪರಿಶೀಲನೆ ಪ್ರಕ್ರಿಯೆಗಳನ್ನು ಅವಲಂಬಿಸಿರುತ್ತದೆ.*",
+                reasonsForPfWithdrawalModalTitle: "PF ಹಿಂಪಡೆಯುವ ಕಾರಣಗಳು",
+                reasonMedicalPurposes: "ವೈದ್ಯಕೀಯ ಉದ್ದೇಶಗಳು",
+                reasonMarriage: "ಮದುವೆ (ಸ್ವಯಂ, ಮಗು, ಒಡಹುಟ್ಟಿದವರು)",
+                reasonEducation: "ಶಿಕ್ಷಣ (ಸ್ವಯಂ, ಮಗು)",
+                reasonHousePurchase: "ಮನೆ ಖರೀದಿ/ನಿರ್ಮಾಣ",
+                reasonHouseRenovation: "ಮನೆ ನವೀಕರಣ/ಬದಲಾವಣೆ",
+                reasonHomeLoanRepayment: "ಗೃಹ ಸಾಲ ಮರುಪಾವತಿ",
+                reasonUnemployment: "ನಿರುದ್ಯೋಗ (1 ತಿಂಗಳು / 2 ತಿಂಗಳುಗಳು)",
+                reasonBeforeRetirement: "ನಿವೃತ್ತಿಗೆ ಒಂದು ವರ್ಷ ಮೊದಲು (54+ ವಯಸ್ಸು)",
+                reasonDisability: "ಅಂಗವೈಕಲ್ಯ",
+                marriageWithdrawalEligibilityTitle: "ಮದುವೆ ಹಿಂಪಡೆಯುವಿಕೆ: ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ",
+                marriageWithdrawalEligibilityDesc: "ಮದುವೆಗಾಗಿ ಹಿಂಪಡೆಯಲು, ನೀವು ಕನಿಷ್ಠ 7 ವರ್ಷಗಳ EPF ಸದಸ್ಯತ್ವವನ್ನು ಪೂರ್ಣಗೊಳಿಸಿರಬೇಕು. ನಿಮ್ಮ ಉದ್ಯೋಗಿಯ ಪಾಲು + ಬಡ್ಡಿಯ 50% ವರೆಗೆ ನೀವು ಹಿಂಪಡೆಯಬಹುದು.",
+                yearsOfEpfServiceLabel: "EPF ಸೇವೆಯ ವರ್ಷಗಳು:",
+                employeeShareBalanceLabel: "ಉದ್ಯೋಗಿ ಪಾಲು + ಬಡ್ಡಿ (₹):",
+                checkEligibilityBtn: "ಅರ್ಹತೆ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮೊತ್ತವನ್ನು ಲೆಕ್ಕಹಾಕಿ",
+                enterDesiredWithdrawalAmountLabel: "ಬಯಸಿದ ಹಿಂಪಡೆಯುವಿಕೆ ಮೊತ್ತವನ್ನು ನಮೂದಿಸಿ (₹):",
+                getPersonalizedAdviceBtn: "✨ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಹಿಂಪಡೆಯುವಿಕೆ ಸಲಹೆ ಪಡೆಯಿರಿ",
+                proceedToBankDetailsBtn: "ಬ್ಯಾಂಕ್ ವಿವರಗಳಿಗೆ ಮುಂದುವರಿಯಿರಿ",
+                confirmBankDetailsTitle: "ಬ್ಯಾಂಕ್ ವಿವರಗಳನ್ನು ದೃಢೀಕರಿಸಿ",
+                confirmBankDetailsDesc: "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಲಿಂಕ್ ಮಾಡಿದ ಬ್ಯಾಂಕ್ ಖಾತೆ ವಿವರಗಳನ್ನು ದೃಢೀಕರಿಸಿ.",
+                linkedBankAccountLabel: "ಲಿಂಕ್ ಮಾಡಿದ ಬ್ಯಾಂಕ್ ಖಾತೆ:",
+                dummyBankInfo: "ಡಮ್ಮಿ ಬ್ಯಾಂಕ್ ಹೆಸರು, ಡಮ್ಮಿ ಶಾಖೆ",
+                enterLast4DigitsLabel: "ಬ್ಯಾಂಕ್ ಖಾತೆಯ ಕೊನೆಯ 4 ಅಂಕೆಗಳನ್ನು ನಮೂದಿಸಿ:",
+                verifyBankProceedBtn: "ಬ್ಯಾಂಕ್ ಖಾತೆ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+                confirmAddressTitle: "ವಿಳಾಸವನ್ನು ದೃಢೀಕರಿಸಿ",
+                confirmAddressDesc: "ದಯವಿಟ್ಟು ನಿಮ್ಮ ನೋಂದಾಯಿತ ವಿಳಾಸವನ್ನು ದೃಢೀಕರಿಸಿ.",
+                registeredAddressLabel: "ನೋಂದಾಯಿತ ವಿಳಾಸ:",
+                isAddressCorrectLabel: "ಈ ವಿಳಾಸ ಸರಿಯಾಗಿದೆಯೇ?",
+                confirmAddressProceedBtn: "ವಿಳಾಸವನ್ನು ದೃಢೀಕರಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+                reviewClaimTitle: "ನಿಮ್ಮ ಕ್ಲೈಮ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ",
+                withdrawalReasonLabel: "ಹಿಂಪಡೆಯುವ ಕಾರಣ:",
+                reasonMarriageDisplay: "ಮದುವೆ",
+                requestedWithdrawalAmountLabel: "ವಿನಂತಿಸಿದ ಹಿಂಪಡೆಯುವಿಕೆ ಮೊತ್ತ:",
+                confirmedBankAccountLabel: "ದೃಢೀಕರಿಸಿದ ಬ್ಯಾಂಕ್ ಖಾತೆ:",
+                confirmedAddressLabel: "ದೃಢೀಕರಿಸಿದ ವಿಳಾಸ:",
+                agreeTermsLabel: "ನಾನು ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳನ್ನು ಒಪ್ಪುತ್ತೇನೆ.",
+                submitPfWithdrawalClaimBtn: "PF ಹಿಂಪಡೆಯುವಿಕೆ ಕ್ಲೈಮ್ ಸಲ್ಲಿಸಿ",
+                claimSubmittedSuccessTitle: "ಕ್ಲೈಮ್ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ!",
+                claimSubmittedDesc: "ಮದುವೆಗಾಗಿ ನಿಮ್ಮ PF ಹಿಂಪಡೆಯುವಿಕೆ ಕ್ಲೈಮ್ ಅನ್ನು ಸಲ್ಲಿಸಲಾಗಿದೆ.",
+                acknowledgmentNumberLabel: "ಸ್ವೀಕೃತಿ ಸಂಖ್ಯೆ:",
+                fundsCreditInfo: "ನಿಮ್ಮ ಲಿಂಕ್ ಮಾಡಿದ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ 3-5 ವ್ಯವಹಾರ ದಿನಗಳಲ್ಲಿ ಹಣವನ್ನು ಜಮಾ ಮಾಡಲಾಗುತ್ತದೆ.",
+                yourPfBalanceTitle: "ನಿಮ್ಮ PF ಬ್ಯಾಲೆನ್ಸ್",
+                footerCopyright: "&copy; 2025 PF ಸಾಥಿ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+                contactUs: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ: info@pfsaathi.com",
+                generatingAdvice: "ಸಲಹೆ ರಚಿಸಲಾಗುತ್ತಿದೆ...",
+                yourPfDataScoreTitle: "ನಿಮ್ಮ PF ಡೇಟಾ ಸ್ಕೋರ್",
+                dataCompletenessScoreTitle: "ಡೇಟಾ ಸಂಪೂರ್ಣತೆ ಸ್ಕೋರ್",
+                allFieldsPopulated: "ಎಲ್ಲಾ ಅಗತ್ಯ ಡೇಟಾ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಲಾಗಿದೆ.",
+                dataMatchScoreTitle: "ಡೇಟಾ ಹೊಂದಾಣಿಕೆ ಸ್ಕೋರ್",
+                discrepanciesFound: "ಲಿಂಕ್ ಮಾಡಿದ ದಾಖಲೆಗಳ ನಡುವೆ (ಉದಾ. ಪ್ಯಾನ್, ಆಧಾರ್, UAN) ವ್ಯತ್ಯಾಸಗಳು ಕಂಡುಬಂದಿವೆ.",
+                overallDataImpactScoreTitle: "ಒಟ್ಟಾರೆ ಡೇಟಾ ಪರಿಣಾಮ ಸ್ಕೋರ್",
+                rejectionChances: "ಹಿಂಪಡೆಯುವಿಕೆಯ ಸಮಯದಲ್ಲಿ 75% ತಿರಸ್ಕರಿಸುವ ಸಾಧ್ಯತೆಗಳು",
+                actionRequiredRectify: "ಸುಗಮ ಹಿಂಪಡೆಯುವಿಕೆಗಳನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ಡೇಟಾ ಹೊಂದಾಣಿಕೆಗಳನ್ನು ಸರಿಪಡಿಸಲು ಕ್ರಮ ಅಗತ್ಯವಿದೆ.",
+                fixDataNowBtn: "ಡೇಟಾವನ್ನು ಈಗ ಸರಿಪಡಿಸಿ",
+                fixDataMismatchTitle: "ಡೇಟಾ ವ್ಯತ್ಯಾಸವನ್ನು ಸರಿಪಡಿಸಿ",
+                mismatchDetectedDesc: "ನಿಮ್ಮ ತಂದೆಯ ಹೆಸರಿನಲ್ಲಿ ಸ್ವಲ್ಪ ವ್ಯತ್ಯಾಸವನ್ನು ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ:",
+                fatherNamePanLabel: "ಪ್ಯಾನ್‌ನಲ್ಲಿ ತಂದೆಯ ಹೆಸರು:",
+                fatherNameUanLabel: "UAN ನಲ್ಲಿ ತಂದೆಯ ಹೆಸರು:",
+                updatePanDataDesc: "ಸ್ಥಿರತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ನಿಮ್ಮ ಪ್ಯಾನ್ ಡೇಟಾವನ್ನು ನವೀಕರಿಸಿ.",
+                yourPanNumberLabel: "ನಿಮ್ಮ ಪ್ಯಾನ್ ಸಂಖ್ಯೆ:",
+                correctedFatherNameLabel: "ಸರಿಪಡಿಸಿದ ತಂದೆಯ ಹೆಸರು (ಅಧಿಕೃತ ದಾಖಲೆಗಳ ಪ್ರಕಾರ):",
+                submitPanUpdateRequestBtn: "ಪ್ಯಾನ್ ಅಪ್‌ಡೇಟ್ ವಿನಂತಿಯನ್ನು ಸಲ್ಲಿಸಿ",
+                backToDataScoreBtn: "ಡೇಟಾ ಸ್ಕೋರ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+                panUpdateSuccessTitle: "ಪ್ಯಾನ್ ಅಪ್‌ಡೇಟ್ ವಿನಂತಿ ಸಲ್ಲಿಸಲಾಗಿದೆ!",
+                panUpdateSuccessDesc: "ಪ್ಯಾನ್‌ನಲ್ಲಿ ತಂದೆಯ ಹೆಸರನ್ನು ಅಪ್‌ಡೇಟ್ ಮಾಡುವ ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಸಲ್ಲಿಸಲಾಗಿದೆ.",
+                panUpdateNotificationInfo: "ಪ್ಯಾನ್‌ನಿಂದ ನೇರವಾಗಿ ಅಪ್‌ಡೇಟ್ ಬಗ್ಗೆ ನಿಮಗೆ ತಿಳಿಸಲಾಗುತ್ತದೆ. PF ಸಾಥಿಯ \"ಟ್ರ್ಯಾಕ್ ವಿನಂತಿಗಳು\" ವಿಭಾಗದಲ್ಲಿಯೂ ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಬಹುದು.",
+            },
+            gu: {
+                headerTitle: "PF સાથી",
+                headerTagline: "તમારું પ્રોવિડન્ટ ફંડ, સરળ બનાવ્યું!",
+                whatToDoTodayTitle: "આજે તમે શું કરવા માંગો છો?",
+                checkBalanceTitle: "મારું PF બેલેન્સ તપાસો",
+                checkBalanceDesc: "તમારું વર્તમાન પ્રોવિડન્ટ ફંડ બેલેન્સ જુઓ.",
+                checkDataScoreTitle: "મારું PF ડેટા સ્કોર તપાસો",
+                checkDataScoreDesc: "ઉપાડ માટે તમારા KYC ડેટાની વિશ્વસનીયતાનું મૂલ્યાંકન કરો.",
+                helpWithdrawTitle: "મને PF ઉપાડવામાં મદદ કરો",
+                helpWithdrawDesc: "આંશિક અથવા સંપૂર્ણ PF ઉપાડનો દાવો શરૂ કરો.",
+                helpTransferTitle: "મને PF ટ્રાન્સફરમાં મદદ કરો",
+                helpTransferDesc: "તમારા PF ને પાછલા એમ્પ્લોયર પાસેથી ટ્રાન્સફર કરો.",
+                speakExpertTitle: "નિષ્ણાત સાથે વાત કરો",
+                speakExpertDesc: "અમારી ટીમ પાસેથી વ્યક્તિગત સહાય મેળવો.",
+                heroTitle: "તમારા નાણાકીય ભવિષ્યને સશક્ત બનાવવું",
+                heroDesc: "PF સાથી પ્રોવિડન્ટ ફંડ વ્યવસ્થાપનને દરેક માટે સુલભ અને સરળ બનાવવા માટે સમર્પિત છે. તમારી બચતને સહેલાઈથી સુરક્ષિત કરો.",
+                getStartedBtn: "શરૂ કરો",
+                reachingEveryCornerTitle: "દરેક ખૂણે પહોંચવું",
+                reachingEveryCornerDesc: "અમારું માનવું છે કે નાણાકીય સુરક્ષા દરેક માટે હોવી જોઈએ, ભલે તે વ્યસ્ત શહેરો હોય કે શાંત ગામડાં. અમારી સેવાઓ સર્વસમાવેશક અને ઉપયોગમાં સરળ બનાવવા માટે રચાયેલ છે, જે ગ્રામીણ સમુદાયોને સશક્ત બનાવે છે.",
+                empoweringUrbanLivesTitle: "શહેરી જીવનને સશક્ત બનાવવું",
+                empoweringUrbanLivesDesc: "અમારા શહેરોના હૃદયમાં, અમે પ્રોવિડન્ટ ફંડ પર સ્પષ્ટતા અને નિયંત્રણ લાવવાનો પ્રયાસ કરીએ છીએ, તે સુનિશ્ચિત કરીએ છીએ કે દરેક શહેરી કાર્યકર આત્મવિશ્વાસ અને સરળતા સાથે સુરક્ષિત ભવિષ્યનું નિર્માણ કરી શકે.",
+                enterMobileNumberTitle: "તમારો UAN લિંક કરેલ મોબાઇલ નંબર દાખલ કરો",
+                enterMobileNumberDesc: "કૃપા કરીને તમારો UAN સાથે લિંક થયેલ 10-અંકનો મોબાઇલ નંબર દાખલ કરો.",
+                sendOtpBtn: "OTP મોકલો",
+                backToHomeBtn: "હોમ પર પાછા",
+                enterOtpTitle: "OTP દાખલ કરો",
+                otpSentDesc: "તમારા મોબાઇલ નંબર પર એક OTP મોકલવામાં આવ્યો છે.",
+                verifyOtpBtn: "OTP ચકાસો",
+                backBtn: "પાછા",
+                yourPfDetailsTitle: "તમારા પ્રોવિડન્ટ ફંડની વિગતો",
+                accountBalanceTitle: "ખાતાની સિલક",
+                immediatelyAvailableBalanceText: "તાત્કાલિક ઉપલબ્ધ સિલક:",
+                asOfDate: "તારીખ: 31 માર્ચ 2025 સુધી",
+                kycDetailsTitle: "KYC વિગતો",
+                aadhaarLinked: "આધાર: લિંક કરેલ ✓",
+                panLinked: "પાન: લિંક કરેલ ✓",
+                bankAccountLinked: "બેંક ખાતું: લિંક કરેલ ✓",
+                employerHistoryTitle: "નોકરીદાતા ઇતિહાસ",
+                recentClaimsTitle: "તાજેતરના દાવાઓ",
+                noRecentClaims: "કોઈ તાજેતરનો દાવો મળ્યો નથી.",
+                initiateWithdrawalBtn: "PF ઉપાડ શરૂ કરો",
+                actionsTitle: "કાર્યો",
+                withdrawableReasonsTitle: "ઉપાડના કારણો",
+                withdrawableReasonsDesc: "તમે તમારા PF ને કયા કારણોસર ઉપાડી શકો છો તે શોધો.",
+                immediatelyAvailableBalanceModalTitle: "તાત્કાલિક ઉપલબ્ધ સિલકની ગણતરી",
+                immediatelyAvailableBalanceModalDesc: "તમારી તાત્કાલિક ઉપલબ્ધ સિલક સામાન્ય રીતે આ રીતે ગણવામાં આવે છે:",
+                simplifiedExplanationNote: "*નોંધ: આ એક સરળ સમજૂતી છે. વાસ્તવિક નિયમો અને પાત્રતાના માપદંડ અલગ હોઈ શકે છે. ચોક્કસ વિગતો માટે કૃપા કરીને સત્તાવાર EPFO માર્ગદર્શિકાઓનો સંદર્ભ લો.*",
+                kycDataConfidenceModalTitle: "KYC ડેટા વિશ્વસનીયતા",
+                panAadhaarMatchTitle: "પાન વિગતો અને આધાર વિગતો મેળ ખાય છે:",
+                highMatch: "ઉચ્ચ મેળ",
+                lessRejectionChances: "આ કારણોસર નકારવાની શક્યતાઓ ઓછી છે.",
+                panUanMatchTitle: "પાન અને UAN વિગતો:",
+                cumulativeScoreTitle: "સંચિત સ્કોર: ઉચ્ચ આત્મવિશ્વાસ",
+                lowRejectionChanceDesc: "આ ડેટા વિસંગતતાઓને કારણે ઉપાડ દરમિયાન નકારવાની ઓછી સંભાવના દર્શાવે છે.",
+                kycNote: "*નોંધ: આ આત્મવિશ્વાસ સ્કોર ફક્ત માહિતીના હેતુઓ માટે છે અને ડેટા મેચિંગના આધારે છે. અંતિમ મંજૂરી સત્તાવાર EPFO ​​ચકાસણી પ્રક્રિયાઓ પર આધારિત છે.*",
+                reasonsForPfWithdrawalModalTitle: "PF ઉપાડના કારણો",
+                reasonMedicalPurposes: "તબીબી હેતુઓ",
+                reasonMarriage: "લગ્ન (સ્વયં, બાળક, ભાઈ-બહેન)",
+                reasonEducation: "શિક્ષણ (સ્વયં, બાળક)",
+                reasonHousePurchase: "ઘર ખરીદી/નિર્માણ",
+                reasonHouseRenovation: "ઘર નવીનીકરણ/ફેરફાર",
+                reasonHomeLoanRepayment: "હોમ લોન ચુકવણી",
+                reasonUnemployment: "બેરોજગારી (1 મહિનો / 2 મહિના)",
+                reasonBeforeRetirement: "નિવૃત્તિના એક વર્ષ પહેલા (54+ વર્ષની ઉંમર)",
+                reasonDisability: "અપંગતા",
+                marriageWithdrawalEligibilityTitle: "લગ્ન ઉપાડ: પાત્રતા તપાસો",
+                marriageWithdrawalEligibilityDesc: "લગ્ન માટે ઉપાડ કરવા માટે, તમારે ઓછામાં ઓછા 7 વર્ષની EPF સભ્યપદ પૂર્ણ કરવી આવશ્યક છે. તમે તમારા કર્મચારીના હિસ્સા + વ્યાજના 50% સુધી ઉપાડી શકો છો.",
+                yearsOfEpfServiceLabel: "EPF સેવાના વર્ષો:",
+                employeeShareBalanceLabel: "કર્મચારીનો હિસ્સો + વ્યાજ (₹):",
+                checkEligibilityBtn: "પાત્રતા તપાસો અને રકમની ગણતરી કરો",
+                enterDesiredWithdrawalAmountLabel: "ઇચ્છિત ઉપાડની રકમ દાખલ કરો (₹):",
+                getPersonalizedAdviceBtn: "✨ વ્યક્તિગત ઉપાડ સલાહ મેળવો",
+                proceedToBankDetailsBtn: "બેંક વિગતો પર આગળ વધો",
+                confirmBankDetailsTitle: "બેંક વિગતોની પુષ્ટિ કરો",
+                confirmBankDetailsDesc: "કૃપા કરીને તમારા લિંક કરેલ બેંક ખાતાની વિગતોની પુષ્ટિ કરો.",
+                linkedBankAccountLabel: "લિંક કરેલ બેંક ખાતું:",
+                dummyBankInfo: "ડમી બેંક નામ, ડમી શાખા",
+                enterLast4DigitsLabel: "બેંક ખાતાના છેલ્લા 4 અંકો દાખલ કરો:",
+                verifyBankProceedBtn: "બેંક ખાતું ચકાસો અને આગળ વધો",
+                confirmAddressTitle: "સરનામાની પુષ્ટિ કરો",
+                confirmAddressDesc: "કૃપા કરીને તમારા નોંધાયેલા સરનામાની પુષ્ટિ કરો.",
+                registeredAddressLabel: "નોંધાયેલ સરનામું:",
+                isAddressCorrectLabel: "શું આ સરનામું સાચું છે?",
+                confirmAddressProceedBtn: "સરનામું પુષ્ટિ કરો અને આગળ વધો",
+                reviewClaimTitle: "તમારા દાવાની સમીક્ષા કરો",
+                withdrawalReasonLabel: "ઉપાડનું કારણ:",
+                reasonMarriageDisplay: "લગ્ન",
+                requestedWithdrawalAmountLabel: "વિનંતી કરેલ ઉપાડની રકમ:",
+                confirmedBankAccountLabel: "પુષ્ટિ થયેલ બેંક ખાતું:",
+                confirmedAddressLabel: "પુષ્ટિ થયેલ સરનામું:",
+                agreeTermsLabel: "હું નિયમો અને શરતો સાથે સંમત છું.",
+                submitPfWithdrawalClaimBtn: "PF ઉપાડનો દાવો સબમિટ કરો",
+                claimSubmittedSuccessTitle: "દાવો સફળતાપૂર્વક સબમિટ થયો!",
+                claimSubmittedDesc: "લગ્ન માટેનો તમારો PF ઉપાડનો દાવો સબમિટ કરવામાં આવ્યો છે.",
+                acknowledgmentNumberLabel: "સ્વીકૃતિ નંબર:",
+                fundsCreditInfo: "3-5 વ્યવસાયિક દિવસોમાં તમારા લિંક કરેલ બેંક ખાતામાં ભંડોળ જમા કરવામાં આવશે.",
+                yourPfBalanceTitle: "તમારી PF સિલક",
+                footerCopyright: "&copy; 2025 PF સાથી. સર્વહક સ્વાધીન.",
+                contactUs: "અમારો સંપર્ક કરો: info@pfsaathi.com",
+                generatingAdvice: "સલાહ જનરેટ થઈ રહી છે...",
+                yourPfDataScoreTitle: "તમારો PF ડેટા સ્કોર",
+                dataCompletenessScoreTitle: "ડેટા પૂર્ણતા સ્કોર",
+                allFieldsPopulated: "બધા આવશ્યક ડેટા ફીલ્ડ્સ ભરવામાં આવ્યા છે.",
+                dataMatchScoreTitle: "ડેટા મેચ સ્કોર",
+                discrepanciesFound: "લિંક કરેલા દસ્તાવેજો (દા.ત., PAN, આધાર, UAN) વચ્ચે વિસંગતતાઓ મળી છે.",
+                overallDataImpactScoreTitle: "એકંદર ડેટા અસર સ્કોર",
+                rejectionChances: "ઉપાડ દરમિયાન નકારવાની 75% શક્યતાઓ",
+                actionRequiredRectify: "સરળ ઉપાડ સુનિશ્ચિત કરવા માટે ડેટા મેળ ખાતા નથી તેને સુધારવા માટે કાર્યવાહી જરૂરી છે.",
+                fixDataNowBtn: "હવે ડેટા ઠીક કરો",
+                fixDataMismatchTitle: "ડેટા મેળ ખાતો નથી તેને ઠીક કરો",
+                mismatchDetectedDesc: "અમને તમારા પિતાના નામમાં થોડો મેળ ખાતો નથી તે મળ્યો છે:",
+                fatherNamePanLabel: "PAN માં પિતાનું નામ:",
+                fatherNameUanLabel: "UAN માં પિતાનું નામ:",
+                updatePanDataDesc: "સુસંગતતા સુનિશ્ચિત કરવા માટે કૃપા કરીને તમારો PAN ડેટા અપડેટ કરો.",
+                yourPanNumberLabel: "તમારો PAN નંબર:",
+                correctedFatherNameLabel: "સુધારેલ પિતાનું નામ (સત્તાવાર રેકોર્ડ મુજબ):",
+                submitPanUpdateRequestBtn: "PAN અપડેટ વિનંતી સબમિટ કરો",
+                backToDataScoreBtn: "ડેટા સ્કોર પર પાછા",
+                panUpdateSuccessTitle: "PAN અપડેટ વિનંતી સબમિટ થઈ!",
+                panUpdateSuccessDesc: "PAN પર પિતાનું નામ અપડેટ કરવાની તમારી વિનંતી સબમિટ કરવામાં આવી છે.",
+                panUpdateNotificationInfo: "તમને PAN તરફથી સીધા અપડેટ વિશે સૂચિત કરવામાં આવશે. તમે PF સાથીના \"ટ્રેક વિનંતીઓ\" વિભાગમાં પણ સ્થિતિ ચકાસી શકો છો.",
+            }
+        };
+
         // Get references to main sections
         const landingPageContent = document.getElementById('landing-page-content');
         const mobileInputSection = document.getElementById('mobile-input-section');
@@ -723,6 +1470,9 @@
         const backToHomeFromBalanceOnlyBtn = document.getElementById('back-to-home-from-balance-only');
         const dynamicBalanceInfo = document.getElementById('dynamic-balance-info');
 
+        // Language selector
+        const languageSelector = document.getElementById('language-selector');
+
 
         let calculatedEligibleWithdrawalAmount = 0;
         let currentYearsOfService = 0;
@@ -791,6 +1541,22 @@
                 }, delay);
                 delay += 1000; // 1 second delay between sentences
             });
+        }
+
+        // Function to set the language
+        function setLanguage(langCode) {
+            // Update all elements with data-key attribute
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[langCode] && translations[langCode][key]) {
+                    element.textContent = translations[langCode][key];
+                }
+            });
+            // Special handling for placeholder attributes if needed (e.g., input fields)
+            // For now, placeholders are static, but this is where you'd add logic if they were dynamic.
+
+            // Save language preference
+            localStorage.setItem('pfSaathiLang', langCode);
         }
 
         // --- Action Tile Event Listeners ---
@@ -1007,7 +1773,7 @@
             withdrawalAdviceContent.innerHTML = `
                 <div class="flex justify-center items-center h-32">
                     <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
-                    <p class="ml-4 text-gray-700">Generating advice...</p>
+                    <p class="ml-4 text-gray-700" data-key="generatingAdvice">Generating advice...</p>
                 </div>
             `; // Show loading spinner
 
@@ -1178,7 +1944,17 @@
 
         // Initialize the page on load
         document.addEventListener('DOMContentLoaded', () => {
+            // Load preferred language from localStorage or default to English
+            const savedLang = localStorage.getItem('pfSaathiLang') || 'en';
+            languageSelector.value = savedLang; // Set dropdown to saved language
+            setLanguage(savedLang); // Apply the language
+
             showSection(landingPageContent); // Ensure landing page is shown first
+        });
+
+        // Event listener for language selector change
+        languageSelector.addEventListener('change', (event) => {
+            setLanguage(event.target.value);
         });
     </script>
 </body>
