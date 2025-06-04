@@ -1,0 +1,1197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'Apple Color Emoji'}
+    span.s2 {font: 12.0px 'Lucida Grande'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;PF Saathi - Your Provident Fund, Simplified!&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS CDN --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* New gradient background for a "Strips" look */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #e0ffe0, #e6f7ff); /* Light green to light blue */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-attachment: fixed; /* Ensures background stays fixed during scroll */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom styles for the message box */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #4CAF50; /* Green */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none; /* Hidden by default */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.5s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box.error {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f44336; /* Red */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box.show {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Styles for the info modals */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-modal-overlay {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(0, 0, 0, 0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 2000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-modal-overlay.show {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: visible;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 90%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-20px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-modal-overlay.show .info-modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-modal-close-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #6b7280; /* Tailwind gray-500 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-modal-close-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1f2937; /* Tailwind gray-900 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Blinking animation for rejection chances */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes blink {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.blinking-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: blink 1s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="antialiased"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="min-h-screen flex flex-col"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Header Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="bg-gradient-to-r from-emerald-600 to-green-700 text-white shadow-lg py-4 px-6 md:px-12 rounded-b-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto flex flex-col md:flex-row items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-3xl md:text-4xl font-extrabold mb-2 md:mb-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>PF Saathi</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;nav class="text-xl md:text-2xl font-medium text-center md:text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Your Provident Fund, Simplified!</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Main Content Area --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="main-content" class="flex-grow container mx-auto px-4 py-8 md:py-16"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Initial Landing Page Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="landing-page-content"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- New: What do you want to do today? Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;section class="bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8"&gt;What do you want to do today?&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="action-check-balance" class="bg-green-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-4xl text-emerald-600 mb-4"&gt;<span class="s1">💰</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Check my PF Balance&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-600"&gt;View your current Provident Fund balance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="action-check-data-score" class="bg-lime-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-4xl text-lime-600 mb-4"&gt;<span class="s1">📈</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Check my PF Data Score&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-600"&gt;Assess your KYC data confidence for withdrawals.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="action-help-withdraw" class="bg-emerald-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-4xl text-green-600 mb-4"&gt;<span class="s1">💸</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Help me Withdraw my PF&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-600"&gt;Start a partial or full PF withdrawal claim.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="action-help-transfer" class="bg-teal-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-4xl text-teal-600 mb-4"&gt;<span class="s1">🔄</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Help me with PF Transfer&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-600"&gt;Transfer your PF from previous employer.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="action-speak-expert" class="bg-purple-50 p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-4xl text-purple-600 mb-4"&gt;<span class="s1">🗣️</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Speak to an Expert&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-600"&gt;Get personalized assistance from our team.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Hero Section (Moved down) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;section class="bg-white bg-opacity-90 text-center mb-12 p-6 md:p-10 rounded-xl shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Empowering Your Financial Future</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>PF Saathi is dedicated to making Provident Fund management accessible and easy for everyone. Secure your savings, effortlessly.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col sm:flex-row justify-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="#" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Get Started</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- This button is now redundant but kept for reference --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button id="check-pf-details-btn" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Check your Provident Fund Details now</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Image Section - Village Population --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md flex flex-col items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/600x400/84cc16/ffffff?text=Happy+Village+Life" alt="Happy Indian villagers smiling and interacting, representing rural population benefiting from financial security." class="w-full h-auto rounded-lg mb-4 object-cover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-2xl font-semibold text-gray-800 mb-2"&gt;Reaching Every Corner&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>We believe financial security should be for everyone, from bustling cities to serene villages. Our services are designed to be inclusive and easy to use, empowering rural communities.</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Image Section - Urban Poor Population --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md flex flex-col items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://placehold.co/600x400/22c55e/ffffff?text=Urban+Dreams+Realized" alt="Happy urban dwellers, possibly from economically weaker sections, smiling and showing hope, representing urban poor benefiting from financial security." class="w-full h-auto rounded-lg mb-4 object-cover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-2xl font-semibold text-gray-800 mb-2"&gt;Empowering Urban Lives&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>In the heart of our cities, we strive to bring clarity and control over Provident Funds, ensuring that every urban worker can build a secure future with confidence and ease.</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Mobile Number Entry Section (Now used for Withdraw PF flow) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="mobile-input-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Enter Your UAN linked Mobile Number&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-700 mb-4"&gt;Please enter your 10-digit mobile number linked with your UAN.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="tel" id="mobile-number-input" placeholder="+91 XXXXXXXXXX" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-center text-lg focus:ring-emerald-500 focus:border-emerald-500" maxlength="10" pattern="[0-9]{10}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="send-otp-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Send OTP</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="back-to-home-from-mobile" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Back to Home</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- OTP Entry Section (Now used for Withdraw PF flow) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="otp-input-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Enter OTP&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-700 mb-4"&gt;An OTP has been sent to your mobile number.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="otp-input" placeholder="Enter 6-digit OTP" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-center text-lg focus:ring-emerald-500 focus:border-emerald-500" maxlength="6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="verify-otp-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Verify OTP</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="back-to-mobile-from-otp" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Back</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- PF Details Section (Hidden by default) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="pf-details-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8"&gt;Your Provident Fund Details&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Account Balance Tile --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-green-50 p-6 rounded-lg shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Account Balance&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-emerald-700"&gt;₹ 1,50,000.00&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Updated: Immediately Available Balance with new info icon --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-medium text-green-700 mt-2 flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Immediately Available Balance: ₹ 90,000.00</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button id="info-icon-btn" class="ml-2 text-green-600 hover:text-green-800 focus:outline-none" title="Click for calculation details"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"&gt;&lt;/path&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;line x1="12" y1="17" x2="12.01" y2="17"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 text-sm mt-2"&gt;As of: 31st March 2025&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- KYC Details Tile --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-lime-50 p-6 rounded-lg shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>KYC Details</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button id="kyc-info-btn" class="ml-2 text-green-600 hover:text-green-800 focus:outline-none" title="Click for KYC confidence details"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"&gt;&lt;/path&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;line x1="12" y1="17" x2="12.01" y2="17"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="list-disc list-inside text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Aadhaar: Linked &lt;span class="text-green-600"&gt;<span class="s2">✓</span>&lt;/span&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;PAN: Linked &lt;span class="text-green-600"&gt;<span class="s2">✓</span>&lt;/span&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Bank Account: Linked &lt;span class="text-green-600"&gt;<span class="s2">✓</span>&lt;/span&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Employer History Tile --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-emerald-50 p-6 rounded-lg shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Employer History&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="list-disc list-inside text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Tech Solutions Pvt. Ltd. (2020 - Present)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;Innovate Corp. (2018 - 2020)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;StartUp Hub (2016 - 2018)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Claims Tile (Claims removed as per request) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-teal-50 p-6 rounded-lg shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Recent Claims&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;No recent claims found.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="initiate-pf-withdrawal-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Initiate PF Withdrawal</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="back-to-home-from-pf" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Back to Home</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Actions Section (This section is now redundant and hidden as its content is moved to landing page) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="container mx-auto px-4 py-8 md:py-16 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8"&gt;Actions&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Withdrawable Reasons Tile --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="withdrawable-reasons-tile-old" class="bg-blue-50 p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-semibold text-blue-800 mb-2"&gt;Withdrawable Reasons&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Find out the reasons for which you can withdraw your PF.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Message Box --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="message-box" class="message-box"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Info Modal for Immediately Available Balance Calculation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="info-modal-overlay" class="info-modal-overlay"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info-modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="info-modal-close-btn" class="info-modal-close-btn"&gt;&amp;times;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold text-gray-900 mb-4"&gt;Immediately Available Balance Calculation&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-700 text-base mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>This is how your immediately available balance is typically calculated:</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="dynamic-balance-info" class="text-left text-lg text-gray-800 space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Content will be loaded here dynamically --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500 mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>*Note: This is a simplified explanation. Actual rules and eligibility criteria may vary. Please refer to official EPFO guidelines for precise details.*</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- KYC Info Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="kyc-modal-overlay" class="info-modal-overlay"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info-modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="kyc-modal-close-btn" class="info-modal-close-btn"&gt;&amp;times;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold text-gray-900 mb-4"&gt;KYC Data Confidence&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-gray-700 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-semibold text-green-700"&gt;PAN details and Aadhaar Details Match:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-lg font-bold text-emerald-600"&gt;High Match&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-600"&gt;Less chances of rejections due to this reason.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-semibold text-green-700"&gt;PAN and UAN details:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-lg font-bold text-emerald-600"&gt;High Match&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm text-gray-600"&gt;Less chances of rejections due to this reason.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-4 p-3 bg-green-100 rounded-lg text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xl font-bold text-green-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Cumulative Score: High Confidence</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>This indicates a low chance of rejections during withdrawal due to data discrepancies.</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>*Note: This confidence score is for informational purposes and based on data matching. Final approval depends on official EPFO verification processes.*</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Withdrawable Reasons Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="reasons-modal-overlay" class="info-modal-overlay"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info-modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="reasons-modal-close-btn" class="info-modal-close-btn"&gt;&amp;times;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold text-gray-900 mb-4"&gt;Reasons for PF Withdrawal&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul id="reasons-list" class="list-none text-left space-y-2 text-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Medical Purposes"&gt;Medical Purposes&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Marriage"&gt;Marriage (Self, Child, Sibling)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Education"&gt;Education (Self, Child)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="House Purchase/Construction"&gt;House Purchase/Construction&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="House Renovation/Alteration"&gt;House Renovation/Alteration&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Repayment of Home Loan"&gt;Repayment of Home Loan&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Unemployment"&gt;Unemployment (1 month / 2 months)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="One year before Retirement"&gt;One year before Retirement (age 54+)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="p-2 rounded-md hover:bg-green-50 cursor-pointer transition duration-150 ease-in-out" data-reason="Disability"&gt;Disability&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Marriage Withdrawal Eligibility Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="marriage-withdrawal-eligibility-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Marriage Withdrawal: Check Eligibility&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>To withdraw for marriage, you must have completed at least 7 years of EPF membership. You can withdraw up to 50% of your employee's share + interest.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="years-of-service" class="block text-left text-gray-700 text-sm font-bold mb-2"&gt;Years of EPF Service:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="years-of-service" value="8" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="employee-share-balance" class="block text-left text-gray-700 text-sm font-bold mb-2"&gt;Employee Share + Interest (₹):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="employee-share-balance" value="180000" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="eligible-amount-display" class="text-lg font-semibold text-emerald-700 mb-4"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="check-eligibility-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Check Eligibility &amp; Calculate Amount</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- New: Desired Withdrawal Amount Input --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="desired-withdrawal-input-group" class="mb-6 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="desired-withdrawal-amount" class="block text-left text-gray-700 text-sm font-bold mb-2"&gt;Enter Desired Withdrawal Amount (₹):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="desired-withdrawal-amount" placeholder="e.g., 50000" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="get-withdrawal-advice-btn" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">✨</span> Get Personalized Withdrawal Advice</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="proceed-to-bank-details-btn" class="w-full bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Proceed to Bank Details</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-pf-details-from-eligibility" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back to PF Details</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Bank Details Confirmation Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="bank-details-confirmation-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Confirm Bank Details&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;Please confirm your linked bank account details.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-green-50 p-4 rounded-lg mb-4 text-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-semibold text-gray-800"&gt;Linked Bank Account:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg text-emerald-700"&gt;XXXX XXXX 1234&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-600"&gt;Dummy Bank Name, Dummy Branch&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="last-4-digits-input" class="block text-left text-gray-700 text-sm font-bold mb-2"&gt;Enter Last 4 Digits of Bank Account:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="last-4-digits-input" placeholder="e.g., 1234" maxlength="4" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="verify-bank-details-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Verify Bank Account &amp; Proceed</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-eligibility-from-bank" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Address Confirmation Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="address-confirmation-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Confirm Address&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;Please confirm your registered address.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-green-50 p-4 rounded-lg mb-4 text-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-semibold text-gray-800"&gt;Registered Address:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg text-emerald-700"&gt;Flat 101, Green Apartments, Cyber City, Bengaluru, Karnataka - 560001&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="checkbox" id="address-correct-checkbox" class="h-5 w-5 text-emerald-600 rounded focus:ring-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="address-correct-checkbox" class="ml-2 text-gray-700"&gt;Is this address correct?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="confirm-address-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Confirm Address &amp; Proceed</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-bank-from-address" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Review and Submit Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="review-and-submit-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-lg mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-center text-gray-900 mb-6"&gt;Review Your Claim&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-4 text-left mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-green-50 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-800"&gt;Withdrawal Reason:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg text-emerald-700"&gt;Marriage&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-lime-50 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-800"&gt;Requested Withdrawal Amount:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg text-emerald-700" id="review-withdrawal-amount"&gt;₹ 0.00&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-emerald-50 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-800"&gt;Confirmed Bank Account:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg text-emerald-700"&gt;XXXX XXXX &lt;span id="review-bank-digits"&gt;&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-teal-50 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-800"&gt;Confirmed Address:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg text-emerald-700" id="review-address"&gt;Flat 101, Green Apartments, Cyber City, Bengaluru, Karnataka - 560001&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="checkbox" id="terms-checkbox" class="h-5 w-5 text-emerald-600 rounded focus:ring-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="terms-checkbox" class="ml-2 text-gray-700"&gt;I agree to the &lt;a href="#" class="text-blue-600 hover:underline"&gt;terms and conditions&lt;/a&gt;.&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="submit-claim-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4" disabled&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Submit PF Withdrawal Claim</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-address-from-review" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Claim Submission Success Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="claim-submission-success-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Claim Submitted Successfully!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Your PF withdrawal claim for Marriage has been submitted.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xl font-bold text-emerald-700 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Acknowledgment Number: &lt;span id="acknowledgment-number"&gt;PFSAATHI2025XXXXX&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-600 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Funds will be credited to your linked bank account within 3-5 business days.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-home-from-success" class="mt-8 bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back to Home</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Withdrawal Advice Modal (New LLM Feature) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="withdrawal-advice-modal-overlay" class="info-modal-overlay"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info-modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="withdrawal-advice-modal-close-btn" class="info-modal-close-btn"&gt;&amp;times;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold text-gray-900 mb-4"&gt;<span class="s1">✨</span> Personalized Withdrawal Advice&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="withdrawal-advice-content" class="text-gray-700 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-center items-center h-32"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="ml-4 text-gray-700"&gt;Generating advice...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>*Advice generated by AI. Please cross-verify with official EPFO guidelines.*</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PF Data Score Section (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="pf-data-score-section" class="hidden bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-lg mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8"&gt;Your PF Data Score&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-6 text-left mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-blue-50 rounded-lg shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Data Completeness Score&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-blue-700"&gt;High&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm mt-1"&gt;All essential data fields are populated.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-red-50 rounded-lg shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Data Match Score&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-red-700"&gt;Low&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm mt-1"&gt;Discrepancies found between linked documents (e.g., PAN, Aadhaar, UAN).&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-4 bg-yellow-50 rounded-lg shadow-md text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Overall Data Impact Score&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl font-bold text-red-700 blinking-text"&gt;75% Chances of Rejection during Withdrawal&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 text-sm mt-2"&gt;Action required to rectify data mismatches to ensure smooth withdrawals.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="fix-data-now-btn" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Fix Data Now</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="back-to-home-from-data-score" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Back to Home</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Data Mismatch Fix Section (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="data-mismatch-fix-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Fix Data Mismatch&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;We've detected a slight mismatch in your father's name:&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-red-50 p-4 rounded-lg mb-6 text-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-semibold text-gray-800"&gt;Father's Name in PAN:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg text-red-700"&gt;Ram Kumar&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="font-semibold text-gray-800 mt-3"&gt;Father's Name in UAN:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg text-red-700"&gt;Ram Kumaar&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;Please update your PAN data to ensure consistency.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="pan-number-input" class="block text-left text-gray-700 text-sm font-bold mb-2"&gt;Your PAN Number:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="pan-number-input" value="ABCDE1234F" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg bg-gray-100" readonly&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="corrected-father-name-input" class="block text-left text-gray-700 text-sm font-bold mb-2"&gt;Corrected Father's Name (as per official records):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="corrected-father-name-input" placeholder="e.g., Ram Kumar" class="w-full p-3 border border-gray-300 rounded-lg text-center text-lg focus:ring-emerald-500 focus:border-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="submit-pan-update-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Submit PAN Update Request</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-data-score-from-fix" class="mt-4 text-green-700 hover:text-green-900 font-medium transition duration-300 ease-in-out"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back to Data Score</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PAN Update Success Section (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="pan-update-success-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;PAN Update Request Submitted!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-700 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Your request to update father's name on PAN has been submitted.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-600 text-sm mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>You will be notified about the update from PAN directly. You can also check the status in the "Track Requests" section of PF Saathi.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-home-from-pan-success" class="mt-8 bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back to Home</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Balance Only Section (New) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="balance-only-section" class="hidden text-center bg-white bg-opacity-90 p-6 md:p-10 rounded-xl shadow-md max-w-md mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-gray-900 mb-6"&gt;Your PF Balance&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-green-50 p-6 rounded-lg shadow-sm mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-semibold text-gray-800 mb-2"&gt;Account Balance&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-2xl font-bold text-emerald-700"&gt;₹ 1,50,000.00&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg font-medium text-green-700 mt-2 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Immediately Available Balance: ₹ 90,000.00</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="info-icon-btn-balance-only" class="ml-2 text-green-600 hover:text-green-800 focus:outline-none" title="Click for calculation details"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"&gt;&lt;/path&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;line x1="12" y1="17" x2="12.01" y2="17"&gt;&lt;/line&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 text-sm mt-2"&gt;As of: 31st March 2025&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="back-to-home-from-balance-only" class="bg-green-200 hover:bg-green-300 text-green-800 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Back to Home</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Footer Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer class="bg-green-900 text-white py-6 px-4 md:px-12 mt-8 rounded-t-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto text-center text-sm md:text-base"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&amp;copy; 2025 PF Saathi. All rights reserved.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Contact Us: &lt;a href="mailto:info@pfsaathi.com" class="text-lime-400 hover:underline"&gt;info@pfsaathi.com&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Get references to main sections</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const landingPageContent = document.getElementById('landing-page-content');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mobileInputSection = document.getElementById('mobile-input-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const otpInputSection = document.getElementById('otp-input-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pfDetailsSection = document.getElementById('pf-details-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const marriageWithdrawalEligibilitySection = document.getElementById('marriage-withdrawal-eligibility-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const bankDetailsConfirmationSection = document.getElementById('bank-details-confirmation-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const addressConfirmationSection = document.getElementById('address-confirmation-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reviewAndSubmitSection = document.getElementById('review-and-submit-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const claimSubmissionSuccessSection = document.getElementById('claim-submission-success-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pfDataScoreSection = document.getElementById('pf-data-score-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dataMismatchFixSection = document.getElementById('data-mismatch-fix-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const panUpdateSuccessSection = document.getElementById('pan-update-success-section');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const balanceOnlySection = document.getElementById('balance-only-section');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const messageBox = document.getElementById('message-box');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const infoModalOverlay = document.getElementById('info-modal-overlay');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const kycModalOverlay = document.getElementById('kyc-modal-overlay');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reasonsModalOverlay = document.getElementById('reasons-modal-overlay');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const withdrawalAdviceModalOverlay = document.getElementById('withdrawal-advice-modal-overlay');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Get references to buttons and inputs</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToHomeFromPfBtn = document.getElementById('back-to-home-from-pf');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const infoIconBtn = document.getElementById('info-icon-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const infoModalCloseBtn = document.getElementById('info-modal-close-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const kycInfoBtn = document.getElementById('kyc-info-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const kycModalCloseBtn = document.getElementById('kyc-modal-close-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reasonsModalCloseBtn = document.getElementById('reasons-modal-close-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reasonsList = document.getElementById('reasons-list');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Main action tiles</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const actionCheckBalance = document.getElementById('action-check-balance');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const actionCheckDataScore = document.getElementById('action-check-data-score');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const actionHelpWithdraw = document.getElementById('action-help-withdraw');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const actionHelpTransfer = document.getElementById('action-help-transfer');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const actionSpeakExpert = document.getElementById('action-speak-expert');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Mobile/OTP related elements</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mobileNumberInput = document.getElementById('mobile-number-input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const sendOtpBtn = document.getElementById('send-otp-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const otpInput = document.getElementById('otp-input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const verifyOtpBtn = document.getElementById('verify-otp-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToHomeFromMobileBtn = document.getElementById('back-to-home-from-mobile');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToMobileFromOtpBtn = document.getElementById('back-to-mobile-from-otp');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Button in PF Details Section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const initiatePfWithdrawalBtn = document.getElementById('initiate-pf-withdrawal-btn');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Elements for withdrawal workflow</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const yearsOfServiceInput = document.getElementById('years-of-service');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const employeeShareBalanceInput = document.getElementById('employee-share-balance');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const eligibleAmountDisplay = document.getElementById('eligible-amount-display');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const checkEligibilityBtn = document.getElementById('check-eligibility-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const desiredWithdrawalAmountInput = document.getElementById('desired-withdrawal-amount');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const desiredWithdrawalInputGroup = document.getElementById('desired-withdrawal-input-group');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const getWithdrawalAdviceBtn = document.getElementById('get-withdrawal-advice-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const proceedToBankDetailsBtn = document.getElementById('proceed-to-bank-details-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToPfDetailsFromEligibilityBtn = document.getElementById('back-to-pf-details-from-eligibility');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const last4DigitsInput = document.getElementById('last-4-digits-input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const verifyBankDetailsBtn = document.getElementById('verify-bank-details-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToEligibilityFromBankBtn = document.getElementById('back-to-eligibility-from-bank');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const addressCorrectCheckbox = document.getElementById('address-correct-checkbox');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const confirmAddressBtn = document.getElementById('confirm-address-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToBankFromAddressBtn = document.getElementById('back-to-bank-from-address');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reviewWithdrawalAmount = document.getElementById('review-withdrawal-amount');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reviewBankDigits = document.getElementById('review-bank-digits');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const reviewAddress = document.getElementById('review-address');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const termsCheckbox = document.getElementById('terms-checkbox');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const submitClaimBtn = document.getElementById('submit-claim-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToAddressFromReviewBtn = document.getElementById('back-to-address-from-review');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const acknowledgmentNumberSpan = document.getElementById('acknowledgment-number');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToHomeFromSuccessBtn = document.getElementById('back-to-home-from-success');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToHomeFromDataScoreBtn = document.getElementById('back-to-home-from-data-score');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const withdrawalAdviceContent = document.getElementById('withdrawal-advice-content');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const withdrawalAdviceModalCloseBtn = document.getElementById('withdrawal-advice-modal-close-btn');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Elements for data mismatch fix workflow</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fixDataNowBtn = document.getElementById('fix-data-now-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const panNumberInput = document.getElementById('pan-number-input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const correctedFatherNameInput = document.getElementById('corrected-father-name-input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const submitPanUpdateBtn = document.getElementById('submit-pan-update-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToDataScoreFromFixBtn = document.getElementById('back-to-data-score-from-fix');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToHomeFromPanSuccessBtn = document.getElementById('back-to-home-from-pan-success');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Elements for balance-only section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const infoIconBtnBalanceOnly = document.getElementById('info-icon-btn-balance-only');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const backToHomeFromBalanceOnlyBtn = document.getElementById('back-to-home-from-balance-only');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dynamicBalanceInfo = document.getElementById('dynamic-balance-info'); // New: for dynamic content</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let calculatedEligibleWithdrawalAmount = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentYearsOfService = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentEmployeeShareBalance = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let finalRequestedWithdrawalAmount = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Content for dynamic balance info display</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const balanceInfoSentences = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"Upon Retirement or Superannuation: You can withdraw your full balance.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"For Unemployment (after 1 month): Up to 75% of your PF balance can be withdrawn.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"For Unemployment (after 2 months): The remaining 25% of your PF balance becomes available.",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"For Specific Purposes (e.g., house purchase, medical needs): Partial withdrawals are allowed under certain conditions, usually a percentage of your contribution or a fixed amount, whichever is less."</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to show a message</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showMessage(message, isError = false) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>messageBox.textContent = message;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>messageBox.classList.remove('error');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isError) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageBox.classList.add('error');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>messageBox.classList.add('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageBox.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 3000); // Hide after 3 seconds</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to hide all content sections and show a specific one</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showSection(sectionToShow) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>landingPageContent.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mobileInputSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>otpInputSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pfDetailsSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>marriageWithdrawalEligibilitySection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bankDetailsConfirmationSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>addressConfirmationSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>reviewAndSubmitSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>claimSubmissionSuccessSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pfDataScoreSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>dataMismatchFixSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>panUpdateSuccessSection.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>balanceOnlySection.classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Ensure modals are hidden when switching main sections</p>
+<p class="p1"><span class="Apple-converted-space">            </span>infoModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>kycModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>reasonsModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>withdrawalAdviceModalOverlay.classList.remove('show');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>sectionToShow.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Function to display balance info dynamically</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function displayBalanceInfoDynamically() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>dynamicBalanceInfo.innerHTML = ''; // Clear previous content</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let delay = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>balanceInfoSentences.forEach((sentence, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const p = document.createElement('p');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>p.textContent = sentence;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>p.classList.add('opacity-0', 'transition-opacity', 'duration-500', 'ease-in-out'); // Add classes for fade-in</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>dynamicBalanceInfo.appendChild(p);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Trigger reflow to apply initial opacity before setting to 1</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>p.offsetHeight;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>p.classList.remove('opacity-0');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, delay);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>delay += 1000; // 1 second delay between sentences</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Action Tile Event Listeners ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>actionCheckBalance.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(balanceOnlySection); // Show only the balance section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>actionCheckDataScore.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(pfDataScoreSection);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>actionHelpWithdraw.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(mobileInputSection);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mobileNumberInput.value = ''; // Clear input</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>actionHelpTransfer.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showMessage('PF Transfer functionality coming soon!', false);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>actionSpeakExpert.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showMessage('Connecting you to an expert... (This is a placeholder)', false);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- End Action Tile Event Listeners ---</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Mobile/OTP Workflow ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>sendOtpBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const mobileNumber = mobileNumberInput.value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!/^\d{10}$/.test(mobileNumber)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please enter a valid 10-digit mobile number.', true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showMessage(`OTP sent to +91 ${mobileNumber}.`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(otpInputSection);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>otpInput.value = ''; // Clear OTP input</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>verifyOtpBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const otp = otpInput.value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (otp.length !== 6 || !/^\d{6}$/.test(otp)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please enter a valid 6-digit OTP.', true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showMessage('OTP Verified Successfully!');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(pfDetailsSection); // Proceed to PF Details after successful OTP</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToHomeFromMobileBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(landingPageContent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mobileNumberInput.value = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToMobileFromOtpBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(mobileInputSection);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>otpInput.value = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- End Mobile/OTP Workflow ---</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initiate PF Withdrawal button in PF Details section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>initiatePfWithdrawalBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>reasonsModalOverlay.classList.add('show'); // Show the withdrawal reasons modal</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for "Back to Home" button from PF details section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToHomeFromPfBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(landingPageContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Immediately Available Balance info icon button (in full PF Details)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>infoIconBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>displayBalanceInfoDynamically(); // Call dynamic display</p>
+<p class="p1"><span class="Apple-converted-space">            </span>infoModalOverlay.classList.add('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Immediately Available Balance info icon button (in balance-only section)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>infoIconBtnBalanceOnly.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>displayBalanceInfoDynamically(); // Call dynamic display</p>
+<p class="p1"><span class="Apple-converted-space">            </span>infoModalOverlay.classList.add('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Immediately Available Balance info modal close button</p>
+<p class="p1"><span class="Apple-converted-space">        </span>infoModalCloseBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>infoModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Close Immediately Available Balance modal if clicked outside (on overlay)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>infoModalOverlay.addEventListener('click', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (event.target === infoModalOverlay) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>infoModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for KYC info icon button</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kycInfoBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>kycModalOverlay.classList.add('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for KYC info modal close button</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kycModalCloseBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>kycModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Close KYC modal if clicked outside (on overlay)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kycModalOverlay.addEventListener('click', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (event.target === kycModalOverlay) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>kycModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Withdrawable Reasons modal close button</p>
+<p class="p1"><span class="Apple-converted-space">        </span>reasonsModalCloseBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>reasonsModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Close Withdrawable Reasons modal if clicked outside (on overlay)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>reasonsModalOverlay.addEventListener('click', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (event.target === reasonsModalOverlay) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reasonsModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for clicking a reason in the list</p>
+<p class="p1"><span class="Apple-converted-space">        </span>reasonsList.addEventListener('click', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (event.target.tagName === 'LI') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const selectedReason = event.target.dataset.reason;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage(`Selected Reason: ${selectedReason}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reasonsModalOverlay.classList.remove('show');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// If 'Marriage' is selected, proceed to the eligibility section</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (selectedReason === 'Marriage') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showSection(marriageWithdrawalEligibilitySection);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Reset eligibility section inputs and hide dependent elements</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>yearsOfServiceInput.value = '8'; // Pre-fill</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>employeeShareBalanceInput.value = '180000'; // Pre-fill (50% of 180000 is 90000)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>eligibleAmountDisplay.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desiredWithdrawalAmountInput.value = ''; // Clear desired amount</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desiredWithdrawalInputGroup.classList.add('hidden'); // Hide desired amount input</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>proceedToBankDetailsBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>getWithdrawalAdviceBtn.classList.add('hidden'); // Hide advice button initially</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// For other reasons, just show a message for now</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showMessage(`Functionality for '${selectedReason}' withdrawal is coming soon!`, false);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showSection(pfDetailsSection); // Go back to PF details section after message</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Marriage Withdrawal Eligibility Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>checkEligibilityBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const years = parseInt(yearsOfServiceInput.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const balance = parseFloat(employeeShareBalanceInput.value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentYearsOfService = years; // Store for LLM call</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentEmployeeShareBalance = balance; // Store for LLM call</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isNaN(years) || isNaN(balance) || years &lt; 0 || balance &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please enter valid numbers for years of service and balance.', true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>desiredWithdrawalInputGroup.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>proceedToBankDetailsBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>getWithdrawalAdviceBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (years &gt;= 7) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>calculatedEligibleWithdrawalAmount = balance * 0.50; // 50% of employee's share + interest</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.textContent = `Maximum Eligible Withdrawal: ₹ ${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.classList.remove('text-red-600');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.classList.add('text-emerald-700');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>desiredWithdrawalInputGroup.classList.remove('hidden'); // Show desired amount input</p>
+<p class="p1"><span class="Apple-converted-space">                </span>desiredWithdrawalAmountInput.value = ''; // Clear previous value</p>
+<p class="p1"><span class="Apple-converted-space">                </span>proceedToBankDetailsBtn.classList.add('hidden'); // Disable until valid amount entered</p>
+<p class="p1"><span class="Apple-converted-space">                </span>getWithdrawalAdviceBtn.classList.remove('hidden'); // Show advice button</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('You are eligible for Marriage Withdrawal! Enter your desired amount.');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.textContent = `Not Eligible: Requires at least 7 years of service.`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.classList.remove('text-emerald-700');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eligibleAmountDisplay.classList.add('text-red-600');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>desiredWithdrawalInputGroup.classList.add('hidden'); // Hide desired amount input</p>
+<p class="p1"><span class="Apple-converted-space">                </span>proceedToBankDetailsBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>getWithdrawalAdviceBtn.classList.add('hidden'); // Hide advice button</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('You are not eligible for Marriage Withdrawal yet.', true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for desired withdrawal amount input</p>
+<p class="p1"><span class="Apple-converted-space">        </span>desiredWithdrawalAmountInput.addEventListener('input', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const desiredAmount = parseFloat(desiredWithdrawalAmountInput.value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isNaN(desiredAmount) || desiredAmount &lt;= 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please enter a valid positive amount for withdrawal.', true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>proceedToBankDetailsBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (desiredAmount &gt; calculatedEligibleWithdrawalAmount) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage(`Desired amount (₹${desiredAmount.toLocaleString('en-IN')}) exceeds eligible amount (₹${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN')}).`, true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>proceedToBankDetailsBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Amount entered is valid.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>finalRequestedWithdrawalAmount = desiredAmount; // Store the valid amount</p>
+<p class="p1"><span class="Apple-converted-space">                </span>proceedToBankDetailsBtn.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// LLM Integration: Get Personalized Withdrawal Advice</p>
+<p class="p1"><span class="Apple-converted-space">        </span>getWithdrawalAdviceBtn.addEventListener('click', async () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>withdrawalAdviceModalOverlay.classList.add('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>withdrawalAdviceContent.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-center items-center h-32"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="ml-4 text-gray-700"&gt;Generating advice...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`; // Show loading spinner</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const prompt = `You are a helpful assistant providing guidance on Provident Fund (PF) withdrawals in India. A user is considering a partial PF withdrawal for 'Marriage'. They have ${currentYearsOfService} years of EPF service and are eligible to withdraw ₹ ${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}. Provide concise, helpful advice on what documents they might need, any common pitfalls to avoid for this specific reason, and general best practices for PF withdrawals for marriage. Keep it under 200 words.`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let chatHistory = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>chatHistory.push({ role: "user", parts: [{ text: prompt }] });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const payload = { contents: chatHistory };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const response = await fetch(apiUrl, {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>method: 'POST',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>headers: { 'Content-Type': 'application/json' },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>body: JSON.stringify(payload)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const result = await response.json();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (result.candidates &amp;&amp; result.candidates.length &gt; 0 &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>result.candidates[0].content &amp;&amp; result.candidates[0].content.parts &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>result.candidates[0].content.parts.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const text = result.candidates[0].content.parts[0].text;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>withdrawalAdviceContent.innerHTML = `&lt;p&gt;${text}&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>withdrawalAdviceContent.innerHTML = `&lt;p class="text-red-600"&gt;Failed to generate advice. Please try again.&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.error('LLM response structure unexpected:', result);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>withdrawalAdviceContent.innerHTML = `&lt;p class="text-red-600"&gt;Error connecting to AI. Please check your network or try again later.&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Error calling Gemini API:', error);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>withdrawalAdviceModalCloseBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>withdrawalAdviceModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>withdrawalAdviceModalOverlay.addEventListener('click', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (event.target === withdrawalAdviceModalOverlay) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>withdrawalAdviceModalOverlay.classList.remove('show');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>proceedToBankDetailsBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Ensure the finalRequestedWithdrawalAmount is set before proceeding</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (finalRequestedWithdrawalAmount &lt;= 0 || finalRequestedWithdrawalAmount &gt; calculatedEligibleWithdrawalAmount) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please enter a valid withdrawal amount to proceed.', true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(bankDetailsConfirmationSection);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>last4DigitsInput.value = ''; // Clear input</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToPfDetailsFromEligibilityBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(pfDetailsSection); // Go back to PF details section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Bank Details Confirmation Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>verifyBankDetailsBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const last4 = last4DigitsInput.value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (last4 === '1234') { // Dummy verification</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Bank Details Verified!');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reviewBankDigits.textContent = last4; // Update review section</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showSection(addressConfirmationSection);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>addressCorrectCheckbox.checked = false; // Reset checkbox</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confirmAddressBtn.disabled = true; // Disable button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Incorrect last 4 digits. Please try again.', true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToEligibilityFromBankBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(marriageWithdrawalEligibilitySection);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Address Confirmation Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>addressCorrectCheckbox.addEventListener('change', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>confirmAddressBtn.disabled = !addressCorrectCheckbox.checked;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>confirmAddressBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (addressCorrectCheckbox.checked) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Address Confirmed!');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reviewAddress.textContent = 'Flat 101, Green Apartments, Cyber City, Bengaluru, Karnataka - 560001'; // Dummy address</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reviewWithdrawalAmount.textContent = `₹ ${finalRequestedWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showSection(reviewAndSubmitSection);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>termsCheckbox.checked = false; // Reset terms checkbox</p>
+<p class="p1"><span class="Apple-converted-space">                </span>submitClaimBtn.disabled = true; // Disable submit button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please confirm your address to proceed.', true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToBankFromAddressBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(bankDetailsConfirmationSection);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Review and Submit Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>termsCheckbox.addEventListener('change', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>submitClaimBtn.disabled = !termsCheckbox.checked;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>submitClaimBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (termsCheckbox.checked) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Simulate claim submission</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const acknowledgment = 'PFSAATHI' + Math.floor(Math.random() * 100000);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>acknowledgmentNumberSpan.textContent = acknowledgment;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Claim Submission in Progress...');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showSection(claimSubmissionSuccessSection);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showMessage('Claim Submitted Successfully!', false);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 1500); // Simulate network delay</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please agree to the terms and conditions.', true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToAddressFromReviewBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(addressConfirmationSection);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Claim Submission Success Logic</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToHomeFromSuccessBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(landingPageContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Back to Home button from PF Data Score section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToHomeFromDataScoreBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(landingPageContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// New: Event listener for Back to Home button from Balance Only section</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToHomeFromBalanceOnlyBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(landingPageContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Fix Data Now button</p>
+<p class="p1"><span class="Apple-converted-space">        </span>fixDataNowBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(dataMismatchFixSection);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>correctedFatherNameInput.value = ''; // Clear input</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Back to Data Score button from Fix Data Mismatch</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToDataScoreFromFixBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(pfDataScoreSection);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Submit PAN Update Request button</p>
+<p class="p1"><span class="Apple-converted-space">        </span>submitPanUpdateBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const correctedName = correctedFatherNameInput.value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!correctedName) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('Please enter the corrected father\'s name.', true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showMessage('Submitting PAN update request...', false);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showSection(panUpdateSuccessSection);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage('PAN Update Request Submitted Successfully!', false);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 1500); // Simulate service call</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Event listener for Back to Home button from PAN Update Success</p>
+<p class="p1"><span class="Apple-converted-space">        </span>backToHomeFromPanSuccessBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showSection(landingPageContent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
