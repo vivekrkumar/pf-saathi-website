@@ -96,28 +96,6 @@
         .blinking-text {
             animation: blink 1s infinite;
         }
-
-        /* Speed dial specific styling */
-        .speed-dial-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 50%; /* Aspect ratio 2:1 for semicircle */
-            overflow: hidden;
-            margin: 0 auto;
-        }
-
-        .speed-dial-svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .speed-dial-needle {
-            transform-origin: 50px 50px; /* Center of the arc */
-            transition: transform 0.5s ease-in-out;
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -554,49 +532,13 @@
             <div class="space-y-6 text-left mb-8">
                 <div class="p-4 bg-blue-50 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="dataCompletenessScoreTitle">Data Completeness Score</h3>
-                    <div class="speed-dial-container mb-2">
-                        <svg class="speed-dial-svg" viewBox="0 0 100 60">
-                            <!-- Arc background -->
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="lightgray"/>
-                            <!-- Segments -->
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="red" stroke-dasharray="33.33 66.67" stroke-dashoffset="0"/>
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="orange" stroke-dasharray="33.33 66.67" stroke-dashoffset="-33.33"/>
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="green" stroke-dasharray="33.33 66.67" stroke-dashoffset="-66.66"/>
-                            <!-- Center pivot -->
-                            <circle cx="50" cy="50" r="3" fill="#333"/>
-                            <!-- Needle (pointing to green for Completeness) -->
-                            <line x1="50" y1="50" x2="85" y2="45" stroke="#333" stroke-width="2" stroke-linecap="round"
-                                  transform="rotate(-20 50 50)" class="speed-dial-needle"/>
-                            <!-- Labels -->
-                            <text x="10" y="58" font-size="8" fill="#333" text-anchor="middle" data-key="poor">Poor</text>
-                            <text x="50" y="28" font-size="8" fill="#333" text-anchor="middle" data-key="average">Average</text>
-                            <text x="90" y="58" font-size="8" fill="#333" text-anchor="middle" data-key="good">Good</text>
-                        </svg>
-                    </div>
+                    <p class="text-2xl font-bold text-blue-700" data-key="high">High</p>
                     <p class="text-gray-600 text-sm mt-1" data-key="allFieldsPopulated">All essential data fields are populated.</p>
                 </div>
 
                 <div class="p-4 bg-red-50 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2" data-key="dataMatchScoreTitle">Data Match Score</h3>
-                    <div class="speed-dial-container mb-2">
-                        <svg class="speed-dial-svg" viewBox="0 0 100 60">
-                            <!-- Arc background -->
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="lightgray"/>
-                            <!-- Segments -->
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="red" stroke-dasharray="33.33 66.67" stroke-dashoffset="0"/>
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="orange" stroke-dasharray="33.33 66.67" stroke-dashoffset="-33.33"/>
-                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke-width="8" stroke="green" stroke-dasharray="33.33 66.67" stroke-dashoffset="-66.66"/>
-                            <!-- Center pivot -->
-                            <circle cx="50" cy="50" r="3" fill="#333"/>
-                            <!-- Needle (pointing to red for Data Match) -->
-                            <line x1="50" y1="50" x2="15" y2="45" stroke="#333" stroke-width="2" stroke-linecap="round"
-                                  transform="rotate(160 50 50)" class="speed-dial-needle"/>
-                            <!-- Labels -->
-                            <text x="10" y="58" font-size="8" fill="#333" text-anchor="middle" data-key="poor">Poor</text>
-                            <text x="50" y="28" font-size="8" fill="#333" text-anchor="middle" data-key="average">Average</text>
-                            <text x="90" y="58" font-size="8" fill="#333" text-anchor="middle" data-key="good">Good</text>
-                        </svg>
-                    </div>
+                    <p class="text-2xl font-bold text-red-700" data-key="low">Low</p>
                     <p class="text-gray-600 text-sm mt-1" data-key="discrepanciesFound">Discrepancies found between linked documents (e.g., PAN, Aadhaar, UAN).</p>
                 </div>
 
@@ -821,9 +763,6 @@
                 panUpdateSuccessTitle: "PAN Update Request Submitted!",
                 panUpdateSuccessDesc: "Your request to update father's name on PAN has been submitted.",
                 panUpdateNotificationInfo: "You will be notified about the update from PAN directly. You can also check the status in the \"Track Requests\" section of PF Saathi.",
-                poor: "Poor",
-                average: "Average",
-                good: "Good"
             },
             hi: {
                 headerTitle: "पीएफ साथी",
@@ -946,259 +885,6 @@
                 panUpdateSuccessTitle: "पैन अद्यतन अनुरोध जमा किया गया!",
                 panUpdateSuccessDesc: "पैन पर पिता का नाम अपडेट करने का आपका अनुरोध जमा कर दिया गया है।",
                 panUpdateNotificationInfo: "आपको पैन से सीधे अपडेट के बारे में सूचित किया जाएगा। आप पीएफ साथी के \"ट्रैक अनुरोध\" अनुभाग में भी स्थिति की जांच कर सकते हैं।",
-                poor: "खराब",
-                average: "औसत",
-                good: "अच्छा"
-            },
-            mr: {
-                headerTitle: "पीएफ साथी",
-                headerTagline: "तुमचा भविष्य निर्वाह निधी, सोपा केला!",
-                whatToDoTodayTitle: "आज तुम्हाला काय करायचे आहे?",
-                checkBalanceTitle: "माझी पीएफ शिल्लक तपासा",
-                checkBalanceDesc: "तुमची सध्याची भविष्य निर्वाह निधी शिल्लक पहा.",
-                checkDataScoreTitle: "माझा पीएफ डेटा स्कोअर तपासा",
-                checkDataScoreDesc: "निकालीसाठी तुमच्या केवायसी डेटा आत्मविश्वासाचे मूल्यांकन करा.",
-                helpWithdrawTitle: "मला पीएफ काढण्यास मदत करा",
-                helpWithdrawDesc: "अंशतः किंवा पूर्ण पीएफ काढण्याचा दावा सुरू करा.",
-                helpTransferTitle: "मला पीएफ हस्तांतरणात मदत करा",
-                helpTransferDesc: "तुमचा पीएफ मागील मालकाकडून हस्तांतरित करा.",
-                speakExpertTitle: "तज्ञाशी बोला",
-                speakExpertDesc: "आमच्या टीमकडून वैयक्तिकृत मदत मिळवा.",
-                heroTitle: "तुमच्या आर्थिक भविष्याला सशक्त करणे",
-                heroDesc: "पीएफ साथी भविष्य निर्वाह निधी व्यवस्थापन सर्वांसाठी सुलभ आणि सोपे करण्यासाठी समर्पित आहे. तुमची बचत सहजतेने सुरक्षित करा.",
-                getStartedBtn: "सुरुवात करा",
-                reachingEveryCornerTitle: "प्रत्येक कोपऱ्यात पोहोचणे",
-                reachingEveryCornerDesc: "आमचा विश्वास आहे की आर्थिक सुरक्षा प्रत्येकासाठी असावी, मग ती गजबजलेली शहरे असोत किंवा शांत गावे. आमच्या सेवा सर्वसमावेशक आणि वापरण्यास सोप्या आहेत, ज्यामुळे ग्रामीण समुदायांना सशक्त बनवता येते.",
-                empoweringUrbanLivesTitle: "शहरी जीवनांना सशक्त करणे",
-                empoweringUrbanLivesDesc: "आमच्या शहरांच्या मध्यभागी, आम्ही भविष्य निर्वाह निधीवर स्पष्टता आणि नियंत्रण आणण्याचा प्रयत्न करतो, हे सुनिश्चित करतो की प्रत्येक शहरी कामगार आत्मविश्वासाने आणि सहजतेने सुरक्षित भविष्य निर्माण करू शकेल.",
-                enterMobileNumberTitle: "तुमचा यूएएन लिंक केलेला मोबाईल नंबर टाका",
-                enterMobileNumberDesc: "कृपया तुमचा यूएएनशी जोडलेला 10 अंकी मोबाईल नंबर टाका.",
-                sendOtpBtn: "ओटीपी पाठवा",
-                backToHomeBtn: "मुख्यपृष्ठावर परत",
-                enterOtpTitle: "ओटीपी टाका",
-                otpSentDesc: "तुमच्या मोबाईल नंबरवर एक ओटीपी पाठवला आहे.",
-                verifyOtpBtn: "ओटीपी सत्यापित करा",
-                backBtn: "मागे",
-                yourPfDetailsTitle: "तुमचे भविष्य निर्वाह निधी तपशील",
-                accountBalanceTitle: "खाते शिल्लक",
-                immediatelyAvailableBalanceText: "तत्काळ उपलब्ध शिल्लक:",
-                asOfDate: "या तारखेनुसार: 31 मार्च 2025",
-                kycDetailsTitle: "केवायसी तपशील",
-                aadhaarLinked: "आधार: जोडलेले ✓",
-                panLinked: "पॅन: जोडलेले ✓",
-                bankAccountLinked: "बँक खाते: जोडलेले ✓",
-                employerHistoryTitle: "नियोक्ता इतिहास",
-                recentClaimsTitle: "अलीकडील दावे",
-                noRecentClaims: "कोणताही अलीकडील दावा आढळला नाही.",
-                initiateWithdrawalBtn: "पीएफ काढणे सुरू करा",
-                actionsTitle: "क्रिया",
-                withdrawableReasonsTitle: "काढण्याची कारणे",
-                withdrawableReasonsDesc: "तुम्ही तुमचा पीएफ कोणत्या कारणांसाठी काढू शकता ते शोधा.",
-                immediatelyAvailableBalanceModalTitle: "तत्काळ उपलब्ध शिल्लक गणना",
-                immediatelyAvailableBalanceModalDesc: "तुमची तत्काळ उपलब्ध शिल्लक सामान्यतः अशी मोजली जाते:",
-                simplifiedExplanationNote: "*टीप: हे एक सरलीकृत स्पष्टीकरण आहे. वास्तविक नियम आणि पात्रता निकष भिन्न असू शकतात. अचूक तपशिलांसाठी कृपया अधिकृत ईपीएफओ मार्गदर्शक तत्त्वांचा संदर्भ घ्या.*",
-                kycDataConfidenceModalTitle: "केवायसी डेटा आत्मविश्वास",
-                panAadhaarMatchTitle: "पॅन तपशील आणि आधार तपशील जुळणी:",
-                highMatch: "उच्च जुळणी",
-                lessRejectionChances: "या कारणामुळे नाकारण्याची शक्यता कमी आहे.",
-                panUanMatchTitle: "पॅन आणि यूएएन तपशील:",
-                cumulativeScoreTitle: "संचयी स्कोअर: उच्च आत्मविश्वास",
-                lowRejectionChanceDesc: "हे डेटा विसंगतीमुळे काढताना नाकारण्याची कमी शक्यता दर्शवते.",
-                kycNote: "*टीप: हा आत्मविश्वास स्कोअर केवळ माहितीसाठी आहे आणि डेटा जुळणीवर आधारित आहे. अंतिम मंजुरी अधिकृत ईपीएफओ पडताळणी प्रक्रियेवर अवलंबून असते.*",
-                reasonsForPfWithdrawalModalTitle: "पीएफ काढण्याची कारणे",
-                reasonMedicalPurposes: "वैद्यकीय उद्देश",
-                reasonMarriage: "विवाह (स्वतः, मूल, भावंड)",
-                reasonEducation: "शिक्षण (स्वतः, मूल)",
-                reasonHousePurchase: "घर खरेदी/बांधकाम",
-                reasonHouseRenovation: "घर नूतनीकरण/बदल",
-                reasonHomeLoanRepayment: "गृहकर्ज परतफेड",
-                reasonUnemployment: "बेरोजगारी (1 महिना / 2 महिने)",
-                reasonBeforeRetirement: "सेवानिवृत्तीच्या एक वर्ष आधी (54+ वय)",
-                reasonDisability: "अपंगत्व",
-                marriageWithdrawalEligibilityTitle: "विवाह काढणे: पात्रता तपासा",
-                marriageWithdrawalEligibilityDesc: "विवाहासाठी काढण्यासाठी, तुम्हाला किमान 7 वर्षांची ईपीएफ सदस्यता पूर्ण करावी लागेल. तुम्ही तुमच्या कर्मचाऱ्याच्या हिश्श्याच्या + व्याजाच्या 50% पर्यंत काढू शकता.",
-                yearsOfEpfServiceLabel: "ईपीएफ सेवेची वर्षे:",
-                employeeShareBalanceLabel: "कर्मचाऱ्याचा हिस्सा + व्याज (₹):",
-                checkEligibilityBtn: "पात्रता तपासा आणि रक्कम मोजा",
-                enterDesiredWithdrawalAmountLabel: "इच्छित काढण्याची रक्कम प्रविष्ट करा (₹):",
-                getPersonalizedAdviceBtn: "✨ वैयक्तिकृत काढण्याचा सल्ला मिळवा",
-                proceedToBankDetailsBtn: "बँक तपशिलावर पुढे जा",
-                confirmBankDetailsTitle: "बँक तपशिलाची पुष्टी करा",
-                confirmBankDetailsDesc: "कृपया तुमच्या जोडलेल्या बँक खात्याच्या तपशिलाची पुष्टी करा.",
-                linkedBankAccountLabel: "जोडलेले बँक खाते:",
-                dummyBankInfo: "डमी बँक नाव, डमी शाखा",
-                enterLast4DigitsLabel: "बँक खात्याचे शेवटचे 4 अंक प्रविष्ट करा:",
-                verifyBankProceedBtn: "बँक खाते सत्यापित करा आणि पुढे जा",
-                confirmAddressTitle: "पत्याची पुष्टी करा",
-                confirmAddressDesc: "कृपया तुमच्या नोंदणीकृत पत्याची पुष्टी करा.",
-                registeredAddressLabel: "नोंदणीकृत पत्ता:",
-                isAddressCorrectLabel: "हा पत्ता बरोबर आहे का?",
-                confirmAddressProceedBtn: "पत्ता पुष्टी करा आणि पुढे जा",
-                reviewClaimTitle: "तुमच्या दाव्याचे पुनरावलोकन करा",
-                withdrawalReasonLabel: "काढण्याचे कारण:",
-                reasonMarriageDisplay: "विवाह",
-                requestedWithdrawalAmountLabel: "अनुरोधित काढण्याची रक्कम:",
-                confirmedBankAccountLabel: "पुष्टी केलेले बँक खाते:",
-                confirmedAddressLabel: "पुष्टी केलेला पत्ता:",
-                agreeTermsLabel: "मी अटी आणि शर्तींना सहमती देतो.",
-                submitPfWithdrawalClaimBtn: "पीएफ काढण्याचा दावा सबमिट करा",
-                claimSubmittedSuccessTitle: "दावा यशस्वीरित्या सबमिट केला!",
-                claimSubmittedDesc: "विवाहासाठी तुमचा पीएफ काढण्याचा दावा सबमिट केला आहे.",
-                acknowledgmentNumberLabel: "पोचपावती क्रमांक:",
-                fundsCreditInfo: "निधी 3-5 व्यावसायिक दिवसांच्या आत तुमच्या जोडलेल्या बँक खात्यात जमा केले जातील.",
-                yourPfBalanceTitle: "तुमची पीएफ शिल्लक",
-                footerCopyright: "&copy; 2025 पीएफ साथी. सर्व हक्क राखीव.",
-                contactUs: "संपर्क साधा: info@pfsaathi.com",
-                generatingAdvice: "सल्ला तयार होत आहे...",
-                yourPfDataScoreTitle: "तुमचा पीएफ डेटा स्कोअर",
-                dataCompletenessScoreTitle: "डेटा पूर्णता स्कोअर",
-                allFieldsPopulated: "सर्व आवश्यक डेटा फील्ड भरले आहेत.",
-                dataMatchScoreTitle: "डेटा जुळणी स्कोअर",
-                discrepanciesFound: "जोडलेल्या दस्तऐवजांमध्ये (उदा. पॅन, आधार, यूएएन) विसंगती आढळल्या.",
-                overallDataImpactScoreTitle: "एकूण डेटा प्रभाव स्कोअर",
-                rejectionChances: "काढताना नाकारण्याची 75% शक्यता",
-                actionRequiredRectify: "गुळगुळीत काढणे सुनिश्चित करण्यासाठी डेटा जुळणी दुरुस्त करण्यासाठी कारवाई आवश्यक आहे.",
-                fixDataNowBtn: "आता डेटा दुरुस्त करा",
-                fixDataMismatchTitle: "डेटा विसंगती दुरुस्त करा",
-                mismatchDetectedDesc: "आम्ही तुमच्या वडिलांच्या नावात थोडी विसंगती आढळली आहे:",
-                fatherNamePanLabel: "पॅनमध्ये वडिलांचे नाव:",
-                fatherNameUanLabel: "यूएएनमध्ये वडिलांचे नाव:",
-                updatePanDataDesc: "सुसंगतता सुनिश्चित करण्यासाठी कृपया तुमचा पॅन डेटा अपडेट करा.",
-                yourPanNumberLabel: "तुमचा पॅन क्रमांक:",
-                correctedFatherNameLabel: "सुधारलेले वडिलांचे नाव (अधिकृत नोंदीनुसार):",
-                submitPanUpdateRequestBtn: "पॅन अपडेट विनंती सबमिट करा",
-                backToDataScoreBtn: "डेटा स्कोअरवर परत",
-                panUpdateSuccessTitle: "पॅन अपडेट विनंती सबमिट केली!",
-                panUpdateSuccessDesc: "पॅनवर वडिलांचे नाव अपडेट करण्याची तुमची विनंती सबमिट केली आहे.",
-                panUpdateNotificationInfo: "तुम्हाला पॅनकडून थेट अपडेटबद्दल सूचित केले जाईल. तुम्ही पीएफ साथीच्या \"विनंतीचा मागोवा घ्या\" विभागातही स्थिती तपासू शकता.",
-                poor: "खराब",
-                average: "सरासरी",
-                good: "चांगले"
-            },
-            ta: {
-                headerTitle: "PF சாத்தி",
-                headerTagline: "உங்கள் வருங்கால வைப்பு நிதி, எளிதாக்கப்பட்டது!",
-                whatToDoTodayTitle: "இன்று நீங்கள் என்ன செய்ய விரும்புகிறீர்கள்?",
-                checkBalanceTitle: "எனது PF இருப்பைச் சரிபார்க்கவும்",
-                checkBalanceDesc: "உங்கள் தற்போதைய வருங்கால வைப்பு நிதி இருப்பைக் காணவும்.",
-                checkDataScoreTitle: "எனது PF டேட்டா ஸ்கோரைச் சரிபார்க்கவும்",
-                checkDataScoreDesc: "திரும்பப் பெறுவதற்கான உங்கள் KYC டேட்டா நம்பிக்கையை மதிப்பிடவும்.",
-                helpWithdrawTitle: "எனது PF ஐ திரும்பப் பெற எனக்கு உதவுங்கள்",
-                helpWithdrawDesc: "பகுதி அல்லது முழுமையான PF திரும்பப் பெறும் கோரிக்கையைத் தொடங்கவும்.",
-                helpTransferTitle: "PF பரிமாற்றத்திற்கு எனக்கு உதவுங்கள்",
-                helpTransferDesc: "உங்கள் PF ஐ முந்தைய முதலாளியிடமிருந்து மாற்றவும்.",
-                speakExpertTitle: "ஒரு நிபுணரிடம் பேசுங்கள்",
-                speakExpertDesc: "எங்கள் குழுவிடம் இருந்து தனிப்பயனாக்கப்பட்ட உதவியைப் பெறுங்கள்.",
-                heroTitle: "உங்கள் நிதி எதிர்காலத்தை மேம்படுத்துதல்",
-                heroDesc: "PF சாத்தி வருங்கால வைப்பு நிதி நிர்வாகத்தை அனைவருக்கும் அணுகக்கூடியதாகவும் எளிதாகவும் மாற்றுவதற்கு அர்ப்பணிக்கப்பட்டுள்ளது. உங்கள் சேமிப்பை சிரமமின்றி பாதுகாக்கவும்.",
-                getStartedBtn: "தொடங்குங்கள்",
-                reachingEveryCornerTitle: "ஒவ்வொரு மூலையையும் சென்றடைதல்",
-                reachingEveryCornerDesc: "நிதிப் பாதுகாப்பு அனைவருக்கும் இருக்க வேண்டும் என்று நாங்கள் நம்புகிறோம், பரபரப்பான நகரங்கள் முதல் அமைதியான கிராமங்கள் வரை. எங்கள் சேவைகள் அனைவரையும் உள்ளடக்கியதாகவும் பயன்படுத்த எளிதாகவும் வடிவமைக்கப்பட்டுள்ளன, கிராமப்புற சமூகங்களுக்கு அதிகாரம் அளிக்கின்றன.",
-                empoweringUrbanLivesTitle: "நகர்ப்புற வாழ்க்கையை மேம்படுத்துதல்",
-                empoweringUrbanLivesDesc: "எங்கள் நகரங்களின் மையத்தில், வருங்கால வைப்பு நிதியில் தெளிவையும் கட்டுப்பாட்டையும் கொண்டு வர நாங்கள் முயற்சி செய்கிறோம், ஒவ்வொரு நகர்ப்புற தொழிலாளியும் நம்பிக்கையுடனும் எளிதாகவும் பாதுகாப்பான எதிர்காலத்தை உருவாக்க முடியும் என்பதை உறுதிப்படுத்துகிறோம்.",
-                enterMobileNumberTitle: "உங்கள் UAN இணைக்கப்பட்ட மொபைல் எண்ணை உள்ளிடவும்",
-                enterMobileNumberDesc: "உங்கள் UAN உடன் இணைக்கப்பட்ட 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்.",
-                sendOtpBtn: "OTP அனுப்பவும்",
-                backToHomeBtn: "முகப்புக்குத் திரும்பு",
-                enterOtpTitle: "OTP ஐ உள்ளிடவும்",
-                otpSentDesc: "உங்கள் மொபைல் எண்ணுக்கு ஒரு OTP அனுப்பப்பட்டுள்ளது.",
-                verifyOtpBtn: "OTP ஐ சரிபார்க்கவும்",
-                backBtn: "பின்புறம்",
-                yourPfDetailsTitle: "உங்கள் வருங்கால வைப்பு நிதி விவரங்கள்",
-                accountBalanceTitle: "கணக்கு இருப்பு",
-                immediatelyAvailableBalanceText: "உடனடியாகக் கிடைக்கும் இருப்பு:",
-                asOfDate: "தேதி: 31 மார்ச் 2025 வரை",
-                kycDetailsTitle: "KYC விவரங்கள்",
-                aadhaarLinked: "ஆதார்: இணைக்கப்பட்டது ✓",
-                panLinked: "பான்: இணைக்கப்பட்டது ✓",
-                bankAccountLinked: "வங்கி கணக்கு: இணைக்கப்பட்டது ✓",
-                employerHistoryTitle: "முதலாளி வரலாறு",
-                recentClaimsTitle: "சமீபத்திய கோரிக்கைகள்",
-                noRecentClaims: "சமீபத்திய கோரிக்கைகள் எதுவும் காணப்படவில்லை.",
-                initiateWithdrawalBtn: "PF திரும்பப் பெறுதலைத் தொடங்கவும்",
-                actionsTitle: "நடவடிக்கைகள்",
-                withdrawableReasonsTitle: "திரும்பப் பெறக்கூடிய காரணங்கள்",
-                withdrawableReasonsDesc: "உங்கள் PF ஐ நீங்கள் திரும்பப் பெறக்கூடிய காரணங்களைக் கண்டறியவும்.",
-                immediatelyAvailableBalanceModalTitle: "உடனடியாகக் கிடைக்கும் இருப்பு கணக்கீடு",
-                immediatelyAvailableBalanceModalDesc: "உங்கள் உடனடியாகக் கிடைக்கும் இருப்பு பொதுவாக இவ்வாறு கணக்கிடப்படுகிறது:",
-                simplifiedExplanationNote: "*குறிப்பு: இது ஒரு எளிமையான விளக்கம். உண்மையான விதிகள் மற்றும் தகுதி வரம்புகள் மாறுபடலாம். துல்லியமான விவரங்களுக்கு அதிகாரப்பூர்வ EPFO வழிகாட்டுதல்களைப் பார்க்கவும்.*",
-                kycDataConfidenceModalTitle: "KYC டேட்டா நம்பிக்கை",
-                panAadhaarMatchTitle: "பான் விவரங்கள் மற்றும் ஆதார் விவரங்கள் பொருத்தம்:",
-                highMatch: "உயர் பொருத்தம்",
-                lessRejectionChances: "இந்தக் காரணத்தால் நிராகரிப்பதற்கான வாய்ப்புகள் குறைவு.",
-                panUanMatchTitle: "பான் மற்றும் UAN விவரங்கள்:",
-                cumulativeScoreTitle: "மொத்த மதிப்பெண்: அதிக நம்பிக்கை",
-                lowRejectionChanceDesc: "இது டேட்டா முரண்பாடுகள் காரணமாக திரும்பப் பெறும் போது நிராகரிப்பதற்கான குறைந்த வாய்ப்பைக் குறிக்கிறது.",
-                kycNote: "*குறிப்பு: இந்த நம்பிக்கை மதிப்பெண் தகவல் நோக்கங்களுக்காக மட்டுமே மற்றும் டேட்டா பொருத்தத்தின் அடிப்படையில் அமைந்துள்ளது. இறுதி ஒப்புதல் அதிகாரப்பூர்வ EPFO சரிபார்ப்பு செயல்முறைகளைப் பொறுத்தது.*",
-                reasonsForPfWithdrawalModalTitle: "PF திரும்பப் பெறுவதற்கான காரணங்கள்",
-                reasonMedicalPurposes: "மருத்துவ நோக்கங்கள்",
-                reasonMarriage: "திருமணம் (சுயம், குழந்தை, சகோதரர்/சகோதரி)",
-                reasonEducation: "கல்வி (சுயம், குழந்தை)",
-                reasonHousePurchase: "வீடு வாங்குதல்/கட்டுதல்",
-                reasonHouseRenovation: "வீடு புதுப்பித்தல்/மாற்றம்",
-                reasonHomeLoanRepayment: "வீட்டுக் கடன் திருப்பிச் செலுத்துதல்",
-                reasonUnemployment: "வேலையின்மை (1 மாதம் / 2 மாதங்கள்)",
-                reasonBeforeRetirement: "ஓய்வுக்கு ஒரு வருடத்திற்கு முன் (54+ வயது)",
-                reasonDisability: "ஊனம்",
-                marriageWithdrawalEligibilityTitle: "திருமண திரும்பப் பெறுதல்: தகுதியைச் சரிபார்க்கவும்",
-                marriageWithdrawalEligibilityDesc: "திருமணத்திற்காக திரும்பப் பெற, நீங்கள் குறைந்தது 7 வருட EPFO உறுப்பினராக இருக்க வேண்டும். உங்கள் ஊழியரின் பங்கு + வட்டியின் 50% வரை திரும்பப் பெறலாம்.",
-                yearsOfEpfServiceLabel: "EPF சேவை ஆண்டுகள்:",
-                employeeShareBalanceLabel: "ஊழியர் பங்கு + வட்டி (₹):",
-                checkEligibilityBtn: "தகுதியைச் சரிபார்த்து தொகையை கணக்கிடவும்",
-                enterDesiredWithdrawalAmountLabel: "விரும்பிய திரும்பப் பெறும் தொகையை உள்ளிடவும் (₹):",
-                getPersonalizedAdviceBtn: "✨ தனிப்பயனாக்கப்பட்ட திரும்பப் பெறும் ஆலோசனையைப் பெறுங்கள்",
-                proceedToBankDetailsBtn: "வங்கி விவரங்களுக்குச் செல்லவும்",
-                confirmBankDetailsTitle: "வங்கி விவரங்களை உறுதிப்படுத்தவும்",
-                confirmBankDetailsDesc: "உங்கள் இணைக்கப்பட்ட வங்கிக் கணக்கு விவரங்களை உறுதிப்படுத்தவும்.",
-                linkedBankAccountLabel: "இணைக்கப்பட்ட வங்கிக் கணக்கு:",
-                dummyBankInfo: "போலி வங்கிப் பெயர், போலி கிளை",
-                enterLast4DigitsLabel: "வங்கி கணக்கின் கடைசி 4 இலக்கங்களை உள்ளிடவும்:",
-                verifyBankProceedBtn: "வங்கிக் கணக்கைச் சரிபார்த்து தொடரவும்",
-                confirmAddressTitle: "முகவரியை உறுதிப்படுத்தவும்",
-                confirmAddressDesc: "உங்கள் பதிவு செய்யப்பட்ட முகவரியை உறுதிப்படுத்தவும்.",
-                registeredAddressLabel: "பதிவு செய்யப்பட்ட முகவரி:",
-                isAddressCorrectLabel: "இந்த முகவரி சரியானதா?",
-                confirmAddressProceedBtn: "முகவரியை உறுதிப்படுத்தி தொடரவும்",
-                reviewClaimTitle: "உங்கள் கோரிக்கையை மதிப்பாய்வு செய்யவும்",
-                withdrawalReasonLabel: "திரும்பப் பெறும் காரணம்:",
-                reasonMarriageDisplay: "திருமணம்",
-                requestedWithdrawalAmountLabel: "கோரப்பட்ட திரும்பப் பெறும் தொகை:",
-                confirmedBankAccountLabel: "உறுதிப்படுத்தப்பட்ட வங்கிக் கணக்கு:",
-                confirmedAddressLabel: "உறுதிப்படுத்தப்பட்ட முகவரி:",
-                agreeTermsLabel: "நான் விதிமுறைகள் மற்றும் நிபந்தனைகளுக்கு ஒப்புக்கொள்கிறேன்.",
-                submitPfWithdrawalClaimBtn: "PF திரும்பப் பெறும் கோரிக்கையைச் சமர்ப்பிக்கவும்",
-                claimSubmittedSuccessTitle: "கோரிக்கை வெற்றிகரமாகச் சமர்ப்பிக்கப்பட்டது!",
-                claimSubmittedDesc: "திருமணத்திற்கான உங்கள் PF திரும்பப் பெறும் கோரிக்கை சமர்ப்பிக்கப்பட்டுள்ளது.",
-                acknowledgmentNumberLabel: "ஒப்புதல் எண்:",
-                fundsCreditInfo: "3-5 வணிக நாட்களுக்குள் உங்கள் இணைக்கப்பட்ட வங்கிக் கணக்கில் நிதி வரவு வைக்கப்படும்.",
-                yourPfBalanceTitle: "உங்கள் PF இருப்பு",
-                footerCopyright: "&copy; 2025 PF சாத்தி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
-                contactUs: "தொடர்புக்கு: info@pfsaathi.com",
-                generatingAdvice: "ஆலோசனை உருவாக்கப்படுகிறது...",
-                yourPfDataScoreTitle: "உங்கள் PF டேட்டா ஸ்கோர்",
-                dataCompletenessScoreTitle: "டேட்டா முழுமை ஸ்கோர்",
-                allFieldsPopulated: "அனைத்து அத்தியாவசிய டேட்டா புலங்களும் நிரப்பப்பட்டுள்ளன.",
-                dataMatchScoreTitle: "டேட்டா பொருத்தம் ஸ்கோர்",
-                discrepanciesFound: "இணைக்கப்பட்ட ஆவணங்களுக்கு (எ.கா. பான், ஆதார், UAN) இடையே முரண்பாடுகள் கண்டறியப்பட்டன.",
-                overallDataImpactScoreTitle: "மொத்த டேட்டா தாக்கம் ஸ்கோர்",
-                rejectionChances: "திரும்பப் பெறும் போது நிராகரிப்பதற்கான 75% வாய்ப்புகள்",
-                actionRequiredRectify: "சீரான திரும்பப் பெறுதலை உறுதிப்படுத்த டேட்டா பொருந்தாமைகளை சரிசெய்ய நடவடிக்கை தேவை.",
-                fixDataNowBtn: "டேட்டாவை இப்போதே சரிசெய்யவும்",
-                fixDataMismatchTitle: "டேட்டா முரண்பாட்டை சரிசெய்யவும்",
-                mismatchDetectedDesc: "உங்கள் தந்தையின் பெயரில் ஒரு சிறிய முரண்பாட்டை நாங்கள் கண்டறிந்துள்ளோம்:",
-                fatherNamePanLabel: "பானில் தந்தையின் பெயர்:",
-                fatherNameUanLabel: "UAN இல் தந்தையின் பெயர்:",
-                updatePanDataDesc: "நிலையான தன்மையை உறுதிப்படுத்த உங்கள் பான் டேட்டாவை புதுப்பிக்கவும்.",
-                yourPanNumberLabel: "உங்கள் பான் எண்:",
-                correctedFatherNameLabel: "சரியான தந்தையின் பெயர் (அதிகாரப்பூர்வ பதிவுகளின்படி):",
-                submitPanUpdateRequestBtn: "பான் புதுப்பிப்பு கோரிக்கையைச் சமர்ப்பிக்கவும்",
-                backToDataScoreBtn: "டேட்டா ஸ்கோருக்குத் திரும்பு",
-                panUpdateSuccessTitle: "பான் புதுப்பிப்பு கோரிக்கை சமர்ப்பிக்கப்பட்டது!",
-                panUpdateSuccessDesc: "பானில் தந்தையின் பெயரைப் புதுப்பிப்பதற்கான உங்கள் கோரிக்கை சமர்ப்பிக்கப்பட்டுள்ளது.",
-                panUpdateNotificationInfo: "பான் மூலம் நேரடியாக புதுப்பிப்பு குறித்து உங்களுக்கு அறிவிக்கப்படும். PF சாத்தியின் \"கோரிக்கைகளைக் கண்காணிக்கவும்\" பிரிவிலும் நிலையைச் சரிபார்க்கலாம்.",
-                poor: "மோசம்",
-                average: "சராசரி",
-                good: "நல்லது"
             },
             kn: {
                 headerTitle: "PF ಸಾಥಿ",
@@ -1313,142 +999,14 @@
                 mismatchDetectedDesc: "ನಿಮ್ಮ ತಂದೆಯ ಹೆಸರಿನಲ್ಲಿ ಸ್ವಲ್ಪ ವ್ಯತ್ಯಾಸವನ್ನು ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ:",
                 fatherNamePanLabel: "ಪ್ಯಾನ್‌ನಲ್ಲಿ ತಂದೆಯ ಹೆಸರು:",
                 fatherNameUanLabel: "UAN ನಲ್ಲಿ ತಂದೆಯ ಹೆಸರು:",
-                updatePanDataDesc: "ಸ್ಥಿರತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ನಿಮ್ಮ ಪ್ಯಾನ್ ಡೇಟಾವನ್ನು ನವೀಕರಿಸಿ.",
+                updatePanDataDesc: "ಸ್ಥಿರತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ನಿಮ್ಮ ಪ್ಯಾನ್ ಡೇட்டಾವನ್ನು ನವೀಕರಿಸಿ.",
                 yourPanNumberLabel: "ನಿಮ್ಮ ಪ್ಯಾನ್ ಸಂಖ್ಯೆ:",
                 correctedFatherNameLabel: "ಸರಿಪಡಿಸಿದ ತಂದೆಯ ಹೆಸರು (ಅಧಿಕೃತ ದಾಖಲೆಗಳ ಪ್ರಕಾರ):",
                 submitPanUpdateRequestBtn: "ಪ್ಯಾನ್ ಅಪ್‌ಡೇಟ್ ವಿನಂತಿಯನ್ನು ಸಲ್ಲಿಸಿ",
                 backToDataScoreBtn: "ಡೇಟಾ ಸ್ಕೋರ್‌ಗೆ ಹಿಂತಿರುಗಿ",
                 panUpdateSuccessTitle: "ಪ್ಯಾನ್ ಅಪ್‌ಡೇಟ್ ವಿನಂತಿ ಸಲ್ಲಿಸಲಾಗಿದೆ!",
-                panUpdateSuccessDesc: "ಪ್ಯಾನ್‌ನಲ್ಲಿ ತಂದೆಯ ಹೆಸರನ್ನು ಅಪ್‌ಡೇಟ್ ಮಾಡುವ ನಿಮ್ಮ ವಿನಂತಿಯನ್ನು ಸಲ್ಲಿಸಲಾಗಿದೆ.",
-                panUpdateNotificationInfo: "ಪ್ಯಾನ್‌ನಿಂದ ನೇರವಾಗಿ ಅಪ್‌ಡೇಟ್ ಬಗ್ಗೆ ನಿಮಗೆ ತಿಳಿಸಲಾಗುತ್ತದೆ. PF ಸಾಥಿಯ \"ಟ್ರ್ಯಾಕ್ ವಿನಂತಿಗಳು\" ವಿಭಾಗದಲ್ಲಿಯೂ ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಬಹುದು.",
-                poor: "ಕಳಪೆ",
-                average: "ಸರಾಸರಿ",
-                good: "ಉತ್ತಮ"
-            },
-            gu: {
-                headerTitle: "PF સાથી",
-                headerTagline: "તમારું પ્રોવિડન્ટ ફંડ, સરળ બનાવ્યું!",
-                whatToDoTodayTitle: "આજે તમે શું કરવા માંગો છો?",
-                checkBalanceTitle: "મારું PF બેલેન્સ તપાસો",
-                checkBalanceDesc: "તમારું વર્તમાન પ્રોવિડન્ટ ફંડ બેલેન્સ જુઓ.",
-                checkDataScoreTitle: "મારું PF ડેટા સ્કોર તપાસો",
-                checkDataScoreDesc: "ઉપાડ માટે તમારા KYC ડેટાની વિશ્વસનીયતાનું મૂલ્યાંકન કરો.",
-                helpWithdrawTitle: "મને PF ઉપાડવામાં મદદ કરો",
-                helpWithdrawDesc: "આંશિક અથવા સંપૂર્ણ PF ઉપાડનો દાવો શરૂ કરો.",
-                helpTransferTitle: "મને PF ટ્રાન્સફરમાં મદદ કરો",
-                helpTransferDesc: "તમારા PF ને પાછલા એમ્પ્લોયર પાસેથી ટ્રાન્સફર કરો.",
-                speakExpertTitle: "નિષ્ણાત સાથે વાત કરો",
-                speakExpertDesc: "અમારી ટીમ પાસેથી વ્યક્તિગત સહાય મેળવો.",
-                heroTitle: "તમારા નાણાકીય ભવિષ્યને સશક્ત બનાવવું",
-                heroDesc: "PF સાથી પ્રોવિડન્ટ ફંડ વ્યવસ્થાપનને દરેક માટે સુલભ અને સરળ બનાવવા માટે સમર્પિત છે. તમારી બચતને સહેલાઈથી સુરક્ષિત કરો.",
-                getStartedBtn: "શરૂ કરો",
-                reachingEveryCornerTitle: "દરેક ખૂણે પહોંચવું",
-                reachingEveryCornerDesc: "અમારું માનવું છે કે નાણાકીય સુરક્ષા દરેક માટે હોવી જોઈએ, ભલે તે વ્યસ્ત શહેરો હોય કે શાંત ગામડાં. અમારી સેવાઓ સર્વસમાવેશક અને ઉપયોગમાં સરળ બનાવવા માટે રચાયેલ છે, જે ગ્રામીણ સમુદાયોને સશક્ત બનાવે છે.",
-                empoweringUrbanLivesTitle: "શહેરી જીવનને સશક્ત બનાવવું",
-                empoweringUrbanLivesDesc: "અમારા શહેરોના હૃદયમાં, અમે પ્રોવિડન્ટ ફંડ પર સ્પષ્ટતા અને નિયંત્રણ લાવવાનો પ્રયાસ કરીએ છીએ, તે સુનિશ્ચિત કરીએ છીએ કે દરેક શહેરી કાર્યકર આત્મવિશ્વાસ અને સરળતા સાથે સુરક્ષિત ભવિષ્યનું નિર્માણ કરી શકે.",
-                enterMobileNumberTitle: "તમારો UAN લિંક કરેલ મોબાઇલ નંબર દાખલ કરો",
-                enterMobileNumberDesc: "કૃપા કરીને તમારો UAN સાથે લિંક થયેલ 10-અંકનો મોબાઇલ નંબર દાખલ કરો.",
-                sendOtpBtn: "OTP મોકલો",
-                backToHomeBtn: "હોમ પર પાછા",
-                enterOtpTitle: "OTP દાખલ કરો",
-                otpSentDesc: "તમારા મોબાઇલ નંબર પર એક OTP મોકલવામાં આવ્યો છે.",
-                verifyOtpBtn: "OTP ચકાસો",
-                backBtn: "પાછા",
-                yourPfDetailsTitle: "તમારા પ્રોવિડન્ટ ફંડની વિગતો",
-                accountBalanceTitle: "ખાતાની સિલક",
-                immediatelyAvailableBalanceText: "તાત્કાલિક ઉપલબ્ધ સિલક:",
-                asOfDate: "તારીખ: 31 માર્ચ 2025 સુધી",
-                kycDetailsTitle: "KYC વિગતો",
-                aadhaarLinked: "આધાર: લિંક કરેલ ✓",
-                panLinked: "પાન: લિંક કરેલ ✓",
-                bankAccountLinked: "બેંક ખાતું: લિંક કરેલ ✓",
-                employerHistoryTitle: "નોકરીદાતા ઇતિહાસ",
-                recentClaimsTitle: "તાજેતરના દાવાઓ",
-                noRecentClaims: "કોઈ તાજેતરનો દાવો મળ્યો નથી.",
-                initiateWithdrawalBtn: "PF ઉપાડ શરૂ કરો",
-                actionsTitle: "કાર્યો",
-                withdrawableReasonsTitle: "ઉપાડના કારણો",
-                withdrawableReasonsDesc: "તમે તમારા PF ને કયા કારણોસર ઉપાડી શકો છો તે શોધો.",
-                immediatelyAvailableBalanceModalTitle: "તાત્કાલિક ઉપલબ્ધ સિલકની ગણતરી",
-                immediatelyAvailableBalanceModalDesc: "તમારી તાત્કાલિક ઉપલબ્ધ સિલક સામાન્ય રીતે આ રીતે ગણવામાં આવે છે:",
-                simplifiedExplanationNote: "*નોંધ: આ એક સરળ સમજૂતી છે. વાસ્તવિક નિયમો અને પાત્રતાના માપદંડ અલગ હોઈ શકે છે. ચોક્કસ વિગતો માટે કૃપા કરીને સત્તાવાર EPFO માર્ગદર્શિકાઓનો સંદર્ભ લો.*",
-                kycDataConfidenceModalTitle: "KYC ડેટા વિશ્વસનીયતા",
-                panAadhaarMatchTitle: "પાન વિગતો અને આધાર વિગતો મેળ ખાય છે:",
-                highMatch: "ઉચ્ચ મેળ",
-                lessRejectionChances: "આ કારણોસર નકારવાની શક્યતાઓ ઓછી છે.",
-                panUanMatchTitle: "પાન અને UAN વિગતો:",
-                cumulativeScoreTitle: "સંચિત સ્કોર: ઉચ્ચ આત્મવિશ્વાસ",
-                lowRejectionChanceDesc: "આ ડેટા વિસંગતતાઓને કારણે ઉપાડ દરમિયાન નકારવાની ઓછી સંભાવના દર્શાવે છે.",
-                kycNote: "*નોંધ: આ આત્મવિશ્વાસ સ્કોર ફક્ત માહિતીના હેતુઓ માટે છે અને ડેટા મેચિંગના આધારે છે. અંતિમ મંજૂરી સત્તાવાર EPFO ​​ચકાસણી પ્રક્રિયાઓ પર આધારિત છે.*",
-                reasonsForPfWithdrawalModalTitle: "PF ઉપાડના કારણો",
-                reasonMedicalPurposes: "તબીબી હેતુઓ",
-                reasonMarriage: "લગ્ન (સ્વયં, બાળક, ભાઈ-બહેન)",
-                reasonEducation: "શિક્ષણ (સ્વયં, બાળક)",
-                reasonHousePurchase: "ઘર ખરીદી/નિર્માણ",
-                reasonHouseRenovation: "ઘર નવીનીકરણ/ફેરફાર",
-                reasonHomeLoanRepayment: "હોમ લોન ચુકવણી",
-                reasonUnemployment: "બેરોજગારી (1 મહિનો / 2 મહિના)",
-                reasonBeforeRetirement: "નિવૃત્તિના એક વર્ષ પહેલા (54+ વર્ષની ઉંમર)",
-                reasonDisability: "અપંગતા",
-                marriageWithdrawalEligibilityTitle: "લગ્ન ઉપાડ: પાત્રતા તપાસો",
-                marriageWithdrawalEligibilityDesc: "લગ્ન માટે ઉપાડ કરવા માટે, તમારે ઓછામાં ઓછા 7 વર્ષની EPF સભ્યપદ પૂર્ણ કરવી આવશ્યક છે. તમે તમારા કર્મચારીના હિસ્સા + વ્યાજના 50% સુધી ઉપાડી શકો છો.",
-                yearsOfEpfServiceLabel: "EPF સેવાના વર્ષો:",
-                employeeShareBalanceLabel: "કર્મચારીનો હિસ્સો + વ્યાજ (₹):",
-                checkEligibilityBtn: "પાત્રતા તપાસો અને રકમની ગણતરી કરો",
-                enterDesiredWithdrawalAmountLabel: "ઇચ્છિત ઉપાડની રકમ દાખલ કરો (₹):",
-                getPersonalizedAdviceBtn: "✨ વ્યક્તિગત ઉપાડ સલાહ મેળવો",
-                proceedToBankDetailsBtn: "બેંક વિગતો પર આગળ વધો",
-                confirmBankDetailsTitle: "બેંક વિગતોની પુષ્ટિ કરો",
-                confirmBankDetailsDesc: "કૃપા કરીને તમારા લિંક કરેલ બેંક ખાતાની વિગતોની પુષ્ટિ કરો.",
-                linkedBankAccountLabel: "લિંક કરેલ બેંક ખાતું:",
-                dummyBankInfo: "ડમી બેંક નામ, ડમી શાખા",
-                enterLast4DigitsLabel: "બેંક ખાતાના છેલ્લા 4 અંકો દાખલ કરો:",
-                verifyBankProceedBtn: "બેંક ખાતું ચકાસો અને આગળ વધો",
-                confirmAddressTitle: "સરનામાની પુષ્ટિ કરો",
-                confirmAddressDesc: "કૃપા કરીને તમારા નોંધાયેલા સરનામાની પુષ્ટિ કરો.",
-                registeredAddressLabel: "નોંધાયેલ સરનામું:",
-                isAddressCorrectLabel: "શું આ સરનામું સાચું છે?",
-                confirmAddressProceedBtn: "સરનામું પુષ્ટિ કરો અને આગળ વધો",
-                reviewClaimTitle: "તમારા દાવાની સમીક્ષા કરો",
-                withdrawalReasonLabel: "ઉપાડનું કારણ:",
-                reasonMarriageDisplay: "લગ્ન",
-                requestedWithdrawalAmountLabel: "વિનંતી કરેલ ઉપાડની રકમ:",
-                confirmedBankAccountLabel: "પુષ્ટિ થયેલ બેંક ખાતું:",
-                confirmedAddressLabel: "પુષ્ટિ થયેલ સરનામું:",
-                agreeTermsLabel: "હું નિયમો અને શરતો સાથે સંમત છું.",
-                submitPfWithdrawalClaimBtn: "PF ઉપાડનો દાવો સબમિટ કરો",
-                claimSubmittedSuccessTitle: "દાવો સફળતાપૂર્વક સબમિટ થયો!",
-                claimSubmittedDesc: "લગ્ન માટેનો તમારો PF ઉપાડનો દાવો સબમિટ કરવામાં આવ્યો છે.",
-                acknowledgmentNumberLabel: "સ્વીકૃતિ નંબર:",
-                fundsCreditInfo: "3-5 વ્યવસાયિક દિવસોમાં તમારા લિંક કરેલ બેંક ખાતામાં ભંડોળ જમા કરવામાં આવશે.",
-                yourPfBalanceTitle: "તમારી PF સિલક",
-                footerCopyright: "&copy; 2025 PF સાથી. સર્વહક સ્વાધીન.",
-                contactUs: "અમારો સંપર્ક કરો: info@pfsaathi.com",
-                generatingAdvice: "સલાહ જનરેટ થઈ રહી છે...",
-                yourPfDataScoreTitle: "તમારો PF ડેટા સ્કોર",
-                dataCompletenessScoreTitle: "ડેટા પૂર્ણતા સ્કોર",
-                allFieldsPopulated: "બધા આવશ્યક ડેટા ફીલ્ડ્સ ભરવામાં આવ્યા છે.",
-                dataMatchScoreTitle: "ડેટા મેચ સ્કોર",
-                discrepanciesFound: "લિંક કરેલા દસ્તાવેજો (દા.ત., PAN, આધાર, UAN) વચ્ચે વિસંગતતાઓ મળી છે.",
-                overallDataImpactScoreTitle: "એકંદર ડેટા અસર સ્કોર",
-                rejectionChances: "ઉપાડ દરમિયાન નકારવાની 75% શક્યતાઓ",
-                actionRequiredRectify: "સરળ ઉપાડ સુનિશ્ચિત કરવા માટે ડેટા મેળ ખાતા નથી તેને સુધારવા માટે કાર્યવાહી જરૂરી છે.",
-                fixDataNowBtn: "હવે ડેટા ઠીક કરો",
-                fixDataMismatchTitle: "ડેટા મેળ ખાતો નથી તેને ઠીક કરો",
-                mismatchDetectedDesc: "અમને તમારા પિતાના નામમાં થોડો મેળ ખાતો નથી તે મળ્યો છે:",
-                fatherNamePanLabel: "PAN માં પિતાનું નામ:",
-                fatherNameUanLabel: "UAN માં પિતાનું નામ:",
-                updatePanDataDesc: "સુસંગતતા સુનિશ્ચિત કરવા માટે કૃપા કરીને તમારો PAN ડેટા અપડેટ કરો.",
-                yourPanNumberLabel: "તમારો PAN નંબર:",
-                correctedFatherNameLabel: "સુધારેલ પિતાનું નામ (સત્તાવાર રેકોર્ડ મુજબ):",
-                submitPanUpdateRequestBtn: "PAN અપડેટ વિનંતી સબમિટ કરો",
-                backToDataScoreBtn: "ડેટા સ્કોર પર પાછા",
-                panUpdateSuccessTitle: "PAN અપડેટ વિનંતી સબમિટ થઈ!",
-                panUpdateSuccessDesc: "PAN પર પિતાનું નામ અપડેટ કરવાની તમારી વિનંતી સબમિટ કરવામાં આવી છે.",
-                panUpdateNotificationInfo: "તમને PAN તરફથી સીધા અપડેટ વિશે સૂચિત કરવામાં આવશે. તમે PF સાથીના \"ટ્રેક વિનંતીઓ\" વિભાગમાં પણ સ્થિતિ ચકાસી શકો છો.",
-                poor: "ખરાબ",
-                average: "સરેરાશ",
-                good: "સારું"
+                panUpdateSuccessDesc: "ಪ್ಯಾன்‌ನಲ್ಲಿ ತಂದையின் பெயரைப் புதுப்பிப்பதற்கான உங்கள் கோரிக்கை சமர்ப்பிக்கப்பட்டுள்ளது.",
+                panUpdateNotificationInfo: "ಪ್ಯಾன்‌ನಿಂದ ನೇರವಾಗಿ ಅಪ್‌ಡೇಟ್ ಬಗ್ಗೆ ನಿಮಗೆ ತಿಳಿಸಲಾಗುತ್ತದೆ. PF ಸಾಥಿಯ \"ಟ್ರ್ಯಾಕ್ ವಿನಂತಿಗಳು\" ವಿಭಾಗದಲ್ಲಿಯೂ ಸ್ಥಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಬಹುದು.",
             }
         };
 
@@ -1534,4 +1092,520 @@
         const withdrawalAdviceModalCloseBtn = document.getElementById('withdrawal-advice-modal-close-btn');
 
         // Elements for data mismatch fix workflow
-        const fixD
+        const fixDataNowBtn = document.getElementById('fix-data-now-btn');
+        const panNumberInput = document.getElementById('pan-number-input');
+        const correctedFatherNameInput = document.getElementById('corrected-father-name-input');
+        const submitPanUpdateBtn = document.getElementById('submit-pan-update-btn');
+        const backToDataScoreFromFixBtn = document.getElementById('back-to-data-score-from-fix');
+        const backToHomeFromPanSuccessBtn = document.getElementById('back-to-home-from-pan-success');
+
+        // Elements for balance-only section
+        const infoIconBtnBalanceOnly = document.getElementById('info-icon-btn-balance-only');
+        const backToHomeFromBalanceOnlyBtn = document.getElementById('back-to-home-from-balance-only');
+        const dynamicBalanceInfo = document.getElementById('dynamic-balance-info');
+
+        // Language selector
+        const languageSelector = document.getElementById('language-selector');
+
+
+        let calculatedEligibleWithdrawalAmount = 0;
+        let currentYearsOfService = 0;
+        let currentEmployeeShareBalance = 0;
+        let finalRequestedWithdrawalAmount = 0;
+        let currentAction = null; // To store which action led to mobile/OTP flow
+
+        // Content for dynamic balance info display
+        const balanceInfoSentences = [
+            "Upon Retirement or Superannuation: You can withdraw your full balance.",
+            "For Unemployment (after 1 month): Up to 75% of your PF balance can be withdrawn.",
+            "For Unemployment (after 2 months): The remaining 25% of your PF balance becomes available.",
+            "For Specific Purposes (e.g., house purchase, medical needs): Partial withdrawals are allowed under certain conditions, usually a percentage of your contribution or a fixed amount, whichever is less."
+        ];
+
+        // Function to show a message
+        function showMessage(message, isError = false) {
+            messageBox.textContent = message;
+            messageBox.classList.remove('error');
+            if (isError) {
+                messageBox.classList.add('error');
+            }
+            messageBox.classList.add('show');
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Function to hide all content sections and show a specific one
+        function showSection(sectionToShow) {
+            landingPageContent.classList.add('hidden');
+            mobileInputSection.classList.add('hidden');
+            otpInputSection.classList.add('hidden');
+            pfDetailsSection.classList.add('hidden');
+            marriageWithdrawalEligibilitySection.classList.add('hidden');
+            bankDetailsConfirmationSection.classList.add('hidden');
+            addressConfirmationSection.classList.add('hidden');
+            reviewAndSubmitSection.classList.add('hidden');
+            claimSubmissionSuccessSection.classList.add('hidden');
+            pfDataScoreSection.classList.add('hidden');
+            dataMismatchFixSection.classList.add('hidden');
+            panUpdateSuccessSection.classList.add('hidden');
+            balanceOnlySection.classList.add('hidden');
+
+            // Ensure modals are hidden when switching main sections
+            infoModalOverlay.classList.remove('show');
+            kycModalOverlay.classList.remove('show');
+            reasonsModalOverlay.classList.remove('show');
+            withdrawalAdviceModalOverlay.classList.remove('show');
+
+            sectionToShow.classList.remove('hidden');
+        }
+
+        // Function to display balance info dynamically
+        function displayBalanceInfoDynamically() {
+            dynamicBalanceInfo.innerHTML = ''; // Clear previous content
+            let delay = 0;
+            balanceInfoSentences.forEach((sentence, index) => {
+                setTimeout(() => {
+                    const p = document.createElement('p');
+                    p.textContent = sentence;
+                    p.classList.add('opacity-0', 'transition-opacity', 'duration-500', 'ease-in-out'); // Add classes for fade-in
+                    dynamicBalanceInfo.appendChild(p);
+                    // Trigger reflow to apply initial opacity before setting to 1
+                    p.offsetHeight;
+                    p.classList.remove('opacity-0');
+                }, delay);
+                delay += 1000; // 1 second delay between sentences
+            });
+        }
+
+        // Function to set the language
+        function setLanguage(langCode) {
+            // Update all elements with data-key attribute
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[langCode] && translations[langCode][key]) {
+                    element.textContent = translations[langCode][key];
+                }
+            });
+            // Special handling for placeholder attributes if needed (e.g., input fields)
+            // For now, placeholders are static, but this is where you'd add logic if they were dynamic.
+
+            // Save language preference
+            localStorage.setItem('pfSaathiLang', langCode);
+        }
+
+        // --- Action Tile Event Listeners ---
+        actionCheckBalance.addEventListener('click', () => {
+            currentAction = 'checkBalance'; // Set current action
+            showSection(mobileInputSection);
+            mobileNumberInput.value = '9876543210'; // Pre-fill mobile number
+        });
+
+        actionCheckDataScore.addEventListener('click', () => {
+            currentAction = 'checkDataScore'; // Set current action
+            showSection(mobileInputSection);
+            mobileNumberInput.value = '9876543210'; // Pre-fill mobile number
+        });
+
+        actionHelpWithdraw.addEventListener('click', () => {
+            currentAction = 'helpWithdraw'; // Set current action
+            showSection(mobileInputSection);
+            mobileNumberInput.value = '9876543210'; // Pre-fill mobile number
+        });
+
+        actionHelpTransfer.addEventListener('click', () => {
+            showMessage('PF Transfer functionality coming soon!', false);
+        });
+
+        actionSpeakExpert.addEventListener('click', () => {
+            showMessage('Connecting you to an expert... (This is a placeholder)', false);
+        });
+        // --- End Action Tile Event Listeners ---
+
+        // --- Mobile/OTP Workflow ---
+        sendOtpBtn.addEventListener('click', () => {
+            const mobileNumber = mobileNumberInput.value;
+            if (!/^\d{10}$/.test(mobileNumber)) {
+                showMessage('Please enter a valid 10-digit mobile number.', true);
+                return;
+            }
+            showMessage(`OTP sent to +91 ${mobileNumber}.`);
+            showSection(otpInputSection);
+            otpInput.value = '123456'; // Pre-fill OTP
+        });
+
+        verifyOtpBtn.addEventListener('click', () => {
+            const otp = otpInput.value;
+            if (otp.length !== 6 || !/^\d{6}$/.test(otp)) {
+                showMessage('Please enter a valid 6-digit OTP.', true);
+                return;
+            }
+            showMessage('OTP Verified Successfully!');
+
+            // Redirect based on which action initiated the mobile/OTP flow
+            if (currentAction === 'checkBalance') {
+                showSection(balanceOnlySection);
+            } else if (currentAction === 'checkDataScore') {
+                showSection(pfDataScoreSection);
+            } else if (currentAction === 'helpWithdraw') {
+                showSection(pfDetailsSection); // Continue to PF details for withdrawal
+            }
+            currentAction = null; // Reset action
+        });
+
+        backToHomeFromMobileBtn.addEventListener('click', () => {
+            showSection(landingPageContent);
+            mobileNumberInput.value = '';
+            currentAction = null; // Reset action
+        });
+
+        backToMobileFromOtpBtn.addEventListener('click', () => {
+            showSection(mobileInputSection);
+            otpInput.value = '';
+        });
+        // --- End Mobile/OTP Workflow ---
+
+
+        // Initiate PF Withdrawal button in PF Details section
+        initiatePfWithdrawalBtn.addEventListener('click', () => {
+            reasonsModalOverlay.classList.add('show'); // Show the withdrawal reasons modal
+        });
+
+
+        // Event listener for "Back to Home" button from PF details section
+        backToHomeFromPfBtn.addEventListener('click', () => {
+            showSection(landingPageContent);
+        });
+
+        // Event listener for Immediately Available Balance info icon button (in full PF Details)
+        infoIconBtn.addEventListener('click', () => {
+            displayBalanceInfoDynamically(); // Call dynamic display
+            infoModalOverlay.classList.add('show');
+        });
+
+        // Event listener for Immediately Available Balance info icon button (in balance-only section)
+        infoIconBtnBalanceOnly.addEventListener('click', () => {
+            displayBalanceInfoDynamically(); // Call dynamic display
+            infoModalOverlay.classList.add('show');
+        });
+
+
+        // Event listener for Immediately Available Balance info modal close button
+        infoModalCloseBtn.addEventListener('click', () => {
+            infoModalOverlay.classList.remove('show');
+        });
+
+        // Close Immediately Available Balance modal if clicked outside (on overlay)
+        infoModalOverlay.addEventListener('click', (event) => {
+            if (event.target === infoModalOverlay) {
+                infoModalOverlay.classList.remove('show');
+            }
+        });
+
+        // Event listener for KYC info icon button
+        kycInfoBtn.addEventListener('click', () => {
+            kycModalOverlay.classList.add('show');
+        });
+
+        // Event listener for KYC info modal close button
+        kycModalCloseBtn.addEventListener('click', () => {
+            kycModalOverlay.classList.remove('show');
+        });
+
+        // Close KYC modal if clicked outside (on overlay)
+        kycModalOverlay.addEventListener('click', (event) => {
+            if (event.target === kycModalOverlay) {
+                kycModalOverlay.classList.remove('show');
+            }
+        });
+
+        // Event listener for Withdrawable Reasons modal close button
+        reasonsModalCloseBtn.addEventListener('click', () => {
+            reasonsModalOverlay.classList.remove('show');
+        });
+
+        // Close Withdrawable Reasons modal if clicked outside (on overlay)
+        reasonsModalOverlay.addEventListener('click', (event) => {
+            if (event.target === reasonsModalOverlay) {
+                reasonsModalOverlay.classList.remove('show');
+            }
+        });
+
+        // Event listener for clicking a reason in the list
+        reasonsList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                const selectedReason = event.target.dataset.reason;
+                showMessage(`Selected Reason: ${selectedReason}`);
+                reasonsModalOverlay.classList.remove('show');
+
+                // If 'Marriage' is selected, proceed to the eligibility section
+                if (selectedReason === 'Marriage') {
+                    showSection(marriageWithdrawalEligibilitySection);
+                    // Reset eligibility section inputs and hide dependent elements
+                    yearsOfServiceInput.value = '8'; // Pre-fill
+                    employeeShareBalanceInput.value = '180000'; // Pre-fill (50% of 180000 is 90000)
+                    eligibleAmountDisplay.textContent = '';
+                    desiredWithdrawalAmountInput.value = ''; // Clear desired amount
+                    desiredWithdrawalInputGroup.classList.add('hidden'); // Hide desired amount input
+                    proceedToBankDetailsBtn.classList.add('hidden');
+                    getWithdrawalAdviceBtn.classList.add('hidden'); // Hide advice button initially
+                } else {
+                    // For other reasons, just show a message for now
+                    showMessage(`Functionality for '${selectedReason}' withdrawal is coming soon!`, false);
+                    showSection(pfDetailsSection); // Go back to PF details section after message
+                }
+            }
+        });
+
+        // Marriage Withdrawal Eligibility Logic
+        checkEligibilityBtn.addEventListener('click', () => {
+            const years = parseInt(yearsOfServiceInput.value);
+            const balance = parseFloat(employeeShareBalanceInput.value);
+
+            currentYearsOfService = years; // Store for LLM call
+            currentEmployeeShareBalance = balance; // Store for LLM call
+
+            if (isNaN(years) || isNaN(balance) || years < 0 || balance < 0) {
+                showMessage('Please enter valid numbers for years of service and balance.', true);
+                eligibleAmountDisplay.textContent = '';
+                desiredWithdrawalInputGroup.classList.add('hidden');
+                proceedToBankDetailsBtn.classList.add('hidden');
+                getWithdrawalAdviceBtn.classList.add('hidden');
+                return;
+            }
+
+            if (years >= 7) {
+                calculatedEligibleWithdrawalAmount = balance * 0.50; // 50% of employee's share + interest
+                eligibleAmountDisplay.textContent = `Maximum Eligible Withdrawal: ₹ ${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                eligibleAmountDisplay.classList.remove('text-red-600');
+                eligibleAmountDisplay.classList.add('text-emerald-700');
+
+                desiredWithdrawalInputGroup.classList.remove('hidden'); // Show desired amount input
+                desiredWithdrawalAmountInput.value = ''; // Clear previous value
+                proceedToBankDetailsBtn.classList.add('hidden'); // Disable until valid amount entered
+                getWithdrawalAdviceBtn.classList.remove('hidden'); // Show advice button
+                showMessage('You are eligible for Marriage Withdrawal! Enter your desired amount.');
+            } else {
+                eligibleAmountDisplay.textContent = `Not Eligible: Requires at least 7 years of service.`;
+                eligibleAmountDisplay.classList.remove('text-emerald-700');
+                eligibleAmountDisplay.classList.add('text-red-600');
+                desiredWithdrawalInputGroup.classList.add('hidden'); // Hide desired amount input
+                proceedToBankDetailsBtn.classList.add('hidden');
+                getWithdrawalAdviceBtn.classList.add('hidden'); // Hide advice button
+                showMessage('You are not eligible for Marriage Withdrawal yet.', true);
+            }
+        });
+
+        // Event listener for desired withdrawal amount input
+        desiredWithdrawalAmountInput.addEventListener('input', () => {
+            const desiredAmount = parseFloat(desiredWithdrawalAmountInput.value);
+
+            if (isNaN(desiredAmount) || desiredAmount <= 0) {
+                showMessage('Please enter a valid positive amount for withdrawal.', true);
+                proceedToBankDetailsBtn.classList.add('hidden');
+                return;
+            }
+
+            if (desiredAmount > calculatedEligibleWithdrawalAmount) {
+                showMessage(`Desired amount (₹${desiredAmount.toLocaleString('en-IN')}) exceeds eligible amount (₹${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN')}).`, true);
+                proceedToBankDetailsBtn.classList.add('hidden');
+            } else {
+                showMessage('Amount entered is valid.');
+                finalRequestedWithdrawalAmount = desiredAmount; // Store the valid amount
+                proceedToBankDetailsBtn.classList.remove('hidden');
+            }
+        });
+
+
+        // LLM Integration: Get Personalized Withdrawal Advice
+        getWithdrawalAdviceBtn.addEventListener('click', async () => {
+            withdrawalAdviceModalOverlay.classList.add('show');
+            withdrawalAdviceContent.innerHTML = `
+                <div class="flex justify-center items-center h-32">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+                    <p class="ml-4 text-gray-700" data-key="generatingAdvice">Generating advice...</p>
+                </div>
+            `; // Show loading spinner
+
+            const prompt = `You are a helpful assistant providing guidance on Provident Fund (PF) withdrawals in India. A user is considering a partial PF withdrawal for 'Marriage'. They have ${currentYearsOfService} years of EPF service and are eligible to withdraw ₹ ${calculatedEligibleWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}. Provide concise, helpful advice on what documents they might need, any common pitfalls to avoid for this specific reason, and general best practices for PF withdrawals for marriage. Keep it under 200 words.`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    withdrawalAdviceContent.innerHTML = `<p>${text}</p>`;
+                } else {
+                    withdrawalAdviceContent.innerHTML = `<p class="text-red-600">Failed to generate advice. Please try again.</p>`;
+                    console.error('LLM response structure unexpected:', result);
+                }
+            } catch (error) {
+                withdrawalAdviceContent.innerHTML = `<p class="text-red-600">Error connecting to AI. Please check your network or try again later.</p>`;
+                console.error('Error calling Gemini API:', error);
+            }
+        });
+
+        withdrawalAdviceModalCloseBtn.addEventListener('click', () => {
+            withdrawalAdviceModalOverlay.classList.remove('show');
+        });
+
+        withdrawalAdviceModalOverlay.addEventListener('click', (event) => {
+            if (event.target === withdrawalAdviceModalOverlay) {
+                withdrawalAdviceModalOverlay.classList.remove('show');
+            }
+        });
+
+
+        proceedToBankDetailsBtn.addEventListener('click', () => {
+            // Ensure the finalRequestedWithdrawalAmount is set before proceeding
+            if (finalRequestedWithdrawalAmount <= 0 || finalRequestedWithdrawalAmount > calculatedEligibleWithdrawalAmount) {
+                showMessage('Please enter a valid withdrawal amount to proceed.', true);
+                return;
+            }
+            showSection(bankDetailsConfirmationSection);
+            last4DigitsInput.value = ''; // Clear input
+        });
+
+        backToPfDetailsFromEligibilityBtn.addEventListener('click', () => {
+            showSection(pfDetailsSection); // Go back to PF details section
+        });
+
+        // Bank Details Confirmation Logic
+        verifyBankDetailsBtn.addEventListener('click', () => {
+            const last4 = last4DigitsInput.value;
+            if (last4 === '1234') { // Dummy verification
+                showMessage('Bank Details Verified!');
+                reviewBankDigits.textContent = last4; // Update review section
+                showSection(addressConfirmationSection);
+                addressCorrectCheckbox.checked = false; // Reset checkbox
+                confirmAddressBtn.disabled = true; // Disable button
+            } else {
+                showMessage('Incorrect last 4 digits. Please try again.', true);
+            }
+        });
+
+        backToEligibilityFromBankBtn.addEventListener('click', () => {
+            showSection(marriageWithdrawalEligibilitySection);
+        });
+
+        // Address Confirmation Logic
+        addressCorrectCheckbox.addEventListener('change', () => {
+            confirmAddressBtn.disabled = !addressCorrectCheckbox.checked;
+        });
+
+        confirmAddressBtn.addEventListener('click', () => {
+            if (addressCorrectCheckbox.checked) {
+                showMessage('Address Confirmed!');
+                reviewAddress.textContent = 'Flat 101, Green Apartments, Cyber City, Bengaluru, Karnataka - 560001'; // Dummy address
+                reviewWithdrawalAmount.textContent = `₹ ${finalRequestedWithdrawalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                showSection(reviewAndSubmitSection);
+                termsCheckbox.checked = false; // Reset terms checkbox
+                submitClaimBtn.disabled = true; // Disable submit button
+            } else {
+                showMessage('Please confirm your address to proceed.', true);
+            }
+        });
+
+        backToBankFromAddressBtn.addEventListener('click', () => {
+            showSection(bankDetailsConfirmationSection);
+        });
+
+        // Review and Submit Logic
+        termsCheckbox.addEventListener('change', () => {
+            submitClaimBtn.disabled = !termsCheckbox.checked;
+        });
+
+        submitClaimBtn.addEventListener('click', () => {
+            if (termsCheckbox.checked) {
+                // Simulate claim submission
+                const acknowledgment = 'PFSAATHI' + Math.floor(Math.random() * 100000);
+                acknowledgmentNumberSpan.textContent = acknowledgment;
+                showMessage('Claim Submission in Progress...');
+                setTimeout(() => {
+                    showSection(claimSubmissionSuccessSection);
+                    showMessage('Claim Submitted Successfully!', false);
+                }, 1500); // Simulate network delay
+            } else {
+                showMessage('Please agree to the terms and conditions.', true);
+            }
+        });
+
+        backToAddressFromReviewBtn.addEventListener('click', () => {
+            showSection(addressConfirmationSection);
+        });
+
+        // Claim Submission Success Logic
+        backToHomeFromSuccessBtn.addEventListener('click', () => {
+            showSection(landingPageContent);
+        });
+
+        // Event listener for Back to Home button from PF Data Score section
+        backToHomeFromDataScoreBtn.addEventListener('click', () => {
+            showSection(landingPageContent);
+        });
+
+        // New: Event listener for Back to Home button from Balance Only section
+        backToHomeFromBalanceOnlyBtn.addEventListener('click', () => {
+            showSection(landingPageContent);
+        });
+
+        // Event listener for Fix Data Now button
+        fixDataNowBtn.addEventListener('click', () => {
+            showSection(dataMismatchFixSection);
+            correctedFatherNameInput.value = ''; // Clear input
+        });
+
+        // Event listener for Back to Data Score button from Fix Data Mismatch
+        backToDataScoreFromFixBtn.addEventListener('click', () => {
+            showSection(pfDataScoreSection);
+        });
+
+        // Event listener for Submit PAN Update Request button
+        submitPanUpdateBtn.addEventListener('click', () => {
+            const correctedName = correctedFatherNameInput.value;
+            if (!correctedName) {
+                showMessage('Please enter the corrected father\'s name.', true);
+                return;
+            }
+            showMessage('Submitting PAN update request...', false);
+            setTimeout(() => {
+                showSection(panUpdateSuccessSection);
+                showMessage('PAN Update Request Submitted Successfully!', false);
+            }, 1500); // Simulate service call
+        });
+
+        // Event listener for Back to Home button from PAN Update Success
+        backToHomeFromPanSuccessBtn.addEventListener('click', () => {
+            showSection(landingPageContent);
+        });
+
+        // Initialize the page on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load preferred language from localStorage or default to English
+            const savedLang = localStorage.getItem('pfSaathiLang') || 'en';
+            languageSelector.value = savedLang; // Set dropdown to saved language
+            setLanguage(savedLang); // Apply the language
+
+            showSection(landingPageContent); // Ensure landing page is shown first
+        });
+
+        // Event listener for language selector change
+        languageSelector.addEventListener('change', (event) => {
+            setLanguage(event.target.value);
+        });
+    </script>
+</body>
+</html>
